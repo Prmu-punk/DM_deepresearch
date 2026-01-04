@@ -10,8 +10,12 @@ import requests
 from functools import lru_cache
 from typing import Annotated, Any, Dict, List, Literal, Optional
 
+import pandas as pd
+
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import InjectedToolArg, tool
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.language_models import BaseChatModel
 
 # ConceptNet API configuration
 CONCEPTNET_API_BASE = "http://api.conceptnet.io"
@@ -52,7 +56,7 @@ def query_conceptnet_cached(concept: str, limit: int = 20) -> Dict[str, Any]:
     except requests.RequestException as e:
         logger.warning(f"ConceptNet API error for '{concept}': {e}")
     
-        return {"edges": []}
+    return {"edges": []}
 
 
 def extract_related_concepts(
@@ -86,6 +90,9 @@ def extract_related_concepts(
         ]
     
     data = query_conceptnet_cached(concept)
+    if not data:
+        return []
+        
     related = []
     seen_concepts = set()
     concept_lower = concept.lower()
@@ -301,6 +308,200 @@ def build_kg_context(query: str, max_concepts: int = 10) -> str:
         return "\n\n".join(context_parts)
     
     return ""
+
+
+##########################
+# Geoscience Detection & GAKG Expansion
+##########################
+
+GEO_KEYWORDS = {
+    "climate", "meteorology", "atmosphere", "hydrology", "hydrogeology", "precipitation",
+    "geology", "geologic", "geoscience", "geophysics", "tectonic", "earthquake", "seismic",
+    "seismology", "fault", "volcano", "volcanic", "magma", "igneous", "sediment", "basin",
+    "stratigraphy", "paleoclimate", "glacier", "permafrost", "ocean", "oceanography",
+    "coast", "shoreline", "erosion", "landslide", "geothermal", "lithosphere", "crust",
+    "mantle", "geochemistry", "geomorphology", "remote sensing", "satellite"
+}
+
+
+def is_geoscience_topic(text: str) -> bool:
+    """Heuristic check for geoscience topics using a compact keyword seed set."""
+    text_lower = (text or "").lower()
+    return any(keyword in text_lower for keyword in GEO_KEYWORDS)
+
+
+@lru_cache(maxsize=4)
+def _load_gakg_frame(parquet_path: str) -> Optional[pd.DataFrame]:
+    try:
+        return pd.read_parquet(parquet_path)
+    except Exception as exc:  # pragma: no cover - defensive
+        logger.warning(f"Failed to load GAKG parquet '{parquet_path}': {exc}")
+        return None
+
+
+def _gakg_expand_queries(keyword: str, df: pd.DataFrame, top_k: int = 5, use_relation: bool = True) -> List[str]:
+    keyword_lower = keyword.lower().strip()
+    query_terms: List[str] = []
+
+    eff_df = df[df["subject"].str.lower() == keyword_lower]
+    top_effects = (
+        eff_df.groupby(["relation", "object"]).size().sort_values(ascending=False).head(top_k).index.tolist()
+    )
+
+    cau_df = df[df["object"].str.lower() == keyword_lower]
+    top_causes = (
+        cau_df.groupby(["subject", "relation"]).size().sort_values(ascending=False).head(top_k).index.tolist()
+    )
+
+    for rel, obj in top_effects:
+        query_terms.append(f"{keyword} {rel} {obj}" if use_relation else f"{keyword} {obj}")
+
+    for sub, rel in top_causes:
+        query_terms.append(f"{sub} {rel} {keyword}" if use_relation else f"{sub} {keyword}")
+
+    # Deduplicate while preserving order
+    seen = set()
+    deduped: List[str] = []
+    for term in query_terms:
+        if term not in seen:
+            seen.add(term)
+            deduped.append(term)
+
+    return deduped
+
+
+def build_gakg_context(
+    query: str,
+    parquet_path: Optional[str],
+    max_concepts: int = 10,
+    use_relation: bool = True,
+) -> str:
+    """Build context strings from GAKG for geoscience topics.
+
+    Returns a formatted block that mirrors the ConceptNet context format so the
+    downstream prompt handling remains unchanged.
+    """
+
+    if not parquet_path:
+        return ""
+
+    df = _load_gakg_frame(parquet_path)
+    if df is None or not {"subject", "object", "relation"}.issubset(df.columns):
+        return ""
+
+    # Extract keywords to search in GAKG
+    # Expanded stopword list to filter out common academic/research verbs and generic nouns
+    stopwords = {
+        # Common English stopwords
+        "the", "and", "for", "with", "from", "that", "this", "what", "how", "why", "are", "is", "in", "on", "at", "to", "of", "by", "an", "as", "be", "or",
+        # Research/Academic generic terms (verbs & nouns)
+        "research", "study", "studies", "paper", "article", "report", "reports", "journal", "review",
+        "investigate", "examine", "explore", "analyze", "analysis", "assess", "assessment", "evaluate", "evaluation",
+        "focus", "discuss", "discussion", "describe", "description", "compare", "comparison", "contrast",
+        "provide", "propose", "suggest", "indicate", "demonstrate", "show", "find", "finding", "result", "results",
+        "recent", "current", "future", "past", "potential", "impact", "impacts", "effect", "effects", "affect",
+        "data", "method", "methodology", "approach", "technique", "system", "process", "model", "modeling",
+        "quantitative", "qualitative", "significant", "relevance", "relevant", "related", "relationship",
+        "usage", "use", "using", "based", "case", "example", "official", "agency", "international", "national"
+    }
+    
+    # 1. Extract potential keywords
+    raw_words = [w.strip(",.?!()\"':;") for w in query.split()]
+    keywords = []
+    
+    for w in raw_words:
+        w_lower = w.lower()
+        # Filter by length and stopword list
+        if len(w) > 3 and w_lower not in stopwords:
+            keywords.append(w)
+            
+    # 2. (Optional) Keep bigrams if possible? 
+    # For now, let's stick to single words but be stricter.
+    
+    # Also try the full query if it's short (likely a direct entity search)
+    if len(query.split()) <= 3:
+        keywords.append(query)
+
+    all_expansions = []
+    seen_terms = set()
+    
+    for kw in keywords:
+        expansions = _gakg_expand_queries(kw, df, top_k=max_concepts // 2, use_relation=use_relation)
+        for term in expansions:
+            if term not in seen_terms:
+                all_expansions.append(term)
+                seen_terms.add(term)
+        
+        if len(all_expansions) >= max_concepts:
+            break
+
+    if not all_expansions:
+        return ""
+
+    lines = ["Geoscience KG expansions:"]
+    for term in all_expansions:
+        lines.append(f"- {term}")
+    return "\n".join(lines)
+
+
+##########################
+# LLM-based KG Enhancement
+##########################
+
+async def generate_kg_keywords_with_llm(query: str, llm: BaseChatModel) -> List[str]:
+    """Use LLM to extract high-quality keywords for KG lookup."""
+    
+    prompt = f"""You are a research assistant. Your task is to extract 1-3 core scientific entities or concepts from the user's query for Knowledge Graph lookup.
+    
+    Query: "{query}"
+    
+    Rules:
+    1. Extract ONLY specific entities (e.g., "nuclear energy", "climate change", "groundwater").
+    2. Ignore generic verbs (investigate, analyze) and nouns (study, impact, potential).
+    3. Return a comma-separated list of keywords.
+    4. If the query is too abstract, return the most relevant broad topic.
+    
+    Keywords:"""
+    
+    try:
+        response = await llm.ainvoke([HumanMessage(content=prompt)])
+        content = str(response.content).strip()
+        keywords = [k.strip() for k in content.split(",") if k.strip()]
+        return keywords[:3]  # Limit to top 3
+    except Exception as e:
+        logger.warning(f"LLM keyword generation failed: {e}")
+        # Fallback to simple extraction
+        return [w for w in query.split() if len(w) > 4][:2]
+
+async def filter_kg_results_with_llm(query: str, kg_results: str, llm: BaseChatModel) -> str:
+    """Use LLM to filter noise from KG results."""
+    
+    if not kg_results:
+        return ""
+        
+    prompt = f"""You are a research assistant. I have queried a Knowledge Graph for the topic: "{query}".
+    The KG returned some raw results. Some may be noise, but others are valuable scientific context.
+    
+    Raw KG Results:
+    {kg_results}
+    
+    Task:
+    1. Identify concepts that are scientifically relevant to the query or provide useful context.
+    2. Filter out obvious noise (e.g., unrelated homonyms like "nuclear is in diamond").
+    3. Return a clean, bulleted list of the relevant expansions.
+    4. IMPORTANT: If you find ANY potentially relevant concepts, include them. Only return "NO_RELEVANT_CONTEXT" if the results are completely nonsensical or unrelated.
+    
+    Filtered Results:"""
+    
+    try:
+        response = await llm.ainvoke([HumanMessage(content=prompt)])
+        content = str(response.content).strip()
+        if "NO_RELEVANT_CONTEXT" in content:
+            return ""
+        return content
+    except Exception as e:
+        logger.warning(f"LLM result filtering failed: {e}")
+        return kg_results  # Fallback to raw results
 
 
 ##########################

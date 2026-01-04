@@ -88,7 +88,7 @@ async def clarify_with_user(state: AgentState, config: RunnableConfig) -> Comman
     # Configure model with structured output and retry logic
     clarification_model = (
         configurable_model
-        .with_structured_output(ClarifyWithUser)
+        .with_structured_output(ClarifyWithUser, method="json_mode")
         .with_retry(stop_after_attempt=configurable.max_structured_output_retries)
         .with_config(model_config)
     )
@@ -141,7 +141,7 @@ async def write_research_brief(state: AgentState, config: RunnableConfig) -> Com
     # Configure model for structured research question generation
     research_model = (
         configurable_model
-        .with_structured_output(ResearchQuestion)
+        .with_structured_output(ResearchQuestion, method="json_mode")
         .with_retry(stop_after_attempt=configurable.max_structured_output_retries)
         .with_config(research_model_config)
     )
@@ -544,17 +544,22 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
     while synthesis_attempts < max_attempts:
         try:
             # Create system prompt focused on compression task
-            compression_prompt = compress_research_system_prompt.format(date=get_today_str())
+            kg_context = state.get("kg_context", "")
+            kg_info = f"\n\nKnowledge Graph Context used for this research:\n{kg_context}" if kg_context else ""
+            
+            compression_prompt = compress_research_system_prompt.format(date=get_today_str()) + kg_info
             messages = [SystemMessage(content=compression_prompt)] + researcher_messages
             
             # Execute compression
             response = await synthesizer_model.ainvoke(messages)
             
-            # Extract raw notes from all tool and AI messages
+            # Extract raw notes from all tool, AI, and system messages (to include KG context)
             raw_notes_content = "\n".join([
                 str(message.content) 
-                for message in filter_messages(researcher_messages, include_types=["tool", "ai"])
+                for message in filter_messages(researcher_messages, include_types=["tool", "ai", "system"])
             ])
+            if kg_context and kg_context not in raw_notes_content:
+                raw_notes_content = f"Knowledge Graph Context:\n{kg_context}\n\n" + raw_notes_content
             
             # Return successful compression result
             return {
@@ -599,7 +604,7 @@ async def kg_enhance(state: ResearcherState, config: RunnableConfig):
         Updated state with KG context and enhanced researcher messages
     """
     configurable = Configuration.from_runnable_config(config)
-    use_kg = getattr(configurable, 'use_kg_enhancement', False)
+    use_kg = getattr(configurable, 'use_kg_enhancement', False) or getattr(configurable, 'use_gakg_enhancement', False)
     
     if not use_kg:
         # KG enhancement disabled, pass through
@@ -611,24 +616,83 @@ async def kg_enhance(state: ResearcherState, config: RunnableConfig):
         return {"kg_context": ""}
     
     try:
-        # Import KG functions
         from open_deep_research.kg_enhanced_search import (
-            extract_related_concepts,
-            build_kg_context
+            build_gakg_context,
+            build_kg_context,
+            is_geoscience_topic,
+            generate_kg_keywords_with_llm,
+            filter_kg_results_with_llm,
         )
-        
-        # Build KG context from the research topic
-        kg_context = build_kg_context(research_topic, max_concepts=10)
-        
+
+        # Initialize LLM for KG tasks
+        kg_llm = configurable_model.with_config({
+            "model": configurable.research_model,
+            "max_tokens": 500,
+            "api_key": get_api_key_for_model(configurable.research_model, config),
+        })
+
+        is_geo = is_geoscience_topic(research_topic)
+        use_gakg = is_geo and getattr(configurable, 'use_gakg_enhancement', False)
+        kg_context = ""
+        source_label = "ConceptNet knowledge graph"
+
+        if use_gakg:
+            print(f"\n[KG] 检测到地学主题: '{research_topic}'，正在尝试调用 GAKG...")
+            
+            # 1. LLM Keyword Extraction
+            keywords = await generate_kg_keywords_with_llm(research_topic, kg_llm)
+            print(f"[KG] LLM 提取关键词: {keywords}")
+            
+            # 2. Query GAKG with optimized keywords
+            raw_contexts = []
+            for kw in keywords:
+                ctx = build_gakg_context(
+                    kw, # Use keyword instead of full query
+                    parquet_path=getattr(configurable, 'gakg_parquet_path', None),
+                    max_concepts=10,
+                )
+                if ctx:
+                    raw_contexts.append(ctx)
+            
+            raw_kg_text = "\n".join(raw_contexts)
+            
+            # 3. LLM Filtering
+            if raw_kg_text:
+                print(f"[KG] GAKG 原始结果获取成功 (长度: {len(raw_kg_text)} chars)，正在进行 LLM 过滤...")
+                print(f"[KG] GAKG 原始结果预览:\n{raw_kg_text[:500]}..." if len(raw_kg_text) > 500 else f"[KG] GAKG 原始结果:\n{raw_kg_text}")
+                
+                kg_context = await filter_kg_results_with_llm(research_topic, raw_kg_text, kg_llm)
+                
+                if kg_context:
+                    print(f"[KG] GAKG 增强成功！已找到关联概念：\n{kg_context}")
+                    source_label = "GAKG (geoscience) knowledge graph"
+                else:
+                    print(f"[KG] GAKG 结果被 LLM 判定为无关。")
+            else:
+                print(f"[KG] GAKG 未找到匹配概念。")
+
+        if not kg_context:
+            if not use_gakg:
+                print(f"\n[KG] 正在为主题 '{research_topic}' 调用 ConceptNet...")
+            
+            # Fallback to ConceptNet with similar LLM logic if needed, 
+            # or keep simple logic for ConceptNet to save tokens.
+            # Let's apply simple logic for ConceptNet for now or reuse the keywords.
+            kg_context = build_kg_context(research_topic, max_concepts=10)
+            source_label = "ConceptNet knowledge graph"
+            use_gakg = False
+            if kg_context:
+                print(f"[KG] ConceptNet 增强成功！已找到关联概念：\n{kg_context}")
+
         if kg_context:
-            # Add KG context to the researcher messages as a system hint
-            kg_message = HumanMessage(content=f"""
+            preference_hint = "\nPrefer using acemap_search for academic sources." if use_gakg else ""
+            kg_message = SystemMessage(content=f"""
 [Knowledge Graph Context]
-The following related concepts were found using ConceptNet knowledge graph:
+The following related concepts were found using the {source_label}:
 
 {kg_context}
 
-Use these related concepts to guide your search queries and ensure comprehensive coverage.
+Use these related concepts to guide your search queries and ensure comprehensive coverage.{preference_hint}
 """)
             return {
                 "kg_context": kg_context,
@@ -680,8 +744,13 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
     """
     # Step 1: Extract research findings and prepare state cleanup
     notes = state.get("notes", [])
+    raw_notes = state.get("raw_notes", [])
     cleared_state = {"notes": {"type": "override", "value": []}}
-    findings = "\n".join(notes)
+    
+    # Combine summarized notes and raw research notes for maximum context
+    findings = "### Summarized Research Findings\n" + "\n".join(notes)
+    if raw_notes:
+        findings += "\n\n### Detailed Research Notes & Abstracts\n" + "\n".join(raw_notes)
     
     # Step 2: Configure the final report generation model
     configurable = Configuration.from_runnable_config(config)

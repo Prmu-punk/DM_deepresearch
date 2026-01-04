@@ -12,11 +12,8 @@ Assess whether you need to ask a clarifying question, or if the user has already
 IMPORTANT: If you can see in the messages history that you have already asked a clarifying question, you almost always do not need to ask another one. Only ask another question if ABSOLUTELY NECESSARY.
 
 If there are acronyms, abbreviations, or unknown terms, ask the user to clarify.
-If you need to ask a question, follow these guidelines:
-- Be concise while gathering all necessary information
-- Make sure to gather all the information needed to carry out the research task in a concise, well-structured manner.
-- Use bullet points or numbered lists if appropriate for clarity. Make sure that this uses markdown formatting and will be rendered correctly if the string output is passed to a markdown renderer.
-- Don't ask for unnecessary information, or information that the user has already provided. If you can see that the user has already provided the information, do not ask for it again.
+
+CRITICAL: You must respond ONLY with a valid JSON object. Do not include any thinking process, preamble, or markdown code blocks.
 
 Respond in valid JSON format with these exact keys:
 "need_clarification": boolean,
@@ -52,6 +49,9 @@ The messages that have been exchanged so far between yourself and the user are:
 Today's date is {date}.
 
 You will return a single research question that will be used to guide the research.
+
+Respond in valid JSON format with this exact key:
+"research_brief": "<your detailed research question and brief>"
 
 Guidelines:
 1. Maximize Specificity and Detail
@@ -143,12 +143,12 @@ You can use any of the tools provided to you to find resources that can help ans
 </Task>
 
 <Available Tools>
-You have access to two main tools:
-1. **tavily_search**: For conducting web searches to gather information
-2. **think_tool**: For reflection and strategic planning during research
+You have access to research tools to gather information:
+1. **Search Tools**: Use the provided search tools (like tavily_search or acemap_search) to find relevant information and sources.
+2. **think_tool**: For reflection and strategic planning during research.
 {mcp_prompt}
 
-**CRITICAL: Use think_tool after each search to reflect on results and plan next steps. Do not call think_tool with the tavily_search or any other tools. It should be to reflect on the results of the search.**
+**CRITICAL: Use think_tool after each search to reflect on results and plan next steps. Do not call think_tool simultaneously with search tools. It should be used to reflect on the results of the search.**
 </Available Tools>
 
 <Instructions>
@@ -191,6 +191,7 @@ All relevant information should be repeated and rewritten verbatim, but in a cle
 The purpose of this step is just to remove any obviously irrelevant or duplicative information.
 For example, if three sources all say "X", you could say "These three sources all stated X".
 Only these fully comprehensive cleaned findings are going to be returned to the user, so it's crucial that you don't lose any information from the raw messages.
+Pay special attention to academic search results (like Acemap) - ensure that paper titles, key findings from abstracts, and citations are preserved in your summary.
 </Task>
 
 <Guidelines>

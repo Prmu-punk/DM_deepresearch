@@ -14,6 +14,7 @@ class SearchAPI(Enum):
     ANTHROPIC = "anthropic"
     OPENAI = "openai"
     TAVILY = "tavily"
+    ACEMAP = "acemap"
     NONE = "none"
 
 class MCPConfig(BaseModel):
@@ -84,6 +85,7 @@ class Configuration(BaseModel):
                 "description": "Search API to use for research. NOTE: Make sure your Researcher Model supports the selected search API.",
                 "options": [
                     {"label": "Tavily", "value": SearchAPI.TAVILY.value},
+                    {"label": "Acemap Academic Search", "value": SearchAPI.ACEMAP.value},
                     {"label": "OpenAI Native Web Search", "value": SearchAPI.OPENAI.value},
                     {"label": "Anthropic Native Web Search", "value": SearchAPI.ANTHROPIC.value},
                     {"label": "None", "value": SearchAPI.NONE.value}
@@ -119,11 +121,11 @@ class Configuration(BaseModel):
     )
     # Model Configuration
     summarization_model: str = Field(
-        default="openai:gpt-4.1-mini",
+        default="openai:deepseek-v3",
         metadata={
             "x_oap_ui_config": {
                 "type": "text",
-                "default": "openai:gpt-4.1-mini",
+                "default": "openai:deepseek-v3",
                 "description": "Model for summarizing research results from Tavily search results"
             }
         }
@@ -151,11 +153,11 @@ class Configuration(BaseModel):
         }
     )
     research_model: str = Field(
-        default="openai:gpt-4.1",
+        default="openai:deepseek-v3",
         metadata={
             "x_oap_ui_config": {
                 "type": "text",
-                "default": "openai:gpt-4.1",
+                "default": "openai:deepseek-v3",
                 "description": "Model for conducting research. NOTE: Make sure your Researcher Model supports the selected search API."
             }
         }
@@ -171,11 +173,11 @@ class Configuration(BaseModel):
         }
     )
     compression_model: str = Field(
-        default="openai:gpt-4.1",
+        default="openai:deepseek-v3",
         metadata={
             "x_oap_ui_config": {
                 "type": "text",
-                "default": "openai:gpt-4.1",
+                "default": "openai:deepseek-v3",
                 "description": "Model for compressing research findings from sub-agents. NOTE: Make sure your Compression Model supports the selected search API."
             }
         }
@@ -191,11 +193,11 @@ class Configuration(BaseModel):
         }
     )
     final_report_model: str = Field(
-        default="openai:gpt-4.1",
+        default="openai:deepseek-v3",
         metadata={
             "x_oap_ui_config": {
                 "type": "text",
-                "default": "openai:gpt-4.1",
+                "default": "openai:deepseek-v3",
                 "description": "Model for writing the final report from all research findings"
             }
         }
@@ -239,6 +241,27 @@ class Configuration(BaseModel):
                 "type": "boolean",
                 "default": False,
                 "description": "Enable ConceptNet knowledge graph enhancement for Tavily search queries. When enabled, short queries (<5 words) will be expanded with related concepts."
+            }
+        }
+    )
+
+    use_gakg_enhancement: bool = Field(
+        default=False,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "boolean",
+                "default": False,
+                "description": "Enable GAKG-based knowledge graph enhancement for geoscience topics. When enabled and a GAKG parquet path is provided, geoscience queries will be expanded with GAKG context."
+            }
+        }
+    )
+
+    gakg_parquet_path: Optional[str] = Field(
+        default=None,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "text",
+                "description": "Optional path to a local GAKG parquet file for geoscience knowledge graph expansion."
             }
         }
     )

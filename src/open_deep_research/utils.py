@@ -135,6 +135,93 @@ async def tavily_search(
     
     return formatted_output
 
+
+##########################
+# Acemap Academic Search Tool
+##########################
+ACEMAP_SEARCH_DESCRIPTION = (
+    "Academic search via Acemap. Returns paper titles, abstracts, authors, years, and citation counts. "
+    "Use this for scholarly or citation-focused queries."
+)
+
+
+@tool(description=ACEMAP_SEARCH_DESCRIPTION)
+async def acemap_search(
+    queries: List[str],
+    max_results: Annotated[int, InjectedToolArg] = 10,
+    config: RunnableConfig = None,
+) -> str:
+    """Search academic papers using the Acemap public API and format key fields.
+
+    Args:
+        queries: List of search queries to execute.
+        max_results: Maximum number of results to return per query (page size).
+        config: Unused here; kept for interface parity.
+
+    Returns:
+        Formatted string containing Acemap search results.
+    """
+
+    base_url = "https://acemap.info/api/v1/work/search"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    timeout = aiohttp.ClientTimeout(total=15)
+
+    async def fetch_one(session, query: str):
+        params = {"keyword": query, "page": 1, "size": max_results}
+        try:
+            async with session.get(base_url, params=params) as resp:
+                if resp.status != 200:
+                    return {"query": query, "results": [], "error": f"HTTP {resp.status}"}
+                data = await resp.json()
+                return {"query": query, "results": data.get("results", [])}
+        except Exception as e:  # pragma: no cover - network safety
+            return {"query": query, "results": [], "error": str(e)}
+
+    async with aiohttp.ClientSession(timeout=timeout, headers=headers) as session:
+        responses = await asyncio.gather(*[fetch_one(session, q) for q in queries])
+
+    lines: List[str] = []
+    for response in responses:
+        query = response.get("query", "")
+        results = response.get("results", [])
+        error = response.get("error")
+
+        lines.append(f"===== ACEMAP SEARCH: {query} =====")
+        if error:
+            lines.append(f"Search failed: {error}\n")
+            continue
+
+        if not results:
+            lines.append("No results found.\n")
+            continue
+
+        for idx, paper in enumerate(results, start=1):
+            title = paper.get("title") or paper.get("display_name") or "Untitled"
+            abstract = paper.get("abstract") or ""
+            year = paper.get("year") or "Unknown"
+            citations = paper.get("num_citations") or paper.get("citation_count") or 0
+            doi = paper.get("doi") or paper.get("doi_url") or ""
+            url = paper.get("primary_location", {}).get("landing_page_url") or paper.get("id") or ""
+            authorships = paper.get("authorships", [])
+            authors = []
+            for auth in authorships:
+                name = auth.get("author", {}).get("display_name")
+                if name:
+                    authors.append(name)
+
+            lines.append(f"\n--- SOURCE {idx}: {title} ---")
+            lines.append(f"URL: {url}")
+            lines.append(f"Year: {year} | Citations: {citations}")
+            if authors:
+                lines.append(f"Authors: {', '.join(authors[:8])}")
+            if doi:
+                lines.append(f"DOI: {doi}")
+            if abstract:
+                lines.append(f"SUMMARY/ABSTRACT:\n{abstract.strip()}")
+            lines.append("-" * 40)
+
+    return "\n".join(lines)
+
 async def tavily_search_async(
     search_queries, 
     max_results: int = 5, 
@@ -548,6 +635,16 @@ async def get_search_tool(search_api: SearchAPI):
     elif search_api == SearchAPI.OPENAI:
         # OpenAI's web search preview functionality
         return [{"type": "web_search_preview"}]
+        
+    elif search_api == SearchAPI.ACEMAP:
+        # Acemap academic search tool
+        search_tool = acemap_search
+        search_tool.metadata = {
+            **(search_tool.metadata or {}),
+            "type": "search",
+            "name": "web_search"
+        }
+        return [search_tool]
         
     elif search_api == SearchAPI.TAVILY:
         # Configure Tavily search tool with metadata
