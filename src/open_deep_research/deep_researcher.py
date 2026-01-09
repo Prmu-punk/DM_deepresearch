@@ -868,8 +868,12 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
     # Step 3: Attempt report generation with token limit retry logic
     max_retries = 3
     current_retry = 0
-    findings_token_limit = None
-    
+    model_token_limit = get_model_token_limit(configurable.final_report_model)
+    # Pre-clip findings up front to avoid repeated hard failures (chars ~ 3x tokens)
+    if model_token_limit:
+        findings = findings[: model_token_limit * 3]
+    findings_token_limit = len(findings)
+
     while current_retry <= max_retries:
         try:
             # Create comprehensive prompt with all research context
@@ -906,23 +910,21 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
             # Handle token limit exceeded errors with progressive truncation
             if is_token_limit_exceeded(e, configurable.final_report_model):
                 current_retry += 1
-                
+
                 if current_retry == 1:
-                    # First retry: determine initial truncation limit
-                    model_token_limit = get_model_token_limit(configurable.final_report_model)
+                    # If unknown limit, bail early with guidance
                     if not model_token_limit:
                         return {
-                            "final_report": f"Error generating final report: Token limit exceeded, however, we could not determine the model's maximum context length. Please update the model map in deep_researcher/utils.py with this information. {e}",
+                            "final_report": f"Error generating final report: Token limit exceeded, but model context limit is unknown. Please add it in utils.py. {e}",
                             "messages": [AIMessage(content="Report generation failed due to token limits")],
                             **cleared_state
                         }
-                    # Use 4x token limit as character approximation for truncation
-                    findings_token_limit = model_token_limit * 4
+                    # Already pre-clipped once; now tighten to 50%
+                    findings_token_limit = int(findings_token_limit * 0.5)
                 else:
-                    # Subsequent retries: reduce by 10% each time
-                    findings_token_limit = int(findings_token_limit * 0.9)
-                
-                # Truncate findings and retry
+                    # Subsequent retries: reduce by 50% each time to converge fast
+                    findings_token_limit = max(int(findings_token_limit * 0.5), model_token_limit * 2)
+
                 findings = findings[:findings_token_limit]
                 continue
             else:
@@ -933,9 +935,9 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
                     **cleared_state
                 }
     
-    # Step 4: Return failure result if all retries exhausted
+    # Step 4: Return failure result if all retries exhausted (include clipped findings hint)
     return {
-        "final_report": "Error generating final report: Maximum retries exceeded",
+        "final_report": "Error generating final report: Maximum retries exceeded after aggressive truncation. Consider lowering research breadth or final_report_model_max_tokens, or further trimming raw notes.",
         "messages": [AIMessage(content="Report generation failed after maximum retries")],
         **cleared_state
     }

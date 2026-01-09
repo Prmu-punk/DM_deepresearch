@@ -9,8 +9,10 @@
     h1 { margin-bottom: 8px; }
     .panel { margin-bottom: 16px; padding: 16px; background: #fff; border: 1px solid #e5e5ef; border-radius: 8px; }
     .group { margin-bottom: 24px; padding: 16px; background: #fff; border: 1px solid #e5e5ef; border-radius: 8px; }
-    .query-label { font-size: 12px; color: #777; letter-spacing: 0.3px; }
-    .query { font-weight: 800; margin: 4px 0 10px 0; color: #0d47a1; font-size: 18px; }
+    .intent-label { font-size: 12px; color: #555; letter-spacing: 0.3px; }
+    .intent { font-weight: 700; margin: 4px 0 10px 0; color: #333; font-size: 15px; }
+    .query-label { font-size: 12px; color: #555; letter-spacing: 0.3px; }
+    .query { font-weight: 800; margin: 4px 0 12px 0; color: #0d47a1; font-size: 20px; }
     .card { margin-bottom: 12px; padding: 12px; border: 1px solid #e5e5ef; border-radius: 6px; background: #fafafa; }
     .title { font-weight: 700; margin: 0 0 6px 0; }
     .meta { font-size: 13px; color: #555; margin: 0 0 6px 0; }
@@ -23,13 +25,32 @@
     summary { cursor: pointer; font-weight: 700; }
     #report { margin-top: 8px; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <h1>Acemap Results</h1>
-  <p>Fetches <code>runs/acemap_results.json</code>. Start a static server (e.g. <code>python -m http.server 8000</code>) then open <code>http://localhost:8000/ui/acemap.html</code>.</p>
+  <p>Fetches runs/final_report.md and runs/acemap_results.json. Start a static server (e.g. python -m http.server 8000) then open http://localhost:8000/ui/acemap.html.</p>
+
+  <details open>
+    <summary>最终报告（折叠/展开）</summary>
+    <div id="report" class="panel">Loading report...</div>
+  </details>
+
   <div id="container"></div>
 
   <script>
+    async function loadReport() {
+      const el = document.getElementById('report');
+      try {
+        const res = await fetch('../runs/final_report.md', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const md = await res.text();
+        el.innerHTML = marked.parse(md || 'No report yet.');
+      } catch (err) {
+        el.innerHTML = `<p class="empty">Failed to load final_report.md: ${err}</p>`;
+      }
+    }
+
     async function loadData() {
       const container = document.getElementById('container');
       try {
@@ -55,7 +76,15 @@
         div.className = 'group';
         const task = group.task_id || 'task';
         const query = group.query || '';
-        div.innerHTML = `<div class="pill">${task}</div><div class="query">${query}</div>`;
+        const intent = group.intent || group.brief || '';
+        const intentBlock = intent ? `<div class="intent-label">研究意图</div><div class="intent">${intent}</div>` : '';
+        div.innerHTML = `
+          <div class="pill-label">搜索内容</div>
+          <div class="pill">${task}</div>
+          ${intentBlock}
+          <div class="query-label">关键词</div>
+          <div class="query">${query}</div>
+        `;
 
         const results = group.results || [];
         if (results.length === 0) {
@@ -63,13 +92,9 @@
           p.className = 'empty';
           p.textContent = 'No results for this query.';
           div.appendChild(p);
-            <h1>Acemap Results</h1>
-            <p>Fetches <code>runs/final_report.md</code> and <code>runs/acemap_results.json</code>. Start a static server (e.g. <code>python -m http.server 8000</code>) then open <code>http://localhost:8000/ui/acemap.html</code>.</p>
-            <details open>
-              <summary>最终报告（折叠/展开）</summary>
-              <div id="report" class="panel">Loading report...</div>
-            </details>
-            <div id="container"></div>
+        } else {
+          results.forEach(r => {
+            const card = document.createElement('div');
             card.className = 'card';
             const title = r.title || 'Untitled';
             const url = r.url || '#';
@@ -94,6 +119,7 @@
       container.appendChild(frag);
     }
 
+    loadReport();
     loadData();
   </script>
 </body>

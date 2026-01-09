@@ -63,11 +63,11 @@ class Configuration(BaseModel):
         }
     )
     max_concurrent_research_units: int = Field(
-        default=5,
+        default=3,
         metadata={
             "x_oap_ui_config": {
                 "type": "slider",
-                "default": 5,
+                "default": 3,
                 "min": 1,
                 "max": 20,
                 "step": 1,
@@ -94,11 +94,11 @@ class Configuration(BaseModel):
         }
     )
     max_researcher_iterations: int = Field(
-        default=6,
+        default=3,
         metadata={
             "x_oap_ui_config": {
                 "type": "slider",
-                "default": 6,
+                "default": 3,
                 "min": 1,
                 "max": 10,
                 "step": 1,
@@ -131,21 +131,21 @@ class Configuration(BaseModel):
         }
     )
     summarization_model_max_tokens: int = Field(
-        default=8192,
+        default=4096,
         metadata={
             "x_oap_ui_config": {
                 "type": "number",
-                "default": 8192,
+                "default": 4096,
                 "description": "Maximum output tokens for summarization model"
             }
         }
     )
     max_content_length: int = Field(
-        default=50000,
+        default=20000,
         metadata={
             "x_oap_ui_config": {
                 "type": "number",
-                "default": 50000,
+                "default": 20000,
                 "min": 1000,
                 "max": 200000,
                 "description": "Maximum character length for webpage content before summarization"
@@ -163,11 +163,11 @@ class Configuration(BaseModel):
         }
     )
     research_model_max_tokens: int = Field(
-        default=10000,
+        default=6000,
         metadata={
             "x_oap_ui_config": {
                 "type": "number",
-                "default": 10000,
+                "default": 6000,
                 "description": "Maximum output tokens for research model"
             }
         }
@@ -183,11 +183,11 @@ class Configuration(BaseModel):
         }
     )
     compression_model_max_tokens: int = Field(
-        default=8192,
+        default=4096,
         metadata={
             "x_oap_ui_config": {
                 "type": "number",
-                "default": 8192,
+                "default": 4096,
                 "description": "Maximum output tokens for compression model"
             }
         }
@@ -203,11 +203,11 @@ class Configuration(BaseModel):
         }
     )
     final_report_model_max_tokens: int = Field(
-        default=10000,
+        default=4096,
         metadata={
             "x_oap_ui_config": {
                 "type": "number",
-                "default": 10000,
+                "default": 4096,
                 "description": "Maximum output tokens for final report model"
             }
         }
