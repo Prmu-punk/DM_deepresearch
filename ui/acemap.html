@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acemap Results Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 16px; background: #f7f7fb; color: #1f1f1f; }
+    h1 { margin-bottom: 8px; }
+    .panel { margin-bottom: 16px; padding: 16px; background: #fff; border: 1px solid #e5e5ef; border-radius: 8px; }
+    .group { margin-bottom: 24px; padding: 16px; background: #fff; border: 1px solid #e5e5ef; border-radius: 8px; }
+    .query-label { font-size: 12px; color: #777; letter-spacing: 0.3px; }
+    .query { font-weight: 800; margin: 4px 0 10px 0; color: #0d47a1; font-size: 18px; }
+    .card { margin-bottom: 12px; padding: 12px; border: 1px solid #e5e5ef; border-radius: 6px; background: #fafafa; }
+    .title { font-weight: 700; margin: 0 0 6px 0; }
+    .meta { font-size: 13px; color: #555; margin: 0 0 6px 0; }
+    .abstract { font-size: 14px; color: #333; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 12px; background: #e3f2fd; color: #0d47a1; font-size: 12px; margin-right: 6px; }
+    a { color: #0d47a1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .empty { color: #777; font-style: italic; }
+    details { border: 1px solid #e5e5ef; border-radius: 8px; background: #fff; padding: 12px 14px; margin-bottom: 16px; }
+    summary { cursor: pointer; font-weight: 700; }
+    #report { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Acemap Results</h1>
+  <p>Fetches <code>runs/acemap_results.json</code>. Start a static server (e.g. <code>python -m http.server 8000</code>) then open <code>http://localhost:8000/ui/acemap.html</code>.</p>
+  <div id="container"></div>
+
+  <script>
+    async function loadData() {
+      const container = document.getElementById('container');
+      try {
+        const res = await fetch('../runs/acemap_results.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        render(data);
+      } catch (err) {
+        container.innerHTML = `<p class="empty">Failed to load acemap_results.json: ${err}</p>`;
+      }
+    }
+
+    function render(data) {
+      const container = document.getElementById('container');
+      if (!data || data.length === 0) {
+        container.innerHTML = '<p class="empty">No Acemap results yet.</p>';
+        return;
+      }
+
+      const frag = document.createDocumentFragment();
+      data.forEach(group => {
+        const div = document.createElement('div');
+        div.className = 'group';
+        const task = group.task_id || 'task';
+        const query = group.query || '';
+        div.innerHTML = `<div class="pill">${task}</div><div class="query">${query}</div>`;
+
+        const results = group.results || [];
+        if (results.length === 0) {
+          const p = document.createElement('p');
+          p.className = 'empty';
+          p.textContent = 'No results for this query.';
+          div.appendChild(p);
+            <h1>Acemap Results</h1>
+            <p>Fetches <code>runs/final_report.md</code> and <code>runs/acemap_results.json</code>. Start a static server (e.g. <code>python -m http.server 8000</code>) then open <code>http://localhost:8000/ui/acemap.html</code>.</p>
+            <details open>
+              <summary>最终报告（折叠/展开）</summary>
+              <div id="report" class="panel">Loading report...</div>
+            </details>
+            <div id="container"></div>
+            card.className = 'card';
+            const title = r.title || 'Untitled';
+            const url = r.url || '#';
+            const authors = (r.authors || []).join(', ');
+            const year = r.year || '';
+            const venue = r.venue || r.source || '';
+            const citations = r.citations != null ? ` | Cited: ${r.citations}` : '';
+            const abstract = r.abstract ? r.abstract.slice(0, 600) + (r.abstract.length > 600 ? '…' : '') : '';
+            card.innerHTML = `
+              <div class="title"><a href="${url}" target="_blank" rel="noopener">${title}</a></div>
+              <p class="meta">${authors || 'Unknown authors'}${year ? ' · ' + year : ''}${venue ? ' · ' + venue : ''}${citations}</p>
+              <p class="abstract">${abstract || 'No abstract available.'}</p>
+            `;
+            div.appendChild(card);
+          });
+        }
+
+        frag.appendChild(div);
+      });
+
+      container.innerHTML = '';
+      container.appendChild(frag);
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

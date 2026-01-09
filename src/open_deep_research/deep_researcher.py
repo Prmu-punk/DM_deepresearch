@@ -1,6 +1,8 @@
 """Main LangGraph implementation for the Deep Research agent."""
 
 import asyncio
+import json
+import os
 from typing import Literal
 
 from langchain.chat_models import init_chat_model
@@ -56,6 +58,97 @@ from open_deep_research.utils import (
 configurable_model = init_chat_model(
     configurable_fields=("model", "max_tokens", "api_key"),
 )
+
+
+##########################
+# Acemap Aggregation Utils
+##########################
+
+def _extract_acemap_payloads_from_text(text: str) -> list:
+    """Extract ACEMAP JSON blocks embedded in tool outputs."""
+    if not text or "ACEMAP_JSON_START" not in text:
+        return []
+
+    payloads = []
+    marker_start = "### ACEMAP_JSON_START"
+    marker_end = "### ACEMAP_JSON_END"
+    parts = text.split(marker_start)
+    for part in parts[1:]:
+        if marker_end not in part:
+            continue
+        json_block = part.split(marker_end)[0].strip()
+        try:
+            data = json.loads(json_block)
+            if isinstance(data, list):
+                payloads.extend(data)
+        except Exception:
+            continue
+    return payloads
+
+
+def aggregate_acemap_results(tool_outputs, task_id: str, existing: list | None = None):
+    """Aggregate Acemap results from tool outputs and write to disk.
+
+    Args:
+        tool_outputs: List of ToolMessage objects.
+        task_id: Current research topic / task identifier.
+        existing: Existing aggregated list (from state) to merge into.
+
+    Returns:
+        Tuple (updated_list, file_path)
+    """
+    out_dir = os.path.join(os.getcwd(), "runs")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "acemap_results.json")
+
+    # Start from provided state, else try to load existing file to avoid wiping data on empty runs
+    if existing is not None:
+        aggregated = existing
+    else:
+        try:
+            with open(out_path, "r", encoding="utf-8") as f:
+                aggregated = json.load(f)
+                if not isinstance(aggregated, list):
+                    aggregated = []
+        except Exception:
+            aggregated = []
+
+    # Build an index for deduplication
+    seen_keys = set()
+    for item in aggregated:
+        for res in item.get("results", []):
+            key = res.get("url") or (res.get("title", "").lower(), res.get("year"))
+            seen_keys.add(key)
+
+    # Collect new payloads
+    new_records = []
+    for msg in tool_outputs:
+        content = str(msg.content)
+        for payload in _extract_acemap_payloads_from_text(content):
+            query = payload.get("query", "")
+            results = payload.get("results", [])
+            filtered = []
+            for r in results:
+                key = r.get("url") or (r.get("title", "").lower(), r.get("year"))
+                if key in seen_keys:
+                    continue
+                seen_keys.add(key)
+                filtered.append(r)
+            if filtered:
+                new_records.append({"task_id": task_id, "query": query, "results": filtered})
+
+    if new_records:
+        aggregated.extend(new_records)
+
+    # Write to disk only if we have data to avoid wiping previous runs
+    if aggregated:
+        try:
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(aggregated, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+
+    return aggregated, out_path
 
 async def clarify_with_user(state: AgentState, config: RunnableConfig) -> Command[Literal["write_research_brief", "__end__"]]:
     """Analyze user messages and ask clarifying questions if the research scope is unclear.
@@ -487,6 +580,11 @@ async def researcher_tools(state: ResearcherState, config: RunnableConfig) -> Co
         ) 
         for observation, tool_call in zip(observations, tool_calls)
     ]
+
+    # Aggregate Acemap results for UI/export
+    task_id = state.get("research_topic", "")
+    existing_acemap = state.get("acemap_results", [])
+    updated_acemap, out_path = aggregate_acemap_results(tool_outputs, task_id, existing_acemap)
     
     # Step 3: Check late exit conditions (after processing tools)
     exceeded_iterations = state.get("tool_call_iterations", 0) >= configurable.max_react_tool_calls
@@ -499,13 +597,19 @@ async def researcher_tools(state: ResearcherState, config: RunnableConfig) -> Co
         # End research and proceed to compression
         return Command(
             goto="compress_research",
-            update={"researcher_messages": tool_outputs}
+            update={
+                "researcher_messages": tool_outputs,
+                "acemap_results": updated_acemap,
+            }
         )
     
     # Continue research loop with tool results
     return Command(
         goto="researcher",
-        update={"researcher_messages": tool_outputs}
+        update={
+            "researcher_messages": tool_outputs,
+            "acemap_results": updated_acemap,
+        }
     )
 
 async def compress_research(state: ResearcherState, config: RunnableConfig):
@@ -781,6 +885,16 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
                 HumanMessage(content=final_report_prompt)
             ])
             
+            # Persist final report for UI consumption
+            try:
+                out_dir = os.path.join(os.getcwd(), "runs")
+                os.makedirs(out_dir, exist_ok=True)
+                out_path = os.path.join(out_dir, "final_report.md")
+                with open(out_path, "w", encoding="utf-8") as f:
+                    f.write(str(final_report.content))
+            except Exception:
+                pass
+
             # Return successful report generation
             return {
                 "final_report": final_report.content, 

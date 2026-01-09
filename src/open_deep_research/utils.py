@@ -2,6 +2,7 @@
 
 import asyncio
 import logging
+import json
 import os
 import warnings
 from datetime import datetime, timedelta, timezone
@@ -181,6 +182,7 @@ async def acemap_search(
         responses = await asyncio.gather(*[fetch_one(session, q) for q in queries])
 
     lines: List[str] = []
+    structured_payloads: List[Dict[str, Any]] = []
     for response in responses:
         query = response.get("query", "")
         results = response.get("results", [])
@@ -195,6 +197,7 @@ async def acemap_search(
             lines.append("No results found.\n")
             continue
 
+        structured_results: List[Dict[str, Any]] = []
         for idx, paper in enumerate(results, start=1):
             title = paper.get("title") or paper.get("display_name") or "Untitled"
             abstract = paper.get("abstract") or ""
@@ -209,6 +212,18 @@ async def acemap_search(
                 if name:
                     authors.append(name)
 
+            structured_results.append({
+                "query": query,
+                "title": title,
+                "abstract": abstract,
+                "year": year,
+                "citations": citations,
+                "doi": doi,
+                "url": url,
+                "authors": authors,
+                "source": "acemap"
+            })
+
             lines.append(f"\n--- SOURCE {idx}: {title} ---")
             lines.append(f"URL: {url}")
             lines.append(f"Year: {year} | Citations: {citations}")
@@ -219,6 +234,18 @@ async def acemap_search(
             if abstract:
                 lines.append(f"SUMMARY/ABSTRACT:\n{abstract.strip()}")
             lines.append("-" * 40)
+
+        if structured_results:
+            structured_payloads.append({
+                "query": query,
+                "results": structured_results
+            })
+
+    # Append a JSON block for downstream aggregation (UI/export)
+    if structured_payloads:
+        lines.append("\n### ACEMAP_JSON_START")
+        lines.append(json.dumps(structured_payloads, ensure_ascii=False))
+        lines.append("### ACEMAP_JSON_END")
 
     return "\n".join(lines)
 
@@ -904,6 +931,7 @@ MODEL_TOKEN_LIMITS = {
     "openai:o3-pro": 200000,
     "openai:o1": 200000,
     "openai:o1-pro": 200000,
+    "openai:deepseek-v3": 150000,
     "anthropic:claude-opus-4": 200000,
     "anthropic:claude-sonnet-4": 200000,
     "anthropic:claude-3-7-sonnet": 200000,
