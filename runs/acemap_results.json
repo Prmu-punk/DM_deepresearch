@@ -1,445 +1,331 @@
 [
   {
-    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
-    "query": "lifecycle greenhouse gas emissions electricity generation",
+    "task_id": "Key factors influencing nuclear power greenhouse gas emissions, including uranium ore grade variations, enrichment methods (centrifuge vs gaseous diffusion), energy mix used in fuel processing and construction, and other operational parameters. Research should quantify how these factors impact overall emissions in g CO₂-eq/kWh, with specific data from peer-reviewed studies and technical reports. Include information on how different national energy mixes affect nuclear emissions and any recent technological improvements that have reduced emissions. Provide direct links to original research papers and primary data sources.",
+    "query": "uranium ore grade impact greenhouse gas emissions nuclear",
     "results": [
       {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Comparison of Lifecycle Greenhouse Gas Emissions of Various Electricity Generation Sources",
+        "query": "uranium ore grade impact greenhouse gas emissions nuclear",
+        "title": "The impact of uranium ore grade on the greenhouse gas footprint of nuclear power",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "",
-        "url": "https://www.cameco.com/uranium_101/static/pdf/Cameco_-_Corporation_Report_on_GHG_Emissions_nov_2010.pdf",
+        "doi": "10.1016/j.jclepro.2013.11.034",
+        "url": "https://doi.org/10.1016/j.jclepro.2013.11.034",
         "authors": [
-          "B Berg"
+          "Terry Norgate",
+          "Nawshad Haque",
+          "Paul Koltun"
         ],
         "source": "acemap"
       },
       {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Greenhouse gas emissions analysis for electricity generation",
+        "query": "uranium ore grade impact greenhouse gas emissions nuclear",
+        "title": "The heterogeneous impact of geopolitical risk and environment-related innovations on greenhouse gas emissions: The role of nuclear and renewable energy in the circular economy",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.20906/sbai-sbse-2023/4070",
-        "url": "https://doi.org/10.20906/sbai-sbse-2023/4070",
+        "doi": "10.1016/j.gr.2023.08.016",
+        "url": "https://doi.org/10.1016/j.gr.2023.08.016",
         "authors": [
-          "Matheus de S. S. Fogliatto",
-          "Rafael Rodrigues Mendes Ribeiro",
-          "Henrique O. Caetano",
-          "Luiz Desuó N.",
-          "Carlos Dias Maciel"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Life Cycle Greenhouse Gas Emissions from Electricity Generation",
-        "abstract": "As clean energy increasingly becomes part of the national dialogue, lenders, utilities, and lawmakers need the most comprehensive and accurate information on GHG emissions from various sources of energy to inform policy, planning, and investment decisions. The National Renewable Energy Laboratory (NREL) recently led the Life Cycle Assessment (LCA) Harmonization Project, a study that gives decision makers and investors more precise estimates of life cycle GHG emissions for renewable and conventional generation, clarifying inconsistent and conflicting estimates in the published literature, and reducing uncertainty.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2172/1338444",
-        "url": "https://doi.org/10.2172/1338444",
-        "authors": [
-          "NULL AUTHOR_ID"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Life Cycle Greenhouse Gas Emissions of Nuclear Electricity Generation",
-        "abstract": "Summary A systematic review and harmonization of life cycle assessment (LCA) literature of nuclear electricity generation technologies was performed to determine causes of and, where possible, reduce variability in estimates of life cycle greenhouse gas (GHG) emissions to clarify the state of knowledge and inform decision making. LCA literature indicates that life cycle GHG emissions from nuclear power are a fraction of traditional fossil sources, but the conditions and assumptions under which nuclear power are deployed can have a significant impact on the magnitude of life cycle GHG emissions relative to renewable technologies. Screening 274 references yielded 27 that reported 99 independent estimates of life cycle GHG emissions from light water reactors (LWRs). The published median, interquartile range (IQR), and range for the pool of LWR life cycle GHG emission estimates were 13, 23, and 220 grams of carbon dioxide equivalent per kilowatt‐hour (g CO 2 ‐eq/kWh), respectively. After harmonizing methods to use consistent gross system boundaries and values for several important system parameters, the same statistics were 12, 17, and 110 g CO 2 ‐eq/kWh, respectively. Harmonization (especially of performance characteristics) clarifies the estimation of central tendency and variability. To explain the remaining variability, several additional, highly influential consequential factors were examined using other methods. These factors included the primary source energy mix, uranium ore grade, and the selected LCA method. For example, a scenario analysis of future global nuclear development examined the effects of a decreasing global uranium market‐average ore grade on life cycle GHG emissions. Depending on conditions, median life cycle GHG emissions could be 9 to 110 g CO 2 ‐eq/kWh by 2050.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1111/j.1530-9290.2012.00472.x",
-        "url": "https://doi.org/10.1111/j.1530-9290.2012.00472.x",
-        "authors": [
-          "Ethan Warner",
-          "Garvin Heath"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Greenhouse gas emissions from plastics lifecycle - projections",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1787/e39547a0-en",
-        "url": "https://doi.org/10.1787/e39547a0-en",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Life Cycle Greenhouse Gas Emissions of Coal‐Fired Electricity Generation",
-        "abstract": "Summary This systematic review and harmonization of life cycle assessments (LCAs) of utility‐scale coal‐fired electricity generation systems focuses on reducing variability and clarifying central tendencies in estimates of life cycle greenhouse gas (GHG) emissions. Screening 270 references for quality LCA methods, transparency, and completeness yielded 53 that reported 164 estimates of life cycle GHG emissions. These estimates for subcritical pulverized, integrated gasification combined cycle, fluidized bed, and supercritical pulverized coal combustion technologies vary from 675 to 1,689 grams CO 2 ‐equivalent per kilowatt‐hour (g CO 2 ‐eq/kWh) (interquartile range [IQR]= 890–1,130 g CO 2 ‐eq/kWh; median = 1,001) leading to confusion over reasonable estimates of life cycle GHG emissions from coal‐fired electricity generation. By adjusting published estimates to common gross system boundaries and consistent values for key operational input parameters (most importantly, combustion carbon dioxide emission factor [CEF]), the meta‐analytical process called harmonization clarifies the existing literature in ways useful for decision makers and analysts by significantly reducing the variability of estimates (−53% in IQR magnitude) while maintaining a nearly constant central tendency (−2.2% in median). Life cycle GHG emissions of a specific power plant depend on many factors and can differ from the generic estimates generated by the harmonization approach, but the tightness of distribution of harmonized estimates across several key coal combustion technologies implies, for some purposes, first‐order estimates of life cycle GHG emissions could be based on knowledge of the technology type, coal mine emissions, thermal efficiency, and CEF alone without requiring full LCAs. Areas where new research is necessary to ensure accuracy are also discussed.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1111/j.1530-9290.2012.00465.x",
-        "url": "https://doi.org/10.1111/j.1530-9290.2012.00465.x",
-        "authors": [
-          "M. Whitaker",
-          "Garvin Heath",
-          "Patrick O’Donoughue",
-          "M. Vorum"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Life Cycle Greenhouse Gas Emissions from Electricity Generation (Fact Sheet)",
-        "abstract": "of life cycle GHG emissions from coal-fired electricity generation. By adjusting published estimates to common gross system boundaries and consistent values for key operational input parameters (most importantly, combustion carbon dioxide emission factor [CEF]), the meta-analytical process called harmonization clarifies the existing literature in ways useful for decision makers and analysts by significantly reducing the variability of estimates ({approx}53% in IQR magnitude) while maintaining a nearly constant central tendency ({approx}2.2% in median). Life cycle GHG emissions of a specific power plant depend on many factors and can differ from the generic estimates generated by the harmonization approach, but the tightness of distribution of harmonized estimates across several key coal combustion technologies implies, for some purposes, first-order estimates of life cycle GHG emissions could be based on knowledge of the technology type, coal mine emissions, thermal efficiency, and CEF alone without requiring full LCAs. Areas where new research is necessary to ensure accuracy are also discussed.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2172/1062479",
-        "url": "https://doi.org/10.2172/1062479",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Quantification of the Lifecycle Greenhouse Gas Emissions from Nuclear Power Generation Systems",
-        "abstract": "This paper statistically quantifies the lifecycle greenhouse gas (GHG) emissions from six distinct reactor-based (boiling water reactor (BWR), pressurized water reactor (PWR), light water reactor (LWR), heavy-water-moderated reactor (HWR), gas-cooled reactor (GCR), fast breeder reactor (FBR)) nuclear power generation systems by following a two-step approach that included (a) performing a review of the lifecycle assessment (LCA) studies on the reactor-based nuclear power generation systems; and (b) statistically evaluating the lifecycle GHG emissions (expressed in grams of carbon dioxide equivalent per kilowatt hour, gCO2e/kWh) for each of the reactor-based nuclear power generation systems to assess the role of different types of nuclear reactors in the reduction of the lifecycle GHG emissions. Additionally, this study quantified the impacts of fuel enrichment methods (centrifuge, gaseous diffusion) on GHG emissions. The mean lifecycle GHG emissions resulting from the use of BWR (sample size, N = 15), PWR (N = 21), LWR (N = 7), HWR (N = 3), GCR (N = 1), and FBR (N = 2) in nuclear power generation systems are 14.52 gCO2e/kWh, 11.87 gCO2e/kWh, 20.5 gCO2e/kWh, 28.2 gCO2e/kWh, 8.35 gCO2e/kWh, and 6.26 gCO2e/kWh, respectively. The FBR nuclear power generation systems produced the minimum lifecycle GHGs. The centrifuge enrichment method produced lower GHG emissions than the gaseous diffusion enrichment method.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.3390/en9110863",
-        "url": "https://doi.org/10.3390/en9110863",
-        "authors": [
-          "Akhil Kadiyala",
-          "Raghava R. Kommalapati",
-          "Ziaul Huque"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Electricity production and greenhouse gas emissions",
-        "abstract": "This article explains the basic issues that are facing the global community regarding the emission of carbon dioxide (CO/sub 2/) gas that is degrading our environment and, most significantly, the environment of generations to come. This article deals with the current state of a potential international agreement to curtail greenhouse gases and the subsequent underlying issues. A theory suggests that apparent reluctance to agree to an international treaty by the United States is directly tied to the process of electric utility reforms. The proposed Kyoto Treaty is explained as well as the consequences of its implementation. The current facts surrounding electric utility generation and CO/sub 2/ gas emissions are explained, as are some mitigation efforts.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1109/mper.2002.1045558",
-        "url": "https://doi.org/10.1109/mper.2002.1045558",
-        "authors": [
-          "M.A. Lamoureux"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "lifecycle greenhouse gas emissions electricity generation",
-        "title": "Electricity Production and Greenhouse Gas Emissions",
-        "abstract": "Perhaps two of the most critical issues facing electric utility managers, power engineers, and all of humankind are the impact and mitigation of greenhouse gas emissions associated with electricity generation. These are issues that, unlike many utility issues, are not limited by state, region, or nation. This article explains the basic issues that are facing the global community regarding the emission of carbon dioxide (CO2) gas that is degrading our environment and, most significantly, the environment of generations to come. This article deals with the current state of a potential international agreement to curtail greenhouse gases and the subsequent underlying issues. A theory suggests that apparent reluctance to agree to an international treaty by the United States is directly tied to the process of electric utility reforms. The proposed Kyoto Treaty is explained as well as the consequences of its implementation. The current facts surrounding electric utility generation and CO <sub xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">2</sub> gas emissions are explained, as are some mitigation efforts.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1109/mper.2002.1045566",
-        "url": "https://doi.org/10.1109/mper.2002.1045566",
-        "authors": [
-          "M.A. Lamoureux"
+          "Syed Tauseef Hassan",
+          "Danish Khan",
+          "Muhammad Awais Baloch",
+          "Quocviet Bui",
+          "Noor Hashim Khan"
         ],
         "source": "acemap"
       }
     ]
   },
   {
-    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
-    "query": "nuclear power emissions comparison IPCC",
+    "task_id": "Key factors influencing nuclear power greenhouse gas emissions, including uranium ore grade variations, enrichment methods (centrifuge vs gaseous diffusion), energy mix used in fuel processing and construction, and other operational parameters. Research should quantify how these factors impact overall emissions in g CO₂-eq/kWh, with specific data from peer-reviewed studies and technical reports. Include information on how different national energy mixes affect nuclear emissions and any recent technological improvements that have reduced emissions. Provide direct links to original research papers and primary data sources.",
+    "query": "centrifuge gaseous diffusion energy consumption comparison",
     "results": [
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "NUCLEAR POWER PLANT EMISSIONS.",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Gaseous diffusion and the centrifuge",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "http://www.osti.gov/scitech/biblio/4707063-nuclear-power-plant-emissions",
+        "url": "http://ui.adsabs.harvard.edu/abs/1976asgi.vkifS....M/abstract",
         "authors": [
-          "U. Janssen"
+          "E. P. Muntz"
         ],
         "source": "acemap"
       },
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Radioactive Emissions from Thermal Power Plants and Comparison with Nuclear Energy",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Radiative energy transfer from gaseous diffusion flames",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.2307/20634992",
-        "url": "https://doi.org/10.2307/20634992",
+        "doi": "10.1016/s0082-0784(75)80390-0",
+        "url": "https://doi.org/10.1016/s0082-0784(75)80390-0",
         "authors": [
-          "Kazuto Okamoto"
+          "G.H. Markstein"
         ],
         "source": "acemap"
       },
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Comparison of new IPCC AR5 global anthropogenic emissions with RETRO inventory",
-        "abstract": "Since 2007 more than half of the world’s population lives in an urban environment. Beside many other challenges most large cities have problems with their air quality. Thus a growing fraction of humans is exposed to e.g. high ozone and particulate matter concentrations, which are known to be harmful to health. As they are emission hotspots, huge urban agglomerations not only have local effects but globally influence the chemical air composition and with it the climate.",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Computational Anaylsis of Signatures of Highly Enriched Uranium Produced by Centrifuge and Gaseous Diffusion",
+        "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://meetingorganizer.copernicus.org/EGU2010/EGU2010-3064.pdf",
+        "url": "http://www.osti.gov/scitech/biblio/962610",
         "authors": [
-          "Angelika Heil",
-          "Cornelia Richter",
-          "Martin G. Schultz"
+          "Houston G. Wood",
+          "Alexander Glaser",
+          "J.M. Begovich"
         ],
         "source": "acemap"
       },
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Nuclear Power: A Nuclear Solution to CO2 Emissions",
-        "abstract": "Global warming is one of the major problems that our planet is facing now-a-days. Climate model projections summarized by the IPCC indicate that average global surface temperature will likely rise a further 1.1 to 6.4 C (2.0 to 11.5 F) during the 21st century. Although most studies focus on the period up to 2100, warming and sea level rise are expected to continue for more than a millennium even if greenhouse gas levels are stabilized. It is increasingly becoming important to understand the factors which contribute to this phenomenon. CO2 is one of the major contributor to this problem as it is a greenhouse gas and is also known to cause depletion of the ozone layer.In this scenario nuclear power (being a non-carbon emitting source) can solve the twin problem of global warming and the energy crisis. In this paper we have tried to analyze the various factors that cause CO2 emissions with respect to the power sector. We have used data from the DOE (Department of energy), U.S.A. We feel that the results we have got are applicable in other countries as well, especially India as it one of the fastest growing economies in the world. As a part of our studies, we have also tried to formulate the dependence of CO2 emissions on the fluctuation in oil prices.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2139/ssrn.1143082",
-        "url": "https://doi.org/10.2139/ssrn.1143082",
-        "authors": [
-          "Rakshay Jain"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydropower, solar power and wind power",
-        "abstract": "Fair comparison of the climate impacts from different energy sources can be made only by accounting for the emissions of all relevant greenhouse gases (GHGs) from the full energy chain (FENCH) of the energy sources. FENCH-GHG emission factors of most of the non-fossil fuel energies are lower than those of the fossil fuels that are in the range of 500-1200 g CO2/kW h(e). The improvement rates concerning their CO2-to-energy ratios of OECD countries and some developing countries are discussed, showing the low performance of the latter from 1965-1996. Detailed FENCH-GHG systems analyses are given for nuclear power, hydropower, and wind and solar power. The FENCH-GHG emission factor of nuclear power is 8.9 g CO2-equiv./kW h(e) and applies to light-water nuclear power plants. The main contributions are from milling, conversion of lower-grade ore, enrichment, construction and operation of the power plant, and reprocessing (if relevant). For hydropower an emission factor is reported of 16 g CO2-equiv./kW h(e) for the best investigated flat-area cold climate power plants. The main, biogenic, emission source is the water reservoir. The information on high-altitude alpine reservoir-type and run-of- river hydropower generation is limited. These plants could probably have emission factors in the low range of 5-10 g CO2-equiv./kW h(e). The FENCH CO2-equivalent emission factors of wind power systems are in the order of 15 g CO2-equiv./kW h(e). The main source is associated with the materials for the turbine and for its foundation. Solar PV and solar thermal power are in an intermediate range their current values are 100-200 and 50-80g CO2-equiv./kW h(e), respectively. GHG emissions are mainly from silicon, which dominates the PV market.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1504/ijram.2002.001520",
-        "url": "https://doi.org/10.1504/ijram.2002.001520",
-        "authors": [
-          "Joop F. van de Vate"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Reducing nuclear power station carbon emissions",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Sludge Dewatering Centrifuge with Low Energy Consumption and High Dryness",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/s0015-1882(20)30044-6",
-        "url": "https://doi.org/10.1016/s0015-1882(20)30044-6",
+        "doi": "",
+        "url": "https://en.cnki.com.cn/Article_en/CJFDTOTAL-GSPS200501032.htm",
+        "authors": [
+          "Xiong Cheng"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Recovery of energy in a gaseous diffusion plant",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "",
+        "url": "ZEE4OUNFRTg3RTg",
+        "authors": [
+          "Jacques Ergalant",
+          "J.C. Guais",
+          "Michel Perrault",
+          "Paul Vignet"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Comparison of Energy Consumption",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1002/047179161x.ch9",
+        "url": "https://doi.org/10.1002/047179161x.ch9",
+        "authors": [
+          "Izrail S. Turovskiy",
+          "P. K. Mathai"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "A Comparison of Methods for Predicting Gaseous Diffusion Coefficients",
+        "abstract": "Nine methods for the estimation of gaseous diffusion coefficients in gas chromatography are reviewed. In order to demonstrate the relative reliability of the various methods a comparison has been made using experimental data from recent sources. Recommendations are given to assist in making the most suitable choice of methods to be employed under a variety of circumstances.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1093/chromsci/3.7.222",
+        "url": "https://doi.org/10.1093/chromsci/3.7.222",
+        "authors": [
+          "Edward N. Fuller",
+          "J. Calvin Giddings"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "International Energy Consumption Comparison--Discussion",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.4324/9781315659602-37",
+        "url": "https://doi.org/10.4324/9781315659602-37",
         "authors": [],
         "source": "acemap"
       },
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Sound emissions from nuclear power plants",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Modelling gaseous emissions from energy consumption during building life cycle",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://inis.iaea.org/search/search.aspx?orig_q=RN:15072905",
+        "url": "https://researchdirect.westernsydney.edu.au/islandora/object/uws%3A14218/",
         "authors": [
-          "H.M. Mueller"
+          "Liyin Shen",
+          "Vivian W.Y. Tam",
+          "Lei Zhang"
         ],
         "source": "acemap"
       },
       {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Sustainability assessment of nuclear power: Discourse analysis of IAEA and IPCC frameworks",
+        "query": "centrifuge gaseous diffusion energy consumption comparison",
+        "title": "Generating Energy Consumption Profiles Using Diffusion Models",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/j.envsci.2015.04.011",
-        "url": "https://doi.org/10.1016/j.envsci.2015.04.011",
+        "doi": "10.1109/sds66131.2025.00027",
+        "url": "https://doi.org/10.1109/sds66131.2025.00027",
         "authors": [
-          "Aviel Verbruggen",
-          "Erik Laes"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "Comparison of cost efficiencies of nuclear power and renewable energy generation in mitigating CO2 emissions",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1007/s11356-020-10537-1",
-        "url": "https://doi.org/10.1007/s11356-020-10537-1",
-        "authors": [
-          "Hyun Seok Kim"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear power emissions comparison IPCC",
-        "title": "COMPARISON OF ENTERIC METHANE EMISSIONS IN CHINA FOR DIFFERENT IPCC ESTIMATION METHODS AND PRODUCTION SCHEMES",
-        "abstract": "Accurate estimation of methane (CH4) emission (ME) from enteric fermentation in China is essential toestablishing and maintaining a reliable global ME inventory and developing strategies to mitigate such emissions. Based onmodern animal production statistics, i.e., feed quality and quantity data for different feeding systems, enteric methaneemissions (EME) in China during the period of 1990 to 1998 were estimated using Intergovernmental Panel on ClimateChange (IPCC) estimation methods for various production scenarios. The estimation was conducted based on: (1) Revised1996 IPCC Guidelines for National Greenhouse Gas Inventories (Revised 1996 IPCC Guidelines) Tier 1, designated M1;(2) Revised 1996 IPCC Guidelines Tier 2, designated M2; (3) IPCC Good Practices Guidance and Uncertainty Managementin National Greenhouse Gas Inventories (IPCC Good Practices Guidance) without incorporation of treated straw effect onME, designated M3; and (4) IPCC Good Practices Guidance with incorporation of treated straw effect on ME, designatedM4. The results revealed variability in ME among the four estimation methods and production conditions. Specifically, theestimated ME values in China for the peak emission year (1996) were 8,614; 11,039; 10,533; and 11,469 Gg, respectively,with M1, M2, M3, and M4, i.e., up to 33% difference from one method to another. These ME values for 1996 were 31%, 28%,27%, and 20% higher than their respective values for 1990, the base year for evaluating future emission changes. Yellow cattlecontribute more than 50% of EME in China. The methane emission factor was found to be 26% to 30% lower for yellow cattlefed treated residues than for those fed non-treated residues due to improved digestibility. This reduced ME factor translatedinto an estimated ME reduction of 935.7 Gg in 1996 and 1,253.5 Gg in 1998 for yellow cattle. To further improve the validityof EME estimation, it is suggested that certain quality control measures be taken, such as adjusting emission factors to reflectthe changing livestock production systems and management practices, measuring ME factors in the field, and collecting andintegrating current animal production statistics.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.13031/2013.17802",
-        "url": "https://doi.org/10.13031/2013.17802",
-        "authors": [
-          "Hongmin Dong",
-          "Xiuxiang Tao",
-          "H. Xin",
-          "Qun He"
+          "Umberto Junior Mele",
+          "Yamshid Farhat"
         ],
         "source": "acemap"
       }
     ]
   },
   {
-    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
-    "query": "CO2 per kWh nuclear renewable fossil fuels",
+    "task_id": "Key factors influencing nuclear power greenhouse gas emissions, including uranium ore grade variations, enrichment methods (centrifuge vs gaseous diffusion), energy mix used in fuel processing and construction, and other operational parameters. Research should quantify how these factors impact overall emissions in g CO₂-eq/kWh, with specific data from peer-reviewed studies and technical reports. Include information on how different national energy mixes affect nuclear emissions and any recent technological improvements that have reduced emissions. Provide direct links to original research papers and primary data sources.",
+    "query": "nuclear power emissions energy mix country specific",
     "results": [
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Fossil fuels, nuclear energy and renewable energy",
-        "abstract": "For the generation of energy sources, natural resources are used by man. The rapid growth of human populations, related to the phenomena of globalization and industrialization, has significantly increased the increase in the consumption of world energy sources. These energy sources can be renewable when the resources used are inexhaustible due to their constant renewal in the environment and non-renewable due to their slow process of formation in nature, thus becoming finite. Climate change is caused by increased emissions of greenhouse gases, mainly CO2, coming mainly from the burning of fossil fuels. However, new energy sources have been sought as a way not only to diversify the energy matrix of countries around the globe but also to develop alternatives that seek a reduction of impacts, especially of an environmental nature. While renewable energy sources such as solar, wind, and wave energy can provide eco-friendly alternatives to fossil fuels and nuclear power, the intermittent nature of these energy sources requires an energy storage medium that allows for a continuous supply of energy. The work developed emphasizes that regardless of the type of generating source, whether renewable or non-renewable, there is no zero impact on the generation of energy. Knowledge of the low energy efficiency of renewable sources, investments, and the intermittency of schemes that is a characteristic of many of them, has shown that renewable energy sources will almost always be complementary to non-renewable ones.",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Nuclear exit, the US energy mix, and carbon dioxide emissions",
+        "abstract": "AbstractIf the United States were to adopt a policy to phase out nuclear generation, as has happened recently in other developed countries, what would the environmental and energy-mix implications be? Based on alternative scenarios of nuclear exit that consider the influence of potential policies to limit greenhouse gas emissions, a model of the US and global economy indicates that, under current policy, a US nuclear exit would increase carbon dioxide emissions, and likely raise electricity prices and reduce gross domestic product by relatively small amounts. Those economic impacts would be increased by additional measures to limit carbon dioxide emissions.Keywordselectricity pricegreenhouse gasnuclear powerphase outUnited States AcknowledgementsThis article is part of a three-part series on the implications of phasing out civilian nuclear power in Germany, France, and the United States. Additional editorial services for this series were made possible by grants to the Bulletin of the Atomic Scientists from Rockefeller Financial Services and the Civil Society Institute.FundingThe MIT Emissions Prediction and Policy Analysis (EPPA) used in this article is supported by a consortium of industrial sponsors and federal grants. For a list, see: http://globalchange.mit.edu/sponsors/all.Additional informationNotes on contributorsAuthor biographyHenry D. Jacoby is a professor of management in the MIT Sloan School of Management and former codirector of the MIT Joint Program on the Science and Policy of Global Change. He serves on a National Academies committee to advise the US Global Change Research Program, and is a convening lead author for the mitigation chapter of the US National Climate Assessment.Sergey Paltsev is a principal research scientist at the MIT Energy Initiative and assistant director for economic research for the MIT Joint Program on the Science and Policy of Global Change. He serves on an advisory board for the Global Trade Analysis Project, an international network of researchers and policy makers, and is a lead author for the Intergovernmental Panel on Climate Change.Notes1 Joskow and Parsons (2012) JoskowP ParsonsJ (2012) The future of nuclear power after Fukushima. Economics of Energy and Environmental Policy 1(2): 1–30.[Crossref], [Web of Science ®] , [Google Scholar] provide a useful review of the supposed renaissance and the effects of Fukushima on existing plants and potential new construction.2 For an overview of this future for the United States and other countries and the global climate, see the MIT Outlook (MIT Joint Program, 2012 MIT Joint Program on the Science and Policy of Global Change (2012) Energy and climate outlook 2012. June. Available at: http://globalchange.mit.edu/research/publications/other/special/2012Outlook. [Google Scholar]).3 Different types of analysis have been applied to the assessment of nuclear exit. Some use a partial equilibrium approach, which focuses on details of plant investment and system operation while holding constant a number of external conditions such as electricity demand and fuel prices (e.g., Bretschger et al., 2012 BretschgerL RamerR ZhangL (2012) Economic effects of a nuclear phase-out policy: A CGE analysis. Working paper 12/167, Swiss Federal Institute of Technology Zurich. Available at: http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2138953. [Google Scholar]; ürsch et al., 2012 ürschM LindenbergerD MalischekR et al. (2012) German nuclear policy reconsidered: Implications for the electricity market. Economics of Energy and Environmental Policy 1(3): 39–58.[Web of Science ®] , [Google Scholar]). Others employ a general equilibrium approach that, at some sacrifice of technical detail, considers the electric sector as it interacts with the wider energy system and the overall economy (e.g., Böhringer et al., 2002 BöhringerC HoffmannT VögeleS (2002) The cost of phasing out nuclear power: A quantitative assessment of alternative scenarios for Germany. Energy Economics 24(5): 469–490.[Crossref], [Web of Science ®] , [Google Scholar]; Knopf et al., 2012 KnopfB PahleM KondziellaH et al. (2012) Germany's nuclear phase-out: Impacts on electricity prices, CO2 emissions, and on Europe. Potsdam Institute for Climate Impact Research. Available at: www.pik-potsdam.de/members/knopf/publications/Knopf_Germanys%20nuclear%20phase-out.pdf. [Google Scholar]). Ours is of this latter variety.4 The planned nuclear exits in Japan and Europe are not considered in the simulations. Though the EPPA model considers international trade in energy and non-energy goods, there is no trade in electricity among these regions, and effects of planned exit on input prices are not significant, particularly in the context of projected nuclear growth in China and other developing nations.5 The Environmental Protection Agency has proposed a rule that would limit emissions of new power plants to 1,000 pounds of carbon dioxide per megawatt-hour (www.regulations.gov/#!documentDetail;D=EPA-HQ-OAR-2011-0660-0001). If this rule is finalized in its current form, the projected expansion of coal generation will be constrained, shifting generation to natural gas and increasing costs.6 Our projections are higher than those in the latest outlook of the US Energy Information Administration (Energy Department, 2012 Energy Department (2012) Annual energy outlook 2012 with projections to 2035. June. Available at: www.eia.gov/forecasts/aeo/pdf/0383%282012%29.pdf. [Google Scholar]). The outlook keeps the total emissions roughly constant, while we project an increase in emissions, mostly from energy-intensive industry and commercial transportation sectors.7 In 2010 present value, at an interest rate of 5 percent.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.56238/alookdevelopv1-146",
-        "url": "https://doi.org/10.56238/alookdevelopv1-146",
+        "doi": "10.1177/0096340213478553",
+        "url": "https://doi.org/10.1177/0096340213478553",
         "authors": [
-          "Jessica Tamyris de Freitas Cavalcanti",
-          "Júlia Guedes de Lima",
-          "Myrella Rayane do Nascimento Melo",
-          "Eliana Cristina Barreto Monteiro",
-          "Galba Maria de Campos‐Takaki"
+          "Henry D. Jacoby",
+          "Sergey Paltsev"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "\"An Engineering Elective on Energy Sustainability: Renewable, Nuclear, and Fossil Fuels\"",
-        "abstract": "",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Nuclear power grows in China`s energy mix",
+        "abstract": "China`s rapid economic growth in the past two decades has caused the nations`s demand for electricity to exceed its capacity. AS of 1992, with power shortages as high as 25 percent, {open_quotes}power plant operators were often forced to resort to rolling brownouts to avoid complete system breakdowns,{close_quotes} says Xavier Chen, an assistant professor with the Asian Institute of Technology`s Energy Program in Bangkok, Thailand. To keep pace with China`s economic development, Chen estimates that {open_quotes}China must increase its electricity capacity 6 to 8 percent a year each year into the foreseeable future.{close_quotes} For now, coal is transported to power plants in the rapidly developing eastern coastal provinces at great expense. Chen also notes that the environmental disadvantages of coal make it a less desirable source of energy than nuclear. Development of nuclear energy is likely to go forward for another reason: In China, there is much less opposition to nuclear power plants than in other developing nations. {open_quotes}Nuclear energy likely will plan an important role in China`s future energy mix and help close the gap between electricity production and demand,{close_quotes} Chen says.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.18260/1-2-1153-51133",
-        "url": "https://doi.org/10.18260/1-2-1153-51133",
+        "doi": "",
+        "url": "http://www.osti.gov/scitech/biblio/255288-nuclear-power-grows-china-energy-mix",
         "authors": [
-          "Shih-Liang Wang"
+          "Xavier Chen"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "CO2-to-Fuels Renewable Gasoline and Jet Fuel Can Soon Be Price Competitive with Fossil Fuels",
-        "abstract": "",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Optimization of Energy Mix - Nuclear Power and Renewable Energy for Low Emissions Energy Source a Benefit for Generations to Come",
+        "abstract": "The paper addresses the general issues concerning nuclear power generation in today's energy market. Nuclear power with its characteristic generating cycle parameters is common for base load applications but modern operating nuclear power stations are able to vary their load according to the demand. Emissions are one of the most important aspects in power generation and the nuclear power is one of the few low emissions power source. Although nuclear power has at this moment low efficiencies it is a competitive and reliable power source for generations to come. Recent research achievements showed that nuclear energy could be also considered renewable.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/j.joule.2020.01.002",
-        "url": "https://doi.org/10.1016/j.joule.2020.01.002",
+        "doi": "10.1016/j.egypro.2017.03.1092",
+        "url": "https://doi.org/10.1016/j.egypro.2017.03.1092",
         "authors": [
-          "R. A. McGinnis"
+          "Gabriel Lazaro Pavel",
+          "Andrei Razvan Budu",
+          "Dominic Eugeniu Moraru"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Fossil fuels, renewable and nuclear options to meet the energy and the environmental challenges",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Energy mix, power generation effects on carbon dioxide (CO2) emissions",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://inis.iaea.org/Search/search.aspx?orig_q=RN:27068056",
+        "url": "https://www.iaee.org/proceedings/article/7780",
         "authors": [
-          "P. Bacher",
-          "Jean-Eudes Moncomble"
+          "Konstantinos Sklavos",
+          "Bert Scholtens Lammertjan Dam"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Do Natural Disasters, Fossil Fuels, and Renewable Energy Affect CO2 Emissions and the Ecological Footprint?",
-        "abstract": "Climate change is a global concern driven by increasing pollution through rising CO2 emissions and growing ecological footprint from human activities. This research investigates how environmental quality (proxied by CO2 emissions and ecological footprint) in Indonesia is affected by multiple factors, including natural disasters, fossil fuels, renewable energy consumption, economic growth, and capital formation from 1965 to 2022. The analysis employs the Autoregressive Distributed Lag (ARDL) model, with robustness ensured using Dynamic Ordinary Least Squares (DOLS), followed by Granger causality tests to examine dynamic relationships between variables. The findings show that natural disasters, fossil fuel consumption, and economic growth contribute to increasing CO2 emissions in the long run, while renewable energy consumption helps reduce them. Natural disasters exhibit a negative but insignificant impact on the ecological footprint. Economic growth increases the ecological footprint, whereas capital formation helps reduce it in the long run. In the short run, fossil fuels are found to increase CO2 emissions, while renewable energy reduces them. Natural disasters are found to increase the ecological footprint. Additionally, the Granger causality test confirms a unidirectional relationship from both natural disasters and economic growth to environmental quality. This study recommends that Indonesia implement integrated strategies focused on accelerating green energy adoption and enhancing disaster resilience to achieve environmental quality.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.60084/eje.v3i1.285",
-        "url": "https://doi.org/10.60084/eje.v3i1.285",
-        "authors": [
-          "Ghalieb Mutig Idroes",
-          "Iin Shabrina Hilal",
-          "Iffah Hafizah",
-          "Yoshihiro Hamaguchi",
-          "Cécile De Bruyn",
-          "Maulidar Agustina",
-          "Andreea Pernici",
-          "Stelian Stancu"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Renewable Energies Increase, Fossil Fuels Replacement and Nuclear Option Assessment in the Portuguese Energy Mix",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "The Importance of Nuclear Power in Our Energy Mix",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.24084/repqj10.441",
-        "url": "https://doi.org/10.24084/repqj10.441",
+        "doi": "10.1177/1095796020949233",
+        "url": "https://doi.org/10.1177/1095796020949233",
         "authors": [
-          "Perla Flores",
-          "J.C.O. Matias",
-          "Carlos M. P. Cabrita",
-          "V.M.F. Mendes",
-          "João P. S. Catalào"
+          "Gary S. Was",
+          "Todd R. Allen"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Neopolitics (New energy order politics) of Fossil, Renewable and Nuclear Fuels - Turkey’s Position and Alternative Futures",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Energy mix with the vulnerability of nuclear power utilization",
+        "abstract": "Domestic supply disruption particularly associated with nuclear energy utilization has been considered as a new risk after Fukushima disaster. Future energy mix should be discussed from the perspective of the interaction between quantitative analysis on vulnerabilities of nuclear systems and policy narratives. This paper proposes a new approach for the analysis on energy mix including the impact of vulnerability of nuclear power utilization based on the basic energy plan in Japan. The model is established using system dynamics for the quantitative analysis on 4 indicators: CO2 emissions, cost, diversification, and nuclear trouble vulnerability. Finally the best mix is derived and discussed through the multiple combination of thermal and nuclear installed capacity. This paper may aid policymakers with an adequately designed energy policy in the country where nuclear power is to be installed.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1049/cp.2016.1332",
+        "url": "https://doi.org/10.1049/cp.2016.1332",
+        "authors": [
+          "Shoki Kosai",
+          "Nasrudin Abd Rahim"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "The position of nuclear power in Indonesian optimal energy mix",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://dergipark.org.tr/tr/pub/uidergisi/issue/39263/462370",
+        "url": "https://inis.iaea.org/search/search.aspx?orig_q=RN:28034992",
         "authors": [
-          "Mert BİLGİN"
+          "I. Subki"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Energy and Technology Options for CO2 Emission Reduction. Towards Symbiotic Use of Nuclear Energy and Fossil Fuels.",
-        "abstract": "The potential of CO2 emission reduction is analyzed by the MARKAL model for the Japanese energy system in the time horizon 1985-2030, taking into account such reduction measures as energy conservation, fuel switching, and technology substitution. Among them, nuclear energy utilization is found to have a large CO2 reduction potential, i.e. from 10% reduction of the total emission in 1990 to the levels of 16%, 21% and 42% in years 2000, 2010 and 2030, respectively, through electric power generation and process heat application.",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "PUBLIC PERCEPTION ON INTEGRATING NUCLEAR POWER IN NIGERIA'S ENERGY MIX",
+        "abstract": "In twenty years, Nigeria's population is expected t o double and aggregate energy demand will triple (NEP, Draft Revised Edition 2013), Conv entional energy sources alone will not meet the challenges of an increasing population at affordabl e costs and in a flexible manner. To meet the rapidly growing demand for energy, and the challenges posed by climate change. There has to be a conscious effort to consider other sources to be in tegrated into the energy mix to meet this energy demand. Nuclear energy is seen as one of the source s that have the capacity to meet this increasing demand ifeffectivelyintegrated into the nation's en ergy mix. A survey was conductedto capture public opinions in the deployment of other energy options such as nuclear energy into the Nigeria energy mix. The res ult of the survey indicated a decline in support fo r nuclear energy as option in meeting Nigeria energy povertycompared to renewable energy which was most favoured by vast majority of the respondents. This is however attributable to the present securit y challenge in Nigeria and the fukushima accident whi ch occurred 2011 in Japan. The opposition to nuclear power can be reversed if the peaceful applications, socio-economic and environmental case for its deployment is strong eno ugh. This paper would help policy/decision makers in making proper decision as regards to nuclear pow er deployment and its review if barriers such as energy security, public's opposition are adequately addressed.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.3327/jaesj.33.1131",
-        "url": "https://doi.org/10.3327/jaesj.33.1131",
+        "doi": "",
+        "url": "http://johronline.com/issue/20140630-082837.152.pdf",
         "authors": [
-          "S. Yasukawa",
-          "Osamu Sato",
-          "Yoshihiro Tadokoro",
-          "Takeyoshi KAJIYAMA",
-          "Hajimu SHIRAKI",
-          "Masahide KONTA",
-          "Yoshinori SHIMOYAMADA"
+          "Olukolapo O. Akinmola",
+          "George N. Osaghae",
+          "Tajudeen O. Abdulazeez",
+          "H. Ahidjo"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Comparing the Substitution of Nuclear Energy or Renewable Energy for Fossil Fuels between the United States and Africa",
-        "abstract": "This study explores the differences in energy consumption between the highly economically developed United States and economically underdeveloped Africa. This study conducted the parameter estimation and equilibrium analysis of a Lotka–Volterra model to investigate the short-term and long-term relations of different types of energy, respectively. The parameter estimation results show that nuclear energy consumption increases the consumption of fossil fuels in the United States but decreases fossil fuel consumption in Africa. This implies that Africa can replace fossil fuels with nuclear energy in the short run. Given the current state of energy consumption, the results of the equilibrium analysis indicate that the United States’ nuclear and fossil fuel consumption will reach a stable long-term equilibrium. However, Africa will experience significant fluctuations in nuclear and fossil fuel consumption, and both nuclear and fossil fuel consumption will eventually be depleted. The highly economically developed United States arranges energy consumption in an environmentally friendly way and reshapes economies to achieve sustainability, so its long-term energy consumption is more stable than economically underdeveloped Africa. Accuracy analysis results show that the nuclear or renewable energy consumption predicted by the Lotka–Volterra model is more accurate than that of a Bass model since the Lotka–Volterra model considers energy interactions.",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Nuclear power fleet replacement: an opportunity for the French energy mix?",
+        "abstract": "– In France, 27% of the electricity is to be produced by renewable resources by 2020. This share is intended to grow continuously up to 2050. The recent European agreement and the French  energy transition law  will promote such a development. The French power system is characterized by high nuclear penetration and nuclear power is meant to remain a significant contributor in the medium and long term, as a low-carbon power source. More than half the French nuclear power fleet was installed in the late seventies / early eighties. Thus, the issue of its replacement is at the core of the French power mix issue. The objective of this paper is to provide some insights about the opportunity it enables for the energy mix. Two plausible replacement scenarios are developed and analyzed as regards the energy cost provided by nuclear power. For a given target level of nuclear installed capacities, the penetration of non-dispatchable renewables with dispatch priority will increase the need for nuclear power modulation at reduced average load factor. The impact of modulation on the nuclear levelized cost of electricity is assessed, according to the considered replacement scenario and for different renewable and nuclear energy penetration scenarios. Results show that, according to the selected assumptions, implementing a progressive shutdown (based on an increased operation lifetime of Nuclear Power Plants) appears a relevant choice since it both provides a lowest power production cost even at reduced average load factor to participate to load following and allows the possibility of  waiting  for choosing most sustainable technologies.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.3390/su151310076",
-        "url": "https://doi.org/10.3390/su151310076",
+        "doi": "",
+        "url": "https://hal.archives-ouvertes.fr/hal-01264242",
         "authors": [
-          "Bi-Huei Tsai",
-          "Yao-Min Huang"
+          "Camille Cany",
+          "Christine Mansilla",
+          "Pascal da Costa",
+          "Gilles Mathonnière",
+          "Thierry Duquesnoy",
+          "Anne Baschwitz"
         ],
         "source": "acemap"
       },
       {
-        "query": "CO2 per kWh nuclear renewable fossil fuels",
-        "title": "Replacing Fossil Fuels and Nuclear Power with Renewable Energy: Utopia or Valid Option? A Swiss Case Study of Bioenergy",
-        "abstract": "The transition towards a reliable, sustainable, low-carbon energy system is a major challenge of the 21st century. Due to the lower energy density of many renewable energy sources, a future system is expected to be more decentralized, leading to significant changes at the regional scale. This study analyzes the feasibility of the energy transition in the Swiss canton of Aargau as an illustrative example and explores different strategies to satisfy the local demand for electricity, heat, and fuel by 2035. In particular, we assess the potential contribution of biomass. Four scenarios demonstrate what energy demand proportion could be covered by bioenergy if different priorities were given to the provision of heat, electricity, and fuel. The impact of improved conversion technologies is also considered. The results show that the sustainably available renewable energy sources in canton Aargau will probably not be sufficient to cover its forecasted energy demand in 2035, neither with present nor future biomass conversion technologies. At best, 74% of the energy demand could be met by renewables. Biomass can increase the degree of autarky by a maximum of 13%. Depending on the scenario, at least 26–43% (2500–5700 GWh) of total energy demand is lacking, particularly for mobility purposes.",
+        "query": "nuclear power emissions energy mix country specific",
+        "title": "Too hot to handle? Uranium and nuclear power in Australia's energy mix",
+        "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.3390/en13082051",
-        "url": "https://doi.org/10.3390/en13082051",
+        "doi": "",
+        "url": "https://research-repository.uwa.edu.au/en/publications/too-hot-to-handle-uranium-and-nuclear-power-in-australias-energy-",
         "authors": [
-          "Renato Lemm",
-          "Raphael Haymoz",
-          "Astrid Björnsen Gurung",
-          "Vanessa Burg",
-          "Tom Strebel",
-          "Oliver Thees"
+          "Sharon Mascher"
         ],
         "source": "acemap"
       }

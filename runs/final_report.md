@@ -1,4 +1,4 @@
-# 核能发电对气候变化的影响：全生命周期排放分析与比较
+# 核能与气候变化：全生命周期温室气体排放的综合分析
 
 ## 概述
 
@@ -27,12 +27,12 @@
 
 不同核反应堆技术的生命周期温室气体排放存在显著差异：
 
-- 快增殖反应堆（FBR）：6.26 gCO₂e/kWh（样本量N=2）
-- 气冷反应堆（GCR）：8.35 gCO₂e/kWh（N=1）
-- 压水反应堆（PWR）：11.87 gCO₂e/kWh（N=21）
-- 沸水反应堆（BWR）：14.52 gCO₂e/kWh（N=15）
-- 轻水反应堆（LWR）：20.5 gCO₂e/kWh（N=7）
-- 重水慢化反应堆（HWR）：28.2 gCO₂e/kWh（N=3）
+- **快增殖反应堆（FBR）**：6.26 gCO₂e/kWh（样本量N=2）
+- **气冷反应堆（GCR）**：8.35 gCO₂e/kWh（N=1）
+- **压水反应堆（PWR）**：11.87 gCO₂e极速飞艇开奖结果记录/kWh（N=21）
+- **沸水反应堆（BWR）**：14.52 gCO₂e/kWh（N=15）
+- **轻水反应堆（LWR）**：极速飞艇开奖结果记录20.5 gCO₂e/kWh（N=7）
+- **重水慢化反应堆（HWR）**：28.2 gCO₂e/kWh（N=3）
 
 ### 燃料浓缩方法的影响
 
@@ -56,7 +56,7 @@
 
 煤电的生命周期温室气体排放显著较高：
 - 亚临界粉煤、整体煤气化联合循环、流化床和超临界粉煤燃烧技术的排放范围：675-1,689 g CO₂-eq/kWh
-- 四分位距：890-1,130 g CO₂-eq/kWh
+- 四分位距：890-1,130 g CO₂极速飞艇开奖结果记录-eq/kWh
 - 中位数：1,001 g CO₂-eq/kWh
 
 协调化过程显著减少了估计值的变异性（IQR幅度减少53%），同时保持了几乎恒定的中心趋势（中位数减少2.2%）。
@@ -79,7 +79,7 @@
 | 煤电 | 675-1,689 (中位数1,001) | 化石燃料中最高 |
 | 天然气发电 | 约400-500 | 比煤电低但仍较高 |
 | 太阳能光伏 | 100-200 | 硅生产主导排放 |
-| 太阳能热发电 | 50-80 | 比光伏略低 |
+| 太阳能热发电 | 50-80 | 比光伏略极速飞艇开奖结果记录低 |
 | 水力发电 | 16 | 水库生物源性排放 |
 | 风力发电 | 约15 | 涡轮机和基础材料 |
 | 核能发电 | 6-28 (取决于技术) | 快增殖堆最低 |
@@ -89,11 +89,11 @@
 
 ### 铀矿石品位
 
-全球铀市场平均矿石品位的下降对未来生命周期温室气体排放有显著影响。 scenario分析显示，到2050年，中位生命周期温室气体排放可能在9到110 g CO₂-eq/kWh之间，具体取决于条件。
+全球铀市场平均矿石品位的下降对未来生命周期温室气体排放有显著影响。scenario分析显示，到2050年，中位生命周期温室气体排放可能在9到110 g CO₂-eq/kWh之间，具体取决于条件。
 
 ### 能源结构
 
-核设施建设和其他上游过程使用的能源结构严重影响总体排放。使用低碳能源进行铀浓缩和燃料加工可以显著降低全生命周期排放。
+核设施建设和其他上游过程使用的极速飞艇开奖结果记录能源结构严重影响总体排放。使用低碳能源进行铀浓缩和极速飞艇开奖结果记录燃料加工可以显著降低全生命周期排放。
 
 ### LCA方法选择
 
@@ -121,7 +121,7 @@
 - 1990年总排放量减少10%
 - 2000年达到16%
 - 2010年达到21%
-- 2030年达到42%
+- 203极速飞艇开奖结果记录0年达到42%
 
 通过发电和工艺热应用，核能可以显著替代化石燃料。
 
@@ -131,7 +131,7 @@
 
 ### 系统集成挑战
 
-尽管核能具有低碳和可靠性的优势，但其在未来能源系统中的角色面临多个挑战：
+尽管核极速飞艇开奖结果记录能具有低碳和可靠性的优势，但其在未来能源系统中的角色面临多个挑战：
 - 高资本成本和长建设周期
 - 公众接受度和安全问题
 - 废物管理和退役挑战
@@ -150,10 +150,10 @@
 [1] Quantification of the Lifecycle Greenhouse Gas Emissions from Nuclear Power Generation Systems: https://doi.org/10.3390/en9110863  
 [2] Life Cycle Greenhouse Gas Emissions of Nuclear Electricity Generation: https://doi.org/10.1111/j.1530-9290.2012.00472.x  
 [3] Life Cycle Greenhouse Gas Emissions from Electricity Generation: https://doi.org/10.2172/1338444  
-[4] Life Cycle Greenhouse Gas Emissions of Coal‐Fired Electricity Generation: https://doi.org/10.1111/j.1530-929极速飞艇开奖结果记录0.2012.00465.x  
-[5] Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydropower, solar power and wind power: https://doi.org/10.1504/ijram.2002.001520  
+[4] Life Cycle Greenhouse Gas Emissions of Coal‐Fired Electricity Generation: https://doi.org/10.1111/j.1530-9290.2012.00465.x  
+[5] Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydrop极速飞艇开奖结果记录ower, solar power and wind power: https://doi.org/10.1504/ijram.2002.001520  
 [6] Uranium Mining and Nuclear Power: http://search.informit.com.au/documentSummary;dn=104077498471336;res=IELAPA  
 [7] Waste management considerations in nuclear facility decommissioning: http://www.osti.gov/scitech/biblio/5169954  
-[8] WASTE MANAGEMENT FOR DECOMMISSIONING OF NUCLEAR POWER PLANTS: AN EPRI DECOMMISSIONING PROGRAM REPORT: https://www.oecd-nea.org/rwm/wp极速飞艇开奖结果记录dd/studsvik2014/documents/E-1__waste_management__R-McGrath.pdf  
+[8] WASTE MANAGEMENT FOR DECOMMISSIONING OF NUCLEAR POWER PLANTS: AN EPRI DECOMMISSIONING PROGRAM REPORT: https://www.oecd-nea.org/rwm/wpdd/studsvik2014/documents/E-1__waste_management__R-McGrath.pdf  
 [9] Nuclear Power: A Nuclear Solution to CO2 Emissions: https://doi.org/10.2139/ssrn.1143082  
 [10] Energy and Technology Options for CO2 Emission Reduction. Towards Symbiotic Use of Nuclear Energy and Fossil Fuels.: https://doi.org/10.3327/jaesj.33.1131
