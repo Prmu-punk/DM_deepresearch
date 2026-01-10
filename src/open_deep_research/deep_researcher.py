@@ -335,6 +335,18 @@ async def supervisor_tools(state: SupervisorState, config: RunnableConfig) -> Co
     supervisor_messages = state.get("supervisor_messages", [])
     research_iterations = state.get("research_iterations", 0)
     most_recent_message = supervisor_messages[-1]
+
+    # Normalize tool_call args: some models return JSON strings instead of dicts
+    normalized_tool_calls = []
+    for tc in most_recent_message.tool_calls:
+        args = tc.get("args")
+        if isinstance(args, str):
+            try:
+                args = json.loads(args)
+            except Exception:
+                args = {}
+        normalized_tool_calls.append({**tc, "args": args})
+    most_recent_message.tool_calls = normalized_tool_calls
     
     # Define exit criteria for research phase
     exceeded_allowed_iterations = research_iterations > configurable.max_researcher_iterations
@@ -545,6 +557,18 @@ async def researcher_tools(state: ResearcherState, config: RunnableConfig) -> Co
     configurable = Configuration.from_runnable_config(config)
     researcher_messages = state.get("researcher_messages", [])
     most_recent_message = researcher_messages[-1]
+
+    # Normalize tool_call args: some models return JSON strings instead of dicts
+    normalized_tool_calls = []
+    for tc in most_recent_message.tool_calls:
+        args = tc.get("args")
+        if isinstance(args, str):
+            try:
+                args = json.loads(args)
+            except Exception:
+                args = {}
+        normalized_tool_calls.append({**tc, "args": args})
+    most_recent_message.tool_calls = normalized_tool_calls
     
     # Early exit if no tool calls were made (including native web search)
     has_tool_calls = bool(most_recent_message.tool_calls)
@@ -741,11 +765,11 @@ async def kg_enhance(state: ResearcherState, config: RunnableConfig):
         source_label = "ConceptNet knowledge graph"
 
         if use_gakg:
-            print(f"\n[KG] 检测到地学主题: '{research_topic}'，正在尝试调用 GAKG...")
+            print(f"\n[KG] 检测到地学主题: '{research_topic}'，正在尝试调用 GAKG...\n")
             
             # 1. LLM Keyword Extraction
             keywords = await generate_kg_keywords_with_llm(research_topic, kg_llm)
-            print(f"[KG] LLM 提取关键词: {keywords}")
+            print(f"[KG] LLM 提取关键词: {keywords}\n")
             
             # 2. Query GAKG with optimized keywords
             raw_contexts = []
@@ -762,22 +786,22 @@ async def kg_enhance(state: ResearcherState, config: RunnableConfig):
             
             # 3. LLM Filtering
             if raw_kg_text:
-                print(f"[KG] GAKG 原始结果获取成功 (长度: {len(raw_kg_text)} chars)，正在进行 LLM 过滤...")
+                print(f"[KG] GAKG 原始结果获取成功 (长度: {len(raw_kg_text)} chars)\n")
                 print(f"[KG] GAKG 原始结果预览:\n{raw_kg_text[:500]}..." if len(raw_kg_text) > 500 else f"[KG] GAKG 原始结果:\n{raw_kg_text}")
-                
+                print("[KG] 正在进行 LLM 过滤...\n")
                 kg_context = await filter_kg_results_with_llm(research_topic, raw_kg_text, kg_llm)
                 
                 if kg_context:
-                    print(f"[KG] GAKG 增强成功！已找到关联概念：\n{kg_context}")
+                    print(f"[KG] GAKG 增强：已找到关联概念：\n{kg_context}")
                     source_label = "GAKG (geoscience) knowledge graph"
                 else:
-                    print(f"[KG] GAKG 结果被 LLM 判定为无关。")
+                    print(f"[KG] GAKG 结果被 LLM 判定为无关。\n")
             else:
-                print(f"[KG] GAKG 未找到匹配概念。")
+                print(f"[KG] GAKG 未找到匹配概念。\n")
 
         if not kg_context:
             if not use_gakg:
-                print(f"\n[KG] 正在为主题 '{research_topic}' 调用 ConceptNet...")
+                print(f"\n[KG] 正在为主题 '{research_topic}' 调用 ConceptNet...\n")
             
             # Fallback to ConceptNet with similar LLM logic if needed, 
             # or keep simple logic for ConceptNet to save tokens.
@@ -850,7 +874,17 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
     notes = state.get("notes", [])
     raw_notes = state.get("raw_notes", [])
     cleared_state = {"notes": {"type": "override", "value": []}}
-    
+
+    # Bail out early if no evidence to avoid hallucinated reports
+    evidence_text = "\n".join(notes + raw_notes)
+    has_urls = "http" in evidence_text
+    if (not notes and not raw_notes) or not has_urls:
+        return {
+            "final_report": "Research aborted: insufficient grounded search results (no credible sources/URLs found).",
+            "messages": [AIMessage(content="Report skipped: not enough grounded evidence.")],
+            **cleared_state
+        }
+
     # Combine summarized notes and raw research notes for maximum context
     findings = "### Summarized Research Findings\n" + "\n".join(notes)
     if raw_notes:

@@ -31,6 +31,16 @@
   <h1>Acemap Results</h1>
   <p>Fetches runs/final_report.md and runs/acemap_results.json. Start a static server (e.g. python -m http.server 8000) then open http://localhost:8000/ui/acemap.html.</p>
 
+  <div id="search-panel" class="panel">
+    <h3>快速发起新研究</h3>
+    <form id="search-form">
+      <label for="query">研究问题</label><br />
+      <textarea id="query" name="query" rows="3" style="width:100%; margin:6px 0;" placeholder="输入要研究的问题"></textarea>
+      <button type="submit" style="padding:8px 14px; margin-right:8px;">开始研究</button>
+      <span id="status"></span>
+    </form>
+  </div>
+
   <details open>
     <summary>最终报告（折叠/展开）</summary>
     <div id="report" class="panel">Loading report...</div>
@@ -119,6 +129,76 @@
       container.appendChild(frag);
     }
 
+    // Simple client to call backend API (uvicorn server on 8001)
+    const API_BASE = 'http://localhost:8001/api';
+
+    async function startResearch(query) {
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = '提交中...';
+      try {
+        const res = await fetch(`${API_BASE}/research`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query }),
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const runId = data.status; // status field carries run_id here
+        statusEl.textContent = `已提交，运行ID: ${runId}，轮询状态中...`;
+        pollStatus(runId);
+      } catch (err) {
+        statusEl.textContent = '提交失败: ' + err;
+      }
+    }
+
+    async function pollStatus(runId) {
+      const statusEl = document.getElementById('status');
+      const poll = async () => {
+        try {
+          const res = await fetch(`${API_BASE}/research/${runId}/status`, { cache: 'no-cache' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          if (data.status === 'done') {
+            statusEl.textContent = '完成，拉取结果...';
+            await loadResult(runId);
+            statusEl.textContent = '完成';
+            return;
+          }
+          if (data.status === 'error') {
+            statusEl.textContent = '失败: ' + (data.error || '未知错误');
+            return;
+          }
+          statusEl.textContent = `运行中 (${data.status})...`;
+          setTimeout(poll, 2000);
+        } catch (err) {
+          statusEl.textContent = '轮询失败: ' + err;
+        }
+      };
+      poll();
+    }
+
+    async function loadResult(runId) {
+      try {
+        const res = await fetch(`${API_BASE}/research/${runId}/result`, { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        // Update report and results from API payload
+        document.getElementById('report').innerHTML = marked.parse(data.final_report || 'No report yet.');
+        render(data.acemap_results || []);
+      } catch (err) {
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = '获取结果失败: ' + err;
+      }
+    }
+
+    document.getElementById('search-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const q = document.getElementById('query').value.trim();
+      if (!q) return;
+      await startResearch(q);
+    });
+
+    // Initial load from files (if any past runs exist)
     loadReport();
     loadData();
   </script>

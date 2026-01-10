@@ -77,11 +77,11 @@ class Configuration(BaseModel):
     )
     # Research Configuration
     search_api: SearchAPI = Field(
-        default=SearchAPI.TAVILY,
+        default=SearchAPI.ACEMAP,
         metadata={
             "x_oap_ui_config": {
                 "type": "select",
-                "default": "tavily",
+                "default": "acemap",
                 "description": "Search API to use for research. NOTE: Make sure your Researcher Model supports the selected search API.",
                 "options": [
                     {"label": "Tavily", "value": SearchAPI.TAVILY.value},
@@ -235,22 +235,22 @@ class Configuration(BaseModel):
     )
     # Knowledge Graph Enhancement Configuration
     use_kg_enhancement: bool = Field(
-        default=False,
+        default=True,
         metadata={
             "x_oap_ui_config": {
                 "type": "boolean",
-                "default": False,
+                "default": True,
                 "description": "Enable ConceptNet knowledge graph enhancement for Tavily search queries. When enabled, short queries (<5 words) will be expanded with related concepts."
             }
         }
     )
 
     use_gakg_enhancement: bool = Field(
-        default=False,
+        default=True,
         metadata={
             "x_oap_ui_config": {
                 "type": "boolean",
-                "default": False,
+                "default": True,
                 "description": "Enable GAKG-based knowledge graph enhancement for geoscience topics. When enabled and a GAKG parquet path is provided, geoscience queries will be expanded with GAKG context."
             }
         }

@@ -199,16 +199,26 @@ async def acemap_search(
 
         structured_results: List[Dict[str, Any]] = []
         for idx, paper in enumerate(results, start=1):
+            if not isinstance(paper, dict):
+                continue
+
             title = paper.get("title") or paper.get("display_name") or "Untitled"
             abstract = paper.get("abstract") or ""
             year = paper.get("year") or "Unknown"
             citations = paper.get("num_citations") or paper.get("citation_count") or 0
             doi = paper.get("doi") or paper.get("doi_url") or ""
-            url = paper.get("primary_location", {}).get("landing_page_url") or paper.get("id") or ""
-            authorships = paper.get("authorships", [])
+            primary_location = paper.get("primary_location") or {}
+            url = None
+            if isinstance(primary_location, dict):
+                url = primary_location.get("landing_page_url")
+            if not url:
+                url = paper.get("id") or ""
+            authorships = paper.get("authorships") or []
             authors = []
             for auth in authorships:
-                name = auth.get("author", {}).get("display_name")
+                if not isinstance(auth, dict):
+                    continue
+                name = auth.get("author", {}).get("display_name") if isinstance(auth.get("author"), dict) else None
                 if name:
                     authors.append(name)
 

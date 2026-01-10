@@ -2,13 +2,21 @@
 
 This module provides functionality to enhance Tavily web searches using
 ConceptNet knowledge graph for query expansion and concept enrichment.
+
+Features:
+- TF-IDF style scoring: prioritizes locally relevant but globally rare concepts
+- Phrase-aware matching with tiered fallback
+- Relation type weighting for semantic relevance
 """
 
 import asyncio
 import logging
+import math
+import re
 import requests
+from collections import Counter
 from functools import lru_cache
-from typing import Annotated, Any, Dict, List, Literal, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional, Tuple
 
 import pandas as pd
 
@@ -21,8 +29,92 @@ from langchain_core.language_models import BaseChatModel
 CONCEPTNET_API_BASE = "http://api.conceptnet.io"
 CONCEPTNET_TIMEOUT = 5  # seconds
 
+# TF-IDF configuration
+MIN_WORD_LENGTH = 3  # Minimum word length to consider
+STOP_NODES = {
+    'this', 'that', 'these', 'those', 'study', 'result', 'results', 
+    'data', 'method', 'methods', 'analysis', 'research', 'paper',
+    'figure', 'table', 'section', 'example', 'case', 'type', 'types'
+}
+
+# Relation type weights (semantic relations weighted higher)
+RELATION_WEIGHTS = {
+    # High value semantic relations
+    'is_a': 2.0, 'isa': 2.0, 'isA': 2.0,
+    'part_of': 1.8, 'partof': 1.8, 'PartOf': 1.8,
+    'has_part': 1.8, 'haspart': 1.8, 'HasPart': 1.8,
+    'related_to': 1.5, 'relatedto': 1.5, 'RelatedTo': 1.5,
+    'similar_to': 1.5, 'similarto': 1.5, 'SimilarTo': 1.5,
+    'synonym': 1.5, 'Synonym': 1.5,
+    'used_for': 1.5, 'usedfor': 1.5, 'UsedFor': 1.5,
+    'causes': 1.5, 'Causes': 1.5,
+    'caused_by': 1.5, 'causedby': 1.5, 'CausedBy': 1.5,
+    'contains': 1.3, 'Contains': 1.3,
+    'has_property': 1.3, 'hasproperty': 1.3, 'HasProperty': 1.3,
+    'defined_as': 1.3, 'definedas': 1.3, 'DefinedAs': 1.3,
+    # Lower value relations (geographic, temporal, etc.)
+    'is_in': 0.5, 'isin': 0.5, 'IsIn': 0.5,
+    'located_in': 0.5, 'locatedin': 0.5, 'LocatedIn': 0.5,
+    'at_location': 0.5, 'atlocation': 0.5, 'AtLocation': 0.5,
+}
+
 # Logger setup
 logger = logging.getLogger(__name__)
+
+
+##########################
+# TF-IDF Style Scoring
+##########################
+
+def _compute_tfidf_scores(
+    local_counts: Counter,
+    global_counts: Counter,
+    total_nodes: int,
+    relation_weights: Optional[Dict[str, float]] = None
+) -> Dict[str, float]:
+    """
+    Compute TF-IDF style scores for neighbor nodes.
+    
+    Score = LocalFreq × log(TotalNodes / GlobalFreq) × RelationWeight
+    
+    Args:
+        local_counts: Counter of (neighbor, relation) -> count for query node
+        global_counts: Counter of neighbor -> total count in graph
+        total_nodes: Total number of unique nodes in graph
+        relation_weights: Optional dict of relation -> weight multiplier
+        
+    Returns:
+        Dict of neighbor -> score
+    """
+    scores = {}
+    
+    for (neighbor, relation), local_freq in local_counts.items():
+        # Skip stop nodes
+        if neighbor.lower() in STOP_NODES:
+            continue
+        if len(neighbor) < MIN_WORD_LENGTH:
+            continue
+            
+        global_freq = global_counts.get(neighbor, 1)
+        
+        # TF-IDF: local frequency × inverse global frequency
+        idf = math.log(total_nodes / global_freq) if global_freq > 0 else 0
+        base_score = local_freq * idf
+        
+        # Apply relation weight
+        rel_weight = 1.0
+        if relation_weights:
+            rel_weight = relation_weights.get(relation, 1.0)
+        
+        final_score = base_score * rel_weight
+        
+        # Aggregate scores if same neighbor appears with different relations
+        if neighbor in scores:
+            scores[neighbor] = max(scores[neighbor], final_score)
+        else:
+            scores[neighbor] = final_score
+    
+    return scores
 
 
 ##########################
@@ -62,17 +154,19 @@ def query_conceptnet_cached(concept: str, limit: int = 20) -> Dict[str, Any]:
 def extract_related_concepts(
     concept: str,
     relation_types: Optional[List[str]] = None,
-    max_concepts: int = 10
-) -> List[Dict[str, str]]:
-    """Extract related concepts from ConceptNet.
+    max_concepts: int = 10,
+    use_tfidf: bool = True
+) -> List[Dict[str, Any]]:
+    """Extract related concepts from ConceptNet using TF-IDF style scoring.
     
     Args:
         concept: The source concept to find relations for
         relation_types: List of relation types to include (None = all useful types)
         max_concepts: Maximum number of related concepts to return
+        use_tfidf: If True, use TF-IDF scoring; if False, use simple neighbor search
         
     Returns:
-        List of dicts with 'concept' and 'relation' keys
+        List of dicts with 'concept', 'relation', 'weight'/'score' keys
     """
     # Default relation types useful for search enhancement
     if relation_types is None:
@@ -89,22 +183,125 @@ def extract_related_concepts(
             "DefinedAs",      # Definitions
         ]
     
-    data = query_conceptnet_cached(concept)
-    if not data:
+    # Fetch edges
+    data = query_conceptnet_cached(concept, limit=50)
+    
+    if not data or not data.get("edges"):
         return []
+    
+    edges = data.get("edges", [])
+    
+    # Filter edges by relation type
+    filtered_edges = [
+        e for e in edges 
+        if e.get("rel", {}).get("label", "") in relation_types
+    ]
+    
+    if use_tfidf and len(filtered_edges) >= 3:
+        return _extract_with_tfidf(concept, filtered_edges, max_concepts)
+    else:
+        return _extract_simple_neighbors(concept, filtered_edges, max_concepts)
+
+
+def _extract_with_tfidf(
+    concept: str, 
+    edges: List[Dict], 
+    max_concepts: int
+) -> List[Dict[str, Any]]:
+    """Extract related concepts using TF-IDF style scoring.
+    
+    Score = LocalFreq × IDF × RelationWeight
+    - LocalFreq: How often this neighbor appears in query's edges
+    - IDF: log(total_concepts / global_freq) - rare concepts score higher
+    - RelationWeight: Semantic relations weighted higher than geographic
+    """
+    concept_lower = concept.lower()
+    
+    # Count local frequencies (neighbors of this concept)
+    local_counts = Counter()  # (neighbor, relation) -> count
+    all_concepts = set()
+    
+    for edge in edges:
+        start_info = edge.get("start", {})
+        end_info = edge.get("end", {})
         
+        start_label = start_info.get("label", "").lower()
+        end_label = end_info.get("label", "").lower()
+        start_lang = start_info.get("language", "en")
+        end_lang = end_info.get("language", "en")
+        rel_label = edge.get("rel", {}).get("label", "")
+        
+        # Track all concepts for global frequency estimation
+        if start_lang == "en" and start_label:
+            all_concepts.add(start_label)
+        if end_lang == "en" and end_label:
+            all_concepts.add(end_label)
+        
+        # Count neighbors of the query concept
+        if start_lang == "en" and end_lang == "en":
+            if start_label == concept_lower and end_label:
+                local_counts[(end_label, rel_label)] += 1
+            elif end_label == concept_lower and start_label:
+                local_counts[(start_label, rel_label)] += 1
+    
+    if not local_counts:
+        return _extract_simple_neighbors(concept, edges, max_concepts)
+    
+    # For ConceptNet, we use edge count as a proxy for global frequency
+    # (concepts that appear in many edges are more common)
+    global_counts = Counter()
+    for edge in edges:
+        start_label = edge.get("start", {}).get("label", "").lower()
+        end_label = edge.get("end", {}).get("label", "").lower()
+        if start_label:
+            global_counts[start_label] += 1
+        if end_label:
+            global_counts[end_label] += 1
+    
+    total_nodes = max(len(all_concepts), 1)
+    
+    # Compute TF-IDF scores with relation weights
+    scores = _compute_tfidf_scores(
+        local_counts, 
+        global_counts, 
+        total_nodes, 
+        RELATION_WEIGHTS
+    )
+    
+    if not scores:
+        return _extract_simple_neighbors(concept, edges, max_concepts)
+    
+    # Sort by score and return top results
+    sorted_results = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    
+    # Build result list with relation info
+    results = []
+    neighbor_to_relation = {n: r for (n, r), _ in local_counts.items()}
+    
+    for neighbor, score in sorted_results[:max_concepts]:
+        if neighbor == concept_lower:
+            continue
+        results.append({
+            "concept": neighbor,
+            "relation": neighbor_to_relation.get(neighbor, "RelatedTo"),
+            "weight": score
+        })
+    
+    return results
+
+
+def _extract_simple_neighbors(
+    concept: str, 
+    edges: List[Dict], 
+    max_concepts: int
+) -> List[Dict[str, Any]]:
+    """Extract related concepts using simple neighbor search (original logic)."""
+    
     related = []
     seen_concepts = set()
     concept_lower = concept.lower()
     
-    for edge in data.get("edges", []):
-        # Extract relation type
-        rel_label = edge.get("rel", {}).get("label", "")
-        
-        # Filter by relation type
-        if rel_label not in relation_types:
-            continue
-        
+    for edge in edges:
         # Extract start and end concepts
         start_info = edge.get("start", {})
         end_info = edge.get("end", {})
@@ -113,6 +310,7 @@ def extract_related_concepts(
         end_label = end_info.get("label", "")
         start_lang = start_info.get("language", "en")
         end_lang = end_info.get("language", "en")
+        rel_label = edge.get("rel", {}).get("label", "")
         
         # Only include English concepts
         if start_lang == "en" and start_label.lower() != concept_lower:
@@ -198,7 +396,7 @@ def should_enhance_with_kg(
 def expand_query_with_kg(
     query: str,
     max_expansion_terms: int = 3,
-    expansion_strategy: Literal["append", "or", "separate"] = "or"
+    expansion_strategy: Literal["append", "or", "separate"] = "append"
 ) -> List[str]:
     """Expand a search query using ConceptNet knowledge graph.
     
@@ -270,44 +468,58 @@ def build_kg_context(query: str, max_concepts: int = 10) -> str:
     to better understand the query domain.
     
     Args:
-        query: The search query or research topic
-        max_concepts: Maximum related concepts to include per keyword
+        query: The search query or research topic (used as-is, no splitting)
+        max_concepts: Maximum related concepts to include
         
     Returns:
         Formatted string with KG context information
     """
-    # Extract keywords (words > 3 chars, not stopwords)
-    stopwords = {"the", "and", "for", "with", "from", "that", "this", "what", "how", "why", "are", "is"}
-    keywords = [w for w in query.split() if len(w) > 3 and w.lower() not in stopwords]
+    # Use query as-is without splitting - preserves phrases
+    keyword = query.strip()
     
-    if not keywords:
+    if not keyword:
         return ""
     
-    context_parts = []
+    related = extract_related_concepts(keyword, max_concepts=max_concepts)
     
-    for keyword in keywords[:5]:  # Process top 5 keywords
-        related = extract_related_concepts(keyword, max_concepts=max_concepts)
+    if related:
+        # Group by relation type
+        by_relation = {}
+        for r in related:
+            rel = r["relation"]
+            if rel not in by_relation:
+                by_relation[rel] = []
+            by_relation[rel].append(r["concept"])
         
-        if related:
-            # Group by relation type
-            by_relation = {}
-            for r in related:
-                rel = r["relation"]
-                if rel not in by_relation:
-                    by_relation[rel] = []
-                by_relation[rel].append(r["concept"])
-            
-            # Format output
-            parts = [f"**{keyword}**:"]
-            for rel, concepts in by_relation.items():
-                parts.append(f"  - {rel}: {', '.join(concepts[:5])}")
-            
-            context_parts.append("\n".join(parts))
-    
-    if context_parts:
-        return "\n\n".join(context_parts)
+        # Format output
+        parts = [f"**{keyword}**:"]
+        for rel, concepts in by_relation.items():
+            parts.append(f"  - {rel}: {', '.join(concepts[:5])}")
+        
+        result = "\n".join(parts)
+        return result
     
     return ""
+
+
+def _write_debug_log(function_name: str, query: str, context: str) -> None:
+    """Write KG expansion debug info to ./debug.txt"""
+    import os
+    from datetime import datetime
+    
+    debug_file = os.path.join(os.path.dirname(__file__), "debug.txt")
+    
+    try:
+        with open(debug_file, "a", encoding="utf-8") as f:
+            f.write("\n" + "=" * 80 + "\n")
+            f.write(f"[{datetime.now().isoformat()}] {function_name}\n")
+            f.write(f"Query: {query}\n")
+            f.write("-" * 40 + "\n")
+            f.write("Injected KG Context:\n")
+            f.write(context + "\n")
+            f.write("=" * 80 + "\n")
+    except Exception as e:
+        logger.warning(f"Failed to write debug log: {e}")
 
 
 ##########################
@@ -339,7 +551,130 @@ def _load_gakg_frame(parquet_path: str) -> Optional[pd.DataFrame]:
         return None
 
 
+# Cache for GAKG global frequency statistics
+_gakg_global_freq_cache: Dict[str, Tuple[Counter, int]] = {}
+
+
+def _get_gakg_global_stats(df: pd.DataFrame, cache_key: str) -> Tuple[Counter, int]:
+    """
+    Get or compute global frequency statistics for GAKG.
+    
+    Returns:
+        (global_counts Counter, total_unique_nodes)
+    """
+    if cache_key not in _gakg_global_freq_cache:
+        # Count how often each concept appears in the entire graph
+        subjects = df['subject'].str.lower().str.strip()
+        objects = df['object'].str.lower().str.strip()
+        
+        global_counts = Counter(subjects) + Counter(objects)
+        total_nodes = len(global_counts)
+        
+        _gakg_global_freq_cache[cache_key] = (global_counts, total_nodes)
+        logger.info(f"GAKG stats cached: {total_nodes} unique nodes")
+    
+    return _gakg_global_freq_cache[cache_key]
+
+
+def _gakg_expand_with_tfidf(
+    keyword: str, 
+    df: pd.DataFrame, 
+    top_k: int = 10,
+    use_relation: bool = True,
+    cache_key: str = "default"
+) -> List[str]:
+    """
+    Expand keyword using TF-IDF style scoring on GAKG.
+    
+    Score = LocalFreq × IDF × RelationWeight
+    - LocalFreq: How often this neighbor appears with the query
+    - IDF: log(total_nodes / global_freq) - rare concepts score higher
+    - RelationWeight: Semantic relations weighted higher
+    
+    Args:
+        keyword: Query keyword (phrase supported)
+        df: GAKG DataFrame
+        top_k: Number of results to return
+        use_relation: If True, include relation in output string
+        cache_key: Cache key for global stats
+        
+    Returns:
+        List of expanded query strings
+    """
+    keyword_lower = keyword.lower().strip()
+    
+    # Get global statistics
+    global_counts, total_nodes = _get_gakg_global_stats(df, cache_key)
+    
+    # Strategy 1: Exact match
+    subj_df = df[df["subject"].str.lower() == keyword_lower]
+    obj_df = df[df["object"].str.lower() == keyword_lower]
+    
+    # Strategy 2: Contains match (if exact match fails)
+    if subj_df.empty and obj_df.empty:
+        subj_df = df[df["subject"].str.lower().str.contains(keyword_lower, regex=False, na=False)]
+        obj_df = df[df["object"].str.lower().str.contains(keyword_lower, regex=False, na=False)]
+    
+    # Strategy 3: Word-level match (if still empty and keyword has multiple words)
+    if subj_df.empty and obj_df.empty and ' ' in keyword_lower:
+        words = [w for w in keyword_lower.split() if len(w) > 3]
+        if words:
+            pattern = '|'.join([re.escape(w) for w in words])
+            subj_df = df[df["subject"].str.lower().str.contains(pattern, regex=True, na=False)]
+            obj_df = df[df["object"].str.lower().str.contains(pattern, regex=True, na=False)]
+    
+    if subj_df.empty and obj_df.empty:
+        return []
+    
+    # Count local frequencies with relations
+    local_counts = Counter()  # (neighbor, relation) -> count
+    neighbor_info = {}  # neighbor -> (relation, direction)
+    
+    # From subject matches: keyword -> object
+    for _, row in subj_df.iterrows():
+        obj = str(row['object']).lower().strip()
+        rel = str(row.get('relation', 'related'))
+        local_counts[(obj, rel)] += 1
+        if obj not in neighbor_info:
+            neighbor_info[obj] = (rel, 'forward')  # keyword rel object
+    
+    # From object matches: subject -> keyword
+    for _, row in obj_df.iterrows():
+        subj = str(row['subject']).lower().strip()
+        rel = str(row.get('relation', 'related'))
+        local_counts[(subj, rel)] += 1
+        if subj not in neighbor_info:
+            neighbor_info[subj] = (rel, 'backward')  # subject rel keyword
+    
+    # Compute TF-IDF scores
+    scores = _compute_tfidf_scores(local_counts, global_counts, total_nodes, RELATION_WEIGHTS)
+    
+    if not scores:
+        return []
+    
+    # Sort by score and build output
+    sorted_results = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    
+    query_terms = []
+    for neighbor, score in sorted_results[:top_k]:
+        if neighbor == keyword_lower:
+            continue
+        
+        rel, direction = neighbor_info.get(neighbor, ('related', 'forward'))
+        
+        if use_relation:
+            if direction == 'forward':
+                query_terms.append(f"{keyword} {rel} {neighbor}")
+            else:
+                query_terms.append(f"{neighbor} {rel} {keyword}")
+        else:
+            query_terms.append(f"{keyword} {neighbor}")
+    
+    return query_terms
+
+
 def _gakg_expand_queries(keyword: str, df: pd.DataFrame, top_k: int = 5, use_relation: bool = True) -> List[str]:
+    """Simple frequency-based expansion (fallback)."""
     keyword_lower = keyword.lower().strip()
     query_terms: List[str] = []
 
@@ -378,6 +713,11 @@ def build_gakg_context(
 ) -> str:
     """Build context strings from GAKG for geoscience topics.
 
+    Uses TF-IDF style scoring to find relevant concepts:
+    - Prioritizes concepts that are locally frequent but globally rare
+    - Weights semantic relations higher than geographic/temporal relations
+    - Filters out common stop nodes
+
     Returns a formatted block that mirrors the ConceptNet context format so the
     downstream prompt handling remains unchanged.
     """
@@ -389,59 +729,26 @@ def build_gakg_context(
     if df is None or not {"subject", "object", "relation"}.issubset(df.columns):
         return ""
 
-    # Extract keywords to search in GAKG
-    # Expanded stopword list to filter out common academic/research verbs and generic nouns
-    stopwords = {
-        # Common English stopwords
-        "the", "and", "for", "with", "from", "that", "this", "what", "how", "why", "are", "is", "in", "on", "at", "to", "of", "by", "an", "as", "be", "or",
-        # Research/Academic generic terms (verbs & nouns)
-        "research", "study", "studies", "paper", "article", "report", "reports", "journal", "review",
-        "investigate", "examine", "explore", "analyze", "analysis", "assess", "assessment", "evaluate", "evaluation",
-        "focus", "discuss", "discussion", "describe", "description", "compare", "comparison", "contrast",
-        "provide", "propose", "suggest", "indicate", "demonstrate", "show", "find", "finding", "result", "results",
-        "recent", "current", "future", "past", "potential", "impact", "impacts", "effect", "effects", "affect",
-        "data", "method", "methodology", "approach", "technique", "system", "process", "model", "modeling",
-        "quantitative", "qualitative", "significant", "relevance", "relevant", "related", "relationship",
-        "usage", "use", "using", "based", "case", "example", "official", "agency", "international", "national"
-    }
-    
-    # 1. Extract potential keywords
-    raw_words = [w.strip(",.?!()\"':;") for w in query.split()]
-    keywords = []
-    
-    for w in raw_words:
-        w_lower = w.lower()
-        # Filter by length and stopword list
-        if len(w) > 3 and w_lower not in stopwords:
-            keywords.append(w)
-            
-    # 2. (Optional) Keep bigrams if possible? 
-    # For now, let's stick to single words but be stricter.
-    
-    # Also try the full query if it's short (likely a direct entity search)
-    if len(query.split()) <= 3:
-        keywords.append(query)
+    # Use query as-is without splitting into individual words
+    # This preserves phrases like "calcium carbonate", "sedimentary rocks"
+    keyword = query.strip()
 
-    all_expansions = []
-    seen_terms = set()
-    
-    for kw in keywords:
-        expansions = _gakg_expand_queries(kw, df, top_k=max_concepts // 2, use_relation=use_relation)
-        for term in expansions:
-            if term not in seen_terms:
-                all_expansions.append(term)
-                seen_terms.add(term)
-        
-        if len(all_expansions) >= max_concepts:
-            break
+    # Use TF-IDF based expansion
+    expansions = _gakg_expand_with_tfidf(
+        keyword, df, 
+        top_k=max_concepts, 
+        use_relation=use_relation,
+        cache_key=parquet_path or "default"
+    )
 
-    if not all_expansions:
+    if not expansions:
         return ""
 
-    lines = ["Geoscience KG expansions:"]
-    for term in all_expansions:
+    lines = ["Geoscience KG expansions (TF-IDF):"]
+    for term in expansions:
         lines.append(f"- {term}")
-    return "\n".join(lines)
+    result = "\n".join(lines)
+    return result
 
 
 ##########################

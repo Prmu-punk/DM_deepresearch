@@ -1,10 +1,193 @@
 [
   {
-    "task_id": "The role of nuclear energy in climate change mitigation strategies, including its current contribution to global decarbonization efforts. Research statistics from IAEA, IEA, and IPCC on how much CO2 emissions nuclear power currently avoids annually worldwide. Analyze nuclear's potential for providing baseload power to complement intermittent renewables like solar and wind in electricity grid decarbonization. Examine national and international climate policies that include nuclear energy as part of carbon reduction strategies, and evaluate nuclear's capacity factor and reliability compared to other low-carbon energy sources.",
-    "query": "IAEA nuclear power CO2 emissions avoided statistics",
+    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
+    "query": "lifecycle greenhouse gas emissions electricity generation",
     "results": [
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Comparison of Lifecycle Greenhouse Gas Emissions of Various Electricity Generation Sources",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "",
+        "url": "https://www.cameco.com/uranium_101/static/pdf/Cameco_-_Corporation_Report_on_GHG_Emissions_nov_2010.pdf",
+        "authors": [
+          "B Berg"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Greenhouse gas emissions analysis for electricity generation",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.20906/sbai-sbse-2023/4070",
+        "url": "https://doi.org/10.20906/sbai-sbse-2023/4070",
+        "authors": [
+          "Matheus de S. S. Fogliatto",
+          "Rafael Rodrigues Mendes Ribeiro",
+          "Henrique O. Caetano",
+          "Luiz Desuó N.",
+          "Carlos Dias Maciel"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Life Cycle Greenhouse Gas Emissions from Electricity Generation",
+        "abstract": "As clean energy increasingly becomes part of the national dialogue, lenders, utilities, and lawmakers need the most comprehensive and accurate information on GHG emissions from various sources of energy to inform policy, planning, and investment decisions. The National Renewable Energy Laboratory (NREL) recently led the Life Cycle Assessment (LCA) Harmonization Project, a study that gives decision makers and investors more precise estimates of life cycle GHG emissions for renewable and conventional generation, clarifying inconsistent and conflicting estimates in the published literature, and reducing uncertainty.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.2172/1338444",
+        "url": "https://doi.org/10.2172/1338444",
+        "authors": [
+          "NULL AUTHOR_ID"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Life Cycle Greenhouse Gas Emissions of Nuclear Electricity Generation",
+        "abstract": "Summary A systematic review and harmonization of life cycle assessment (LCA) literature of nuclear electricity generation technologies was performed to determine causes of and, where possible, reduce variability in estimates of life cycle greenhouse gas (GHG) emissions to clarify the state of knowledge and inform decision making. LCA literature indicates that life cycle GHG emissions from nuclear power are a fraction of traditional fossil sources, but the conditions and assumptions under which nuclear power are deployed can have a significant impact on the magnitude of life cycle GHG emissions relative to renewable technologies. Screening 274 references yielded 27 that reported 99 independent estimates of life cycle GHG emissions from light water reactors (LWRs). The published median, interquartile range (IQR), and range for the pool of LWR life cycle GHG emission estimates were 13, 23, and 220 grams of carbon dioxide equivalent per kilowatt‐hour (g CO 2 ‐eq/kWh), respectively. After harmonizing methods to use consistent gross system boundaries and values for several important system parameters, the same statistics were 12, 17, and 110 g CO 2 ‐eq/kWh, respectively. Harmonization (especially of performance characteristics) clarifies the estimation of central tendency and variability. To explain the remaining variability, several additional, highly influential consequential factors were examined using other methods. These factors included the primary source energy mix, uranium ore grade, and the selected LCA method. For example, a scenario analysis of future global nuclear development examined the effects of a decreasing global uranium market‐average ore grade on life cycle GHG emissions. Depending on conditions, median life cycle GHG emissions could be 9 to 110 g CO 2 ‐eq/kWh by 2050.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1111/j.1530-9290.2012.00472.x",
+        "url": "https://doi.org/10.1111/j.1530-9290.2012.00472.x",
+        "authors": [
+          "Ethan Warner",
+          "Garvin Heath"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Greenhouse gas emissions from plastics lifecycle - projections",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1787/e39547a0-en",
+        "url": "https://doi.org/10.1787/e39547a0-en",
+        "authors": [],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Life Cycle Greenhouse Gas Emissions of Coal‐Fired Electricity Generation",
+        "abstract": "Summary This systematic review and harmonization of life cycle assessments (LCAs) of utility‐scale coal‐fired electricity generation systems focuses on reducing variability and clarifying central tendencies in estimates of life cycle greenhouse gas (GHG) emissions. Screening 270 references for quality LCA methods, transparency, and completeness yielded 53 that reported 164 estimates of life cycle GHG emissions. These estimates for subcritical pulverized, integrated gasification combined cycle, fluidized bed, and supercritical pulverized coal combustion technologies vary from 675 to 1,689 grams CO 2 ‐equivalent per kilowatt‐hour (g CO 2 ‐eq/kWh) (interquartile range [IQR]= 890–1,130 g CO 2 ‐eq/kWh; median = 1,001) leading to confusion over reasonable estimates of life cycle GHG emissions from coal‐fired electricity generation. By adjusting published estimates to common gross system boundaries and consistent values for key operational input parameters (most importantly, combustion carbon dioxide emission factor [CEF]), the meta‐analytical process called harmonization clarifies the existing literature in ways useful for decision makers and analysts by significantly reducing the variability of estimates (−53% in IQR magnitude) while maintaining a nearly constant central tendency (−2.2% in median). Life cycle GHG emissions of a specific power plant depend on many factors and can differ from the generic estimates generated by the harmonization approach, but the tightness of distribution of harmonized estimates across several key coal combustion technologies implies, for some purposes, first‐order estimates of life cycle GHG emissions could be based on knowledge of the technology type, coal mine emissions, thermal efficiency, and CEF alone without requiring full LCAs. Areas where new research is necessary to ensure accuracy are also discussed.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1111/j.1530-9290.2012.00465.x",
+        "url": "https://doi.org/10.1111/j.1530-9290.2012.00465.x",
+        "authors": [
+          "M. Whitaker",
+          "Garvin Heath",
+          "Patrick O’Donoughue",
+          "M. Vorum"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Life Cycle Greenhouse Gas Emissions from Electricity Generation (Fact Sheet)",
+        "abstract": "of life cycle GHG emissions from coal-fired electricity generation. By adjusting published estimates to common gross system boundaries and consistent values for key operational input parameters (most importantly, combustion carbon dioxide emission factor [CEF]), the meta-analytical process called harmonization clarifies the existing literature in ways useful for decision makers and analysts by significantly reducing the variability of estimates ({approx}53% in IQR magnitude) while maintaining a nearly constant central tendency ({approx}2.2% in median). Life cycle GHG emissions of a specific power plant depend on many factors and can differ from the generic estimates generated by the harmonization approach, but the tightness of distribution of harmonized estimates across several key coal combustion technologies implies, for some purposes, first-order estimates of life cycle GHG emissions could be based on knowledge of the technology type, coal mine emissions, thermal efficiency, and CEF alone without requiring full LCAs. Areas where new research is necessary to ensure accuracy are also discussed.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.2172/1062479",
+        "url": "https://doi.org/10.2172/1062479",
+        "authors": [],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Quantification of the Lifecycle Greenhouse Gas Emissions from Nuclear Power Generation Systems",
+        "abstract": "This paper statistically quantifies the lifecycle greenhouse gas (GHG) emissions from six distinct reactor-based (boiling water reactor (BWR), pressurized water reactor (PWR), light water reactor (LWR), heavy-water-moderated reactor (HWR), gas-cooled reactor (GCR), fast breeder reactor (FBR)) nuclear power generation systems by following a two-step approach that included (a) performing a review of the lifecycle assessment (LCA) studies on the reactor-based nuclear power generation systems; and (b) statistically evaluating the lifecycle GHG emissions (expressed in grams of carbon dioxide equivalent per kilowatt hour, gCO2e/kWh) for each of the reactor-based nuclear power generation systems to assess the role of different types of nuclear reactors in the reduction of the lifecycle GHG emissions. Additionally, this study quantified the impacts of fuel enrichment methods (centrifuge, gaseous diffusion) on GHG emissions. The mean lifecycle GHG emissions resulting from the use of BWR (sample size, N = 15), PWR (N = 21), LWR (N = 7), HWR (N = 3), GCR (N = 1), and FBR (N = 2) in nuclear power generation systems are 14.52 gCO2e/kWh, 11.87 gCO2e/kWh, 20.5 gCO2e/kWh, 28.2 gCO2e/kWh, 8.35 gCO2e/kWh, and 6.26 gCO2e/kWh, respectively. The FBR nuclear power generation systems produced the minimum lifecycle GHGs. The centrifuge enrichment method produced lower GHG emissions than the gaseous diffusion enrichment method.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.3390/en9110863",
+        "url": "https://doi.org/10.3390/en9110863",
+        "authors": [
+          "Akhil Kadiyala",
+          "Raghava R. Kommalapati",
+          "Ziaul Huque"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Electricity production and greenhouse gas emissions",
+        "abstract": "This article explains the basic issues that are facing the global community regarding the emission of carbon dioxide (CO/sub 2/) gas that is degrading our environment and, most significantly, the environment of generations to come. This article deals with the current state of a potential international agreement to curtail greenhouse gases and the subsequent underlying issues. A theory suggests that apparent reluctance to agree to an international treaty by the United States is directly tied to the process of electric utility reforms. The proposed Kyoto Treaty is explained as well as the consequences of its implementation. The current facts surrounding electric utility generation and CO/sub 2/ gas emissions are explained, as are some mitigation efforts.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1109/mper.2002.1045558",
+        "url": "https://doi.org/10.1109/mper.2002.1045558",
+        "authors": [
+          "M.A. Lamoureux"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "lifecycle greenhouse gas emissions electricity generation",
+        "title": "Electricity Production and Greenhouse Gas Emissions",
+        "abstract": "Perhaps two of the most critical issues facing electric utility managers, power engineers, and all of humankind are the impact and mitigation of greenhouse gas emissions associated with electricity generation. These are issues that, unlike many utility issues, are not limited by state, region, or nation. This article explains the basic issues that are facing the global community regarding the emission of carbon dioxide (CO2) gas that is degrading our environment and, most significantly, the environment of generations to come. This article deals with the current state of a potential international agreement to curtail greenhouse gases and the subsequent underlying issues. A theory suggests that apparent reluctance to agree to an international treaty by the United States is directly tied to the process of electric utility reforms. The proposed Kyoto Treaty is explained as well as the consequences of its implementation. The current facts surrounding electric utility generation and CO <sub xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">2</sub> gas emissions are explained, as are some mitigation efforts.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1109/mper.2002.1045566",
+        "url": "https://doi.org/10.1109/mper.2002.1045566",
+        "authors": [
+          "M.A. Lamoureux"
+        ],
+        "source": "acemap"
+      }
+    ]
+  },
+  {
+    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
+    "query": "nuclear power emissions comparison IPCC",
+    "results": [
+      {
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "NUCLEAR POWER PLANT EMISSIONS.",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "",
+        "url": "http://www.osti.gov/scitech/biblio/4707063-nuclear-power-plant-emissions",
+        "authors": [
+          "U. Janssen"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Radioactive Emissions from Thermal Power Plants and Comparison with Nuclear Energy",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.2307/20634992",
+        "url": "https://doi.org/10.2307/20634992",
+        "authors": [
+          "Kazuto Okamoto"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Comparison of new IPCC AR5 global anthropogenic emissions with RETRO inventory",
+        "abstract": "Since 2007 more than half of the world’s population lives in an urban environment. Beside many other challenges most large cities have problems with their air quality. Thus a growing fraction of humans is exposed to e.g. high ozone and particulate matter concentrations, which are known to be harmful to health. As they are emission hotspots, huge urban agglomerations not only have local effects but globally influence the chemical air composition and with it the climate.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "",
+        "url": "https://meetingorganizer.copernicus.org/EGU2010/EGU2010-3064.pdf",
+        "authors": [
+          "Angelika Heil",
+          "Cornelia Richter",
+          "Martin G. Schultz"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "nuclear power emissions comparison IPCC",
         "title": "Nuclear Power: A Nuclear Solution to CO2 Emissions",
         "abstract": "Global warming is one of the major problems that our planet is facing now-a-days. Climate model projections summarized by the IPCC indicate that average global surface temperature will likely rise a further 1.1 to 6.4 C (2.0 to 11.5 F) during the 21st century. Although most studies focus on the period up to 2100, warming and sea level rise are expected to continue for more than a millennium even if greenhouse gas levels are stabilized. It is increasingly becoming important to understand the factors which contribute to this phenomenon. CO2 is one of the major contributor to this problem as it is a greenhouse gas and is also known to cause depletion of the ozone layer.In this scenario nuclear power (being a non-carbon emitting source) can solve the twin problem of global warming and the energy crisis. In this paper we have tried to analyze the various factors that cause CO2 emissions with respect to the power sector. We have used data from the DOE (Department of energy), U.S.A. We feel that the results we have got are applicable in other countries as well, especially India as it one of the fastest growing economies in the world. As a part of our studies, we have also tried to formulate the dependence of CO2 emissions on the fluctuation in oil prices.",
         "year": "Unknown",
@@ -17,106 +200,58 @@
         "source": "acemap"
       },
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "US could “eliminate CO2 emissions without nuclear power”",
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydropower, solar power and wind power",
+        "abstract": "Fair comparison of the climate impacts from different energy sources can be made only by accounting for the emissions of all relevant greenhouse gases (GHGs) from the full energy chain (FENCH) of the energy sources. FENCH-GHG emission factors of most of the non-fossil fuel energies are lower than those of the fossil fuels that are in the range of 500-1200 g CO2/kW h(e). The improvement rates concerning their CO2-to-energy ratios of OECD countries and some developing countries are discussed, showing the low performance of the latter from 1965-1996. Detailed FENCH-GHG systems analyses are given for nuclear power, hydropower, and wind and solar power. The FENCH-GHG emission factor of nuclear power is 8.9 g CO2-equiv./kW h(e) and applies to light-water nuclear power plants. The main contributions are from milling, conversion of lower-grade ore, enrichment, construction and operation of the power plant, and reprocessing (if relevant). For hydropower an emission factor is reported of 16 g CO2-equiv./kW h(e) for the best investigated flat-area cold climate power plants. The main, biogenic, emission source is the water reservoir. The information on high-altitude alpine reservoir-type and run-of- river hydropower generation is limited. These plants could probably have emission factors in the low range of 5-10 g CO2-equiv./kW h(e). The FENCH CO2-equivalent emission factors of wind power systems are in the order of 15 g CO2-equiv./kW h(e). The main source is associated with the materials for the turbine and for its foundation. Solar PV and solar thermal power are in an intermediate range their current values are 100-200 and 50-80g CO2-equiv./kW h(e), respectively. GHG emissions are mainly from silicon, which dominates the PV market.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1504/ijram.2002.001520",
+        "url": "https://doi.org/10.1504/ijram.2002.001520",
+        "authors": [
+          "Joop F. van de Vate"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Reducing nuclear power station carbon emissions",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/s1471-0846(07)70141-5",
-        "url": "https://doi.org/10.1016/s1471-0846(07)70141-5",
+        "doi": "10.1016/s0015-1882(20)30044-6",
+        "url": "https://doi.org/10.1016/s0015-1882(20)30044-6",
         "authors": [],
         "source": "acemap"
       },
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Analyzing the Impact of Nuclear Power on CO2 Emissions",
-        "abstract": "This study investigates the relationship between the nuclear power proportion and CO2 emissions per capita using the panel dynamic ordinary least square method. The panel datasets consist of 18 countries covering 95% of the global nuclear reactors. The results indicate that a long-term 1% increase in nuclear power led to a 0.26–0.32% decrease in CO2 emissions per capita. Additionally, in France, Germany, and Switzerland they demonstrate the existence of the environmental Kuznets curve—an inverted U-shaped relationship between environmental pollution and income per capita.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.3390/su9081428",
-        "url": "https://doi.org/10.3390/su9081428",
-        "authors": [
-          "S. Lee",
-          "Minkyung Kim",
-          "Jiwoong Lee"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "NUCLEAR POWER AND ITS ROLE IN LIMITING CO2 EMISSIONS",
-        "abstract": "ABSTRACT NUCLEAR POWER AND ITS ROLE IN LIMITING CO2 EMISSIONS. The objective of this study is to analyze the proper role of nuclear power in the long term energy planning by comparing different type of scenarios in terms of CO2 emission reduction, based on the Business-as-Usual (BAU) scenario. For this purpose, a MESSAGE (Model of Energy Supply Systems and their General Environmental impacts) was used to develop energy planning as well as CO2 emission projection. A sensitivity analysis for CO2 reduction rates of 2%, 3%, 4% and 5% have been done. From this sensitivity analysis, it can be concluded that nuclear will be a part of optimum solution under CO2 limitation of at least 3% from BAU condition. The more the environmental standards are tightened and enforced the more and the earlier nuclear power becomes part of the optimum generation mix. Keywords: nuclear energy, CO2 emission ABSTRAK ENERGI NUKLIR DAN PERANNYA DALAM PEMBATASAN EMISI CO2. Tujuan dari studi ini adalah untuk melakukan analisis peran dari energi nuklir dalam perencanaan jangka panjang dengan cara membandingkan beberapa skenario yang berbeda dalam hal pengurangan emisi CO2, didasarkan pada skenario Business-as-Usual (BAU.) Untuk tujuan ini, model MESSAGE (Model of Energy Supply Systems and their General Environmental impacts) digunakan guna menyusun perencanaan energi termasuk proyeksi emisi CO2. Analisis sensitivitas untuk tingkat pengurangan CO2 dibuat dengan besaran 2%, 3%, 4% and 5%. Dari analisis sensitivitas dapat disimpulkan bahwa nuklir akan menjadi bagian dari solusi optimal pada kondisi pembatasan CO2 minimal 3% dari skenario BAU. Semakin ketat dan pemaksaan standar lingkiungan akan semakin awal energi nuklir menjadi bagian dari bauran pembangkitan yang optimal. Kata kunci: energi nuklir, emisi CO2",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.17146/jpen.2012.14.2.1482",
-        "url": "https://doi.org/10.17146/jpen.2012.14.2.1482",
-        "authors": [
-          "Suparman Suparman"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Measuring Impact of Nuclear Power on CO2 Emissions. Case of Poland",
-        "abstract": "This monograph is a part of a project carried out within the Coordinated Research Project of International Atomic Energy Agency co-financed from the funds for science in the years 2016–2019 by the Polish Ministry of Science and Higher Education.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.18778/8142-817-0",
-        "url": "https://doi.org/10.18778/8142-817-0",
-        "authors": [
-          "Mariusz Plich",
-          "Łukasz Konopielko",
-          "David Pupovac"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Understanding the Dynamics of Nuclear Power and the Reduction of CO2 Emissions",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1007/978-3-031-04341-3",
-        "url": "https://doi.org/10.1007/978-3-031-04341-3",
-        "authors": [
-          "Hassan Qudrat‐Ullah"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Nuclear Power Technology With and Without Policies to Limit Fossil Fuel CO2 Emissions",
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Sound emissions from nuclear power plants",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "http://ui.adsabs.harvard.edu/abs/2002AGUFM.U11B..05E/abstract",
+        "url": "https://inis.iaea.org/search/search.aspx?orig_q=RN:15072905",
         "authors": [
-          "J.A. Edmonds",
-          "J.A. Clarke"
+          "H.M. Mueller"
         ],
         "source": "acemap"
       },
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Avoided CO2 emissions in China’s power sector by structural change and efficiency gain: An electric generating unit level analysis",
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "Sustainability assessment of nuclear power: Discourse analysis of IAEA and IPCC frameworks",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/j.resconrec.2025.108520",
-        "url": "https://doi.org/10.1016/j.resconrec.2025.108520",
+        "doi": "10.1016/j.envsci.2015.04.011",
+        "url": "https://doi.org/10.1016/j.envsci.2015.04.011",
         "authors": [
-          "Chao Zhang",
-          "Yujie Dong",
-          "Lijin Zhong",
-          "Haoqi Qian",
-          "Shuangtong Wang",
-          "Gang He"
+          "Aviel Verbruggen",
+          "Erik Laes"
         ],
         "source": "acemap"
       },
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
+        "query": "nuclear power emissions comparison IPCC",
         "title": "Comparison of cost efficiencies of nuclear power and renewable energy generation in mitigating CO2 emissions",
         "abstract": "",
         "year": "Unknown",
@@ -129,599 +264,182 @@
         "source": "acemap"
       },
       {
-        "query": "IAEA nuclear power CO2 emissions avoided statistics",
-        "title": "Positive Externalities of Decarbonization: Quantifying the Full Potential of Avoided Deaths and Displaced Carbon Emissions from Renewable Energy and Nuclear Power",
-        "abstract": "Earlier research in this journal suggests that nuclear power systems have prevented 1.84 million air pollution-related deaths from 1971 to 2009 and could save an additional 7 million deaths by 2050. Building on that work, we adopt a broader lens that looks at renewable energy and nuclear power as well as a greater range of energy pathways. We examine via 10 hypothetical scenarios and two time frames the varying impact of different technology configurations on the full potential of avoided carbon emissions and avoided mortality across China, the European Union, India, and the United States. From 2000 to 2020, we estimate the substitution of fossil fuels by nuclear power has saved as many as 42 million lives. Similarly, substituting fossil fuels with hydropower has saved 42.1 million lives (slightly more than that for nuclear power). Finally, other forms of renewable energy have saved another 38 million lives. We project that from 2021 to 2040, nuclear power could save an additional 46.1 million lives and displace 1198 GtCO2; hydropower could save a further 46.2 million lives and displace 1281.47 GtCO2; substituting fossil fuels with other renewable energy could similarly save an additional 41.2 million lives as well as displace over 1250 GtCO2. We offer a critical thought experiment on just how much potential low-carbon options have to provide positive externalities compared to fossil fuels.",
+        "query": "nuclear power emissions comparison IPCC",
+        "title": "COMPARISON OF ENTERIC METHANE EMISSIONS IN CHINA FOR DIFFERENT IPCC ESTIMATION METHODS AND PRODUCTION SCHEMES",
+        "abstract": "Accurate estimation of methane (CH4) emission (ME) from enteric fermentation in China is essential toestablishing and maintaining a reliable global ME inventory and developing strategies to mitigate such emissions. Based onmodern animal production statistics, i.e., feed quality and quantity data for different feeding systems, enteric methaneemissions (EME) in China during the period of 1990 to 1998 were estimated using Intergovernmental Panel on ClimateChange (IPCC) estimation methods for various production scenarios. The estimation was conducted based on: (1) Revised1996 IPCC Guidelines for National Greenhouse Gas Inventories (Revised 1996 IPCC Guidelines) Tier 1, designated M1;(2) Revised 1996 IPCC Guidelines Tier 2, designated M2; (3) IPCC Good Practices Guidance and Uncertainty Managementin National Greenhouse Gas Inventories (IPCC Good Practices Guidance) without incorporation of treated straw effect onME, designated M3; and (4) IPCC Good Practices Guidance with incorporation of treated straw effect on ME, designatedM4. The results revealed variability in ME among the four estimation methods and production conditions. Specifically, theestimated ME values in China for the peak emission year (1996) were 8,614; 11,039; 10,533; and 11,469 Gg, respectively,with M1, M2, M3, and M4, i.e., up to 33% difference from one method to another. These ME values for 1996 were 31%, 28%,27%, and 20% higher than their respective values for 1990, the base year for evaluating future emission changes. Yellow cattlecontribute more than 50% of EME in China. The methane emission factor was found to be 26% to 30% lower for yellow cattlefed treated residues than for those fed non-treated residues due to improved digestibility. This reduced ME factor translatedinto an estimated ME reduction of 935.7 Gg in 1996 and 1,253.5 Gg in 1998 for yellow cattle. To further improve the validityof EME estimation, it is suggested that certain quality control measures be taken, such as adjusting emission factors to reflectthe changing livestock production systems and management practices, measuring ME factors in the field, and collecting andintegrating current animal production statistics.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1021/acs.est.1c00140",
-        "url": "https://doi.org/10.1021/acs.est.1c00140",
+        "doi": "10.13031/2013.17802",
+        "url": "https://doi.org/10.13031/2013.17802",
         "authors": [
-          "Benjamin K. Sovacool",
-          "Chukwuka G. Monyei"
+          "Hongmin Dong",
+          "Xiuxiang Tao",
+          "H. Xin",
+          "Qun He"
         ],
         "source": "acemap"
       }
     ]
   },
   {
-    "task_id": "The role of nuclear energy in climate change mitigation strategies, including its current contribution to global decarbonization efforts. Research statistics from IAEA, IEA, and IPCC on how much CO2 emissions nuclear power currently avoids annually worldwide. Analyze nuclear's potential for providing baseload power to complement intermittent renewables like solar and wind in electricity grid decarbonization. Examine national and international climate policies that include nuclear energy as part of carbon reduction strategies, and evaluate nuclear's capacity factor and reliability compared to other low-carbon energy sources.",
-    "query": "IEA nuclear energy decarbonization report 2024",
+    "task_id": "Comparison of greenhouse gas emissions between nuclear power and other major energy sources (coal, natural gas, solar, wind, hydro). Research quantitative emissions data from authoritative sources including IPCC reports, IEA studies, and peer-reviewed literature. Include direct operational emissions and full lifecycle emissions (construction, fuel cycle, decommissioning). Focus on grams of CO2 equivalent per kWh comparisons. Also research how nuclear power compares in terms of reliability, capacity factors, and grid integration capabilities that affect overall climate impact.",
+    "query": "CO2 per kWh nuclear renewable fossil fuels",
     "results": [
       {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "IEA Wind Energy Annual Report 2000",
-        "abstract": "viewed as a source of reliable technical and economic information. The World Bank has approached the Executive Committee for Wind Energy R & D, through the IEA Renewable Energy Working Party, to assist in the expansion of wind deployment. In addition, IEA is moving from R & D programs to include tracking of implementation incentives offered by its members.",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Fossil fuels, nuclear energy and renewable energy",
+        "abstract": "For the generation of energy sources, natural resources are used by man. The rapid growth of human populations, related to the phenomena of globalization and industrialization, has significantly increased the increase in the consumption of world energy sources. These energy sources can be renewable when the resources used are inexhaustible due to their constant renewal in the environment and non-renewable due to their slow process of formation in nature, thus becoming finite. Climate change is caused by increased emissions of greenhouse gases, mainly CO2, coming mainly from the burning of fossil fuels. However, new energy sources have been sought as a way not only to diversify the energy matrix of countries around the globe but also to develop alternatives that seek a reduction of impacts, especially of an environmental nature. While renewable energy sources such as solar, wind, and wave energy can provide eco-friendly alternatives to fossil fuels and nuclear power, the intermittent nature of these energy sources requires an energy storage medium that allows for a continuous supply of energy. The work developed emphasizes that regardless of the type of generating source, whether renewable or non-renewable, there is no zero impact on the generation of energy. Knowledge of the low energy efficiency of renewable sources, investments, and the intermittency of schemes that is a characteristic of many of them, has shown that renewable energy sources will almost always be complementary to non-renewable ones.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.2172/876554",
-        "url": "https://doi.org/10.2172/876554",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "IEA report – \"Tracking Clean Energy Progress 2013\"",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1108/meq.2013.08324eaa.014",
-        "url": "https://doi.org/10.1108/meq.2013.08324eaa.014",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "The Role of Nuclear in the Decarbonization of Energy System",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1299/jsmemecj.2020.w08101",
-        "url": "https://doi.org/10.1299/jsmemecj.2020.w08101",
+        "doi": "10.56238/alookdevelopv1-146",
+        "url": "https://doi.org/10.56238/alookdevelopv1-146",
         "authors": [
-          "Ryōichi Komiyama"
+          "Jessica Tamyris de Freitas Cavalcanti",
+          "Júlia Guedes de Lima",
+          "Myrella Rayane do Nascimento Melo",
+          "Eliana Cristina Barreto Monteiro",
+          "Galba Maria de Campos‐Takaki"
         ],
         "source": "acemap"
       },
       {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Nuclear energy and its role in decarbonization: Scenarios and perspectives",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "\"An Engineering Elective on Energy Sustainability: Renewable, Nuclear, and Fossil Fuels\"",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1016/b978-0-443-13607-8.00009-2",
-        "url": "https://doi.org/10.1016/b978-0-443-13607-8.00009-2",
+        "doi": "10.18260/1-2-1153-51133",
+        "url": "https://doi.org/10.18260/1-2-1153-51133",
         "authors": [
-          "Joel Augusto Moura Porto",
-          "Lander de Jesus Alves",
-          "Fábio Carvalho Nunes",
-          "Eduardo Gross",
-          "Hector Hugo Silva Medrado",
-          "Josilene da Silva Rocha",
-          "Marcelo Machado Viana",
-          "Ana Paula de Carvalho Teixeira",
-          "Majeti Narasimha Vara Prasad"
+          "Shih-Liang Wang"
         ],
         "source": "acemap"
       },
       {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Consensus Report: Accelerating Decarbonization of the U.S. Energy System",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "CO2-to-Fuels Renewable Gasoline and Jet Fuel Can Soon Be Price Competitive with Fossil Fuels",
+        "abstract": "",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.1016/j.joule.2020.01.002",
+        "url": "https://doi.org/10.1016/j.joule.2020.01.002",
+        "authors": [
+          "R. A. McGinnis"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Fossil fuels, renewable and nuclear options to meet the energy and the environmental challenges",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://trid.trb.org/view/1855151",
+        "url": "https://inis.iaea.org/Search/search.aspx?orig_q=RN:27068056",
         "authors": [
-          "Chris Hendrickson"
+          "P. Bacher",
+          "Jean-Eudes Moncomble"
         ],
         "source": "acemap"
       },
       {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Nuclear Energy as a Pathway to Decarbonization for Modern Steelmaking Plants",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Do Natural Disasters, Fossil Fuels, and Renewable Energy Affect CO2 Emissions and the Ecological Footprint?",
+        "abstract": "Climate change is a global concern driven by increasing pollution through rising CO2 emissions and growing ecological footprint from human activities. This research investigates how environmental quality (proxied by CO2 emissions and ecological footprint) in Indonesia is affected by multiple factors, including natural disasters, fossil fuels, renewable energy consumption, economic growth, and capital formation from 1965 to 2022. The analysis employs the Autoregressive Distributed Lag (ARDL) model, with robustness ensured using Dynamic Ordinary Least Squares (DOLS), followed by Granger causality tests to examine dynamic relationships between variables. The findings show that natural disasters, fossil fuel consumption, and economic growth contribute to increasing CO2 emissions in the long run, while renewable energy consumption helps reduce them. Natural disasters exhibit a negative but insignificant impact on the ecological footprint. Economic growth increases the ecological footprint, whereas capital formation helps reduce it in the long run. In the short run, fossil fuels are found to increase CO2 emissions, while renewable energy reduces them. Natural disasters are found to increase the ecological footprint. Additionally, the Granger causality test confirms a unidirectional relationship from both natural disasters and economic growth to environmental quality. This study recommends that Indonesia implement integrated strategies focused on accelerating green energy adoption and enhancing disaster resilience to achieve environmental quality.",
+        "year": "Unknown",
+        "citations": 0,
+        "doi": "10.60084/eje.v3i1.285",
+        "url": "https://doi.org/10.60084/eje.v3i1.285",
+        "authors": [
+          "Ghalieb Mutig Idroes",
+          "Iin Shabrina Hilal",
+          "Iffah Hafizah",
+          "Yoshihiro Hamaguchi",
+          "Cécile De Bruyn",
+          "Maulidar Agustina",
+          "Andreea Pernici",
+          "Stelian Stancu"
+        ],
+        "source": "acemap"
+      },
+      {
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Renewable Energies Increase, Fossil Fuels Replacement and Nuclear Option Assessment in the Portuguese Energy Mix",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.33313/387/023",
-        "url": "https://doi.org/10.33313/387/023",
+        "doi": "10.24084/repqj10.441",
+        "url": "https://doi.org/10.24084/repqj10.441",
         "authors": [
-          "Hon Loong Lam",
-          "N. Tannyan",
-          "J. Wikston"
+          "Perla Flores",
+          "J.C.O. Matias",
+          "Carlos M. P. Cabrita",
+          "V.M.F. Mendes",
+          "João P. S. Catalào"
         ],
         "source": "acemap"
       },
       {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Nuclear power and renewable energy are both associated with national decarbonization",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1038/s41560-021-00964-w",
-        "url": "https://doi.org/10.1038/s41560-021-00964-w",
-        "authors": [
-          "Harrison Fell",
-          "Alexander Q. Gilbert",
-          "Jesse Jenkins",
-          "Matto Mildenberger"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Future Pathways to U.S. Decarbonization Through Nuclear and Other Energy Systems",
-        "abstract": "This thesis examines the hurdles involved in converting the U.S. energy system to one that emits little or no carbon dioxide into the atmosphere. The first part of this thesis looks at nuclear energy in the U.S., while the second part examines the pursuit of decarbonization through decentralized micro-grids.The thesis begins by examining the possibility of a U.S. domestic market for factory-manufactured small modular nuclear reactors (SMRs) being developed through the use of hybrid water-energy systems. This work found that the use of the proposed hybrid system will not likely lead to the mass market needed to facilitate the mass manufacturing of SMRs. On the electricity side, these hybrid systems powered by SMRs are not cost competitive in the U.S. against similar low carbon technologies like natural gas equipped with carbon capture and sequestration (NGCCS). On the water side, I conclude that the need for water desalination over the next several decades in the U.S. will not be large enough to support the mass SMR market I was searching for. However, there might exist substantial markets in arid countries where natural gas prices exceed 12 $/mscf and where there is a strong desire to adopt nuclear power.Chapter 3 investigates the perceptions of nuclear power as supported by existing theories on differing nuclear perspectives. Our survey participants held significantly less favorable views about nuclear energy if they cited Chernobyl and Fukushima as noteworthy events that shaped their perception. I found that Chernobyl has the most negative impact on participants, even for those who were not alive for the event. There was also a significant increase in negative views of nuclear energy in participants who would have been between the ages of 20 to 30 years old during Chernobyl, but these results do not extend to other events like Fukushima. The survey results also suggested that participants who are both non-white and non-male held significantly less favorable views compared to white males.Chapter 4 examines the trade-offs between decentralization and decarbonization in microgrid planning. A trade-off curve is produced by using a previously developed mixed-integer program (DER-CAM) in a multiobjective programming framework. The results include a range of microgrid designs with different technology mixes or typologies. As the weight on greenhouse gas emissions increases the associated costs rise; at the design that minimizes emissions, the levelized cost of energy (LCOE) of the micro-grid rises to approximately 7x the current cost of electricity in southern California. Changes in natural gas (NG) prices do not change the micro-grid’s typology, but rather forces a quicker transition to low-carbon typologies. Every micro-grid developed in this chapter contained some amount of dispatchable distributed energy resource (DER), leading to an examination as to why a PV + storage only micro-grid would be unlikely. With the apparent need for micro-grids to contain some amount of distributable generation, a relatively small social cost of carbon of $50 per ton of CO2 ensures that every micro-grid would consist of primarily low-no emission DERs.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1184/r1/14666193.v1",
-        "url": "https://kilthub.cmu.edu/articles/thesis/Future_Pathways_to_U_S_Decarbonization_Through_Nuclear_and_Other_Energy_Systems/14666193",
-        "authors": [
-          "Michael Rath"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "New Report on Deep Decarbonization: Implications for US Energy Systems",
-        "abstract": "A recently released report by the National Academies of Sciences, Engineering and Medicine (NASEM) has found that deep decarbonization of the US energy system, leading to net‐zero greenhouse gas emissions by 2050, is feasible and within the historic range of energy system spending as a percent of gross domestic product. A key aspect of the work of the NASEM Committee on Accelerating Decarbonization in the United States: Technological, Policy, and Societal Dimensions was to extend its advice beyond technical and economic decarbonization implications, into the policy and societal considerations required for an effective and just transition to a sustainable energy system. The committee's study produced a technology blueprint for the first 10 years of a transition to deep decarbonization, from 2021–2030, which is aligned with several independent analyses addressing the same problem. The committee presented societal goals that are worthy for achieving a decarbonization transition and a recommended policy framework for achieving technical and societal goals. This article summarizes the important conclusions for readers of this journal.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1002/gas.22221",
-        "url": "https://doi.org/10.1002/gas.22221",
-        "authors": [
-          "Elizabeth L. Zeitler"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IEA nuclear energy decarbonization report 2024",
-        "title": "Proceedings of the 16th IEA ES TCP International Conference on Energy Storage (ENERSTOCK 2024)",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Neopolitics (New energy order politics) of Fossil, Renewable and Nuclear Fuels - Turkey’s Position and Alternative Futures",
         "abstract": "",
         "year": "Unknown",
         "citations": 0,
         "doi": "",
-        "url": "https://hal.science/hal-04918226",
+        "url": "https://dergipark.org.tr/tr/pub/uidergisi/issue/39263/462370",
         "authors": [
-          "Frédéric Kuznik"
-        ],
-        "source": "acemap"
-      }
-    ]
-  },
-  {
-    "task_id": "The role of nuclear energy in climate change mitigation strategies, including its current contribution to global decarbonization efforts. Research statistics from IAEA, IEA, and IPCC on how much CO2 emissions nuclear power currently avoids annually worldwide. Analyze nuclear's potential for providing baseload power to complement intermittent renewables like solar and wind in electricity grid decarbonization. Examine national and international climate policies that include nuclear energy as part of carbon reduction strategies, and evaluate nuclear's capacity factor and reliability compared to other low-carbon energy sources.",
-    "query": "IPCC nuclear energy climate mitigation statistics",
-    "results": [
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "IPCC Special Report on Renewable Energy Sources and Climate Change Mitigation",
-        "abstract": "IPCC Special Report on Renewable Energy Sources and Climate Change Mitigation - Summary for Policy Makers / O. Edenhofer et al., eds. Cambridge University Press, May 2011. Abstract (RAEL/LBL) : The Working Group III Special Report on Renewable Energy Sources and Climate Change Mitigation (SRREN) presents an assessment of the literature on the scientific, technological, environmental, economic and social aspects of the contribution of six renewable energy (RE) sources to the mitigation of...",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "http://rechercheisidore.fr/search/resource/?uri=10670/1.wyvfiq",
-        "authors": [
-          "Danièle Revel"
+          "Mert BİLGİN"
         ],
         "source": "acemap"
       },
       {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Contribution of Geothermal Energy to Climate Change Mitigation: the IPCC Renewable Energy Report",
-        "abstract": "A special report on renewable energy has been commissioned by the IPCC (Inter-Governmental Panel on Climate Change) to provide guidance on future mitigation options for climate change through reducing CO2 emissions. To achieve this, a better understanding is required of potential global and regional geothermal resources. These range from convecting high-grade hydrothermal to conduction-dominated stored thermal energy, and are hosted in volcanic, sedimentary or crystalline crustal rocks. Important issues affecting future utilisation include: energy security and sustainability, status of current applications, future technology advances, cost predictions, projected deployment rates, energy integration and infrastructure requirements, environmental risks and benefits, technology transfer, and policy options. Increased geothermal energy development is well suited to climate change mitigation because it provides base-load power and heating (or cooling) from a large energy resource that is well-distributed globally. It has a good track record of sustainable production using existing technology, applicable to both developed and developing countries, and for generating cost-effective and highly-dispatchable power. Geothermally-heated fluids are available for space heating and cooling and a variety of other industrial applications, ranging from small-scale to district-wide installations. In addition, geothermal heat pumps (GHPs) are deployed worldwide, enabling substantive gains in heating and cooling efficiency of buildings. Relative to other renewable energy technologies, geothermal resources are utilised at high average availability factors (typically > 90% for electricity generation). Overall, geothermal has been shown to be socially acceptable with some positive social and environmental impacts, including a relatively small land-use footprint. Adverse impacts are manageable using best practice reservoir management practices, including water resource conservation. Wider deployment of existing technology and application of new technologies under demonstration will significantly increase the use of geothermal resources at all temperatures. Enhanced or Engineered Geothermal Systems (EGS) offer the potential for global scale utilization when and where it is needed. For this potential to be realised, research and field testing at commercial scale is required with multi-year government and private support and investment. The benefits will include mitigation of climate change through provision of CO2 offsets at competitive costs, and improved energy security.",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Energy and Technology Options for CO2 Emission Reduction. Towards Symbiotic Use of Nuclear Energy and Fossil Fuels.",
+        "abstract": "The potential of CO2 emission reduction is analyzed by the MARKAL model for the Japanese energy system in the time horizon 1985-2030, taking into account such reduction measures as energy conservation, fuel switching, and technology substitution. Among them, nuclear energy utilization is found to have a large CO2 reduction potential, i.e. from 10% reduction of the total emission in 1990 to the levels of 16%, 21% and 42% in years 2000, 2010 and 2030, respectively, through electric power generation and process heat application.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "",
-        "url": "https://www.geothermal-energy.org/pdf/IGAstandard/WGC/2010/0225.pdf",
+        "doi": "10.3327/jaesj.33.1131",
+        "url": "https://doi.org/10.3327/jaesj.33.1131",
         "authors": [
-          "Chris Bromley",
-          "Mike Mongillo",
-          "Gerardo Hiriart",
-          "Barry Goldstein",
-          "Ruggero Bertani",
-          "Ernst Huenges",
-          "J.W. Tester",
-          "Hirofumi Muraoka",
-          "Vladimir Zui"
+          "S. Yasukawa",
+          "Osamu Sato",
+          "Yoshihiro Tadokoro",
+          "Takeyoshi KAJIYAMA",
+          "Hajimu SHIRAKI",
+          "Masahide KONTA",
+          "Yoshinori SHIMOYAMADA"
         ],
         "source": "acemap"
       },
       {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Renewable Energy and Climate Change Mitigation: An Overview of the IPCC Special Report",
-        "abstract": "",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Comparing the Substitution of Nuclear Energy or Renewable Energy for Fossil Fuels between the United States and Africa",
+        "abstract": "This study explores the differences in energy consumption between the highly economically developed United States and economically underdeveloped Africa. This study conducted the parameter estimation and equilibrium analysis of a Lotka–Volterra model to investigate the short-term and long-term relations of different types of energy, respectively. The parameter estimation results show that nuclear energy consumption increases the consumption of fossil fuels in the United States but decreases fossil fuel consumption in Africa. This implies that Africa can replace fossil fuels with nuclear energy in the short run. Given the current state of energy consumption, the results of the equilibrium analysis indicate that the United States’ nuclear and fossil fuel consumption will reach a stable long-term equilibrium. However, Africa will experience significant fluctuations in nuclear and fossil fuel consumption, and both nuclear and fossil fuel consumption will eventually be depleted. The highly economically developed United States arranges energy consumption in an environmentally friendly way and reshapes economies to achieve sustainability, so its long-term energy consumption is more stable than economically underdeveloped Africa. Accuracy analysis results show that the nuclear or renewable energy consumption predicted by the Lotka–Volterra model is more accurate than that of a Bass model since the Lotka–Volterra model considers energy interactions.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "10.1007/978-1-4614-9221-4_4",
-        "url": "https://doi.org/10.1007/978-1-4614-9221-4_4",
+        "doi": "10.3390/su151310076",
+        "url": "https://doi.org/10.3390/su151310076",
         "authors": [
-          "Ralph Sims"
+          "Bi-Huei Tsai",
+          "Yao-Min Huang"
         ],
         "source": "acemap"
       },
       {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Warning to navigators: IPCC report on climate change mitigation",
-        "abstract": "*Despite the proliferation of climate change plans and strategies, global emissions have accelerated over the last\r\ndecade.\r\n*If the present trends continue, temperatures will have risen between 3.7 and 4.3oC by the end of the century.\r\n*To stabilise temperatures at 2oC, emissions must be reduced between 40 and 70% by 2050 and have dropped to almost zero in 2100. This will imply a radical change at technological and institutional level; it will also mean an\r\nimportant transformation in lifestyles.\r\n*Fortunately, there are several stabilising options which are technically viable and economically assumable.\r\n*Nevertheless, it is important that investments are materialised in the coming decades (2010-2030) to avoid having to use technologies to capture emissions in the atmosphere (negative emissions) that would entail higher costs and greater risks.\r\n*International cooperation and the search for fair agreements are essential for making progress with and maintaining mitigation efforts.",
+        "query": "CO2 per kWh nuclear renewable fossil fuels",
+        "title": "Replacing Fossil Fuels and Nuclear Power with Renewable Energy: Utopia or Valid Option? A Swiss Case Study of Bioenergy",
+        "abstract": "The transition towards a reliable, sustainable, low-carbon energy system is a major challenge of the 21st century. Due to the lower energy density of many renewable energy sources, a future system is expected to be more decentralized, leading to significant changes at the regional scale. This study analyzes the feasibility of the energy transition in the Swiss canton of Aargau as an illustrative example and explores different strategies to satisfy the local demand for electricity, heat, and fuel by 2035. In particular, we assess the potential contribution of biomass. Four scenarios demonstrate what energy demand proportion could be covered by bioenergy if different priorities were given to the provision of heat, electricity, and fuel. The impact of improved conversion technologies is also considered. The results show that the sustainably available renewable energy sources in canton Aargau will probably not be sufficient to cover its forecasted energy demand in 2035, neither with present nor future biomass conversion technologies. At best, 74% of the energy demand could be met by renewables. Biomass can increase the degree of autarky by a maximum of 13%. Depending on the scenario, at least 26–43% (2500–5700 GWh) of total energy demand is lacking, particularly for mobility purposes.",
         "year": "Unknown",
         "citations": 0,
-        "doi": "",
-        "url": "https://addi.ehu.es/bitstream/10810/14191/1/PB2014_02_Special_issue.pdf",
+        "doi": "10.3390/en13082051",
+        "url": "https://doi.org/10.3390/en13082051",
         "authors": [
-          "Mikel González-Eguino and Iñaki Arto"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Role of nuclear energy in mitigation of climate change",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://cris.vtt.fi/en/publications/role-of-nuclear-energy-in-mitigation-of-climate-change",
-        "authors": [
-          "Timo Vanttola",
-          "Seppo Vuori"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "IPCC Climate Change 2013: Mitigation of Climate Change - Key Findings and Lessons Learned",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "http://ui.adsabs.harvard.edu/abs/2014EGUGA..1617002S/abstract",
-        "authors": [
-          "Youba Sokona"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Climate Change Mitigation in Agriculture Statistics",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://data.gov.uk/dataset/4d25b8ab-ba74-49a9-907e-536187b29df9/climate-change-mitigation-in-agriculture-statistics",
-        "authors": [
-          "Rural Affairs"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Statistics for climate change mitigation policymaking",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.18356/9789211069877c006",
-        "url": "https://doi.org/10.18356/9789211069877c006",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "Climate Change Mitigation in the Himalayas: IPCC Expertise and Science Policy",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://works.bepress.com/costanza-rampini/21/",
-        "authors": [
-          "Costanza Rampini"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "IPCC nuclear energy climate mitigation statistics",
-        "title": "The Mitigation of Climate Change: Findings of IPCC Working Group III",
-        "abstract": "Click to increase image sizeClick to decrease image size Notes Unless otherwise stated, all citations taken from Metz, B., Davidson, O. R., Bosch, P.R., Dave, R. & Meyer, L. A. (eds) IPCC, 2007. Climate Change 2007: Mitigation. Contribution of Working Group III to the Fourth Assessment Report of IPCC (Cambridge: Cambridge University Press, 2007). 1. Ogunlade Davidson at launch of Working Group III Report, 4 May 2007.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1080/14747730701587397",
-        "url": "https://doi.org/10.1080/14747730701587397",
-        "authors": [
-          "Calum Miller"
-        ],
-        "source": "acemap"
-      }
-    ]
-  },
-  {
-    "task_id": "The role of nuclear energy in climate change mitigation strategies, including its current contribution to global decarbonization efforts. Research statistics from IAEA, IEA, and IPCC on how much CO2 emissions nuclear power currently avoids annually worldwide. Analyze nuclear's potential for providing baseload power to complement intermittent renewables like solar and wind in electricity grid decarbonization. Examine national and international climate policies that include nuclear energy as part of carbon reduction strategies, and evaluate nuclear's capacity factor and reliability compared to other low-carbon energy sources.",
-    "query": "nuclear capacity factor vs renewable energy sources",
-    "results": [
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Renewable vs. nuclear energy",
-        "abstract": "Diese Arbeit beschaftigt sich mit dem Thema der erneubaren sowie nuklearen Energiequellen und versucht, ein besseres Verstandnis zu vermitteln sowohl fur die Bedeutung genug Energie zu haben, als auch beim zukunftigen Energiebedarf nachhaltig zu sein. Neben dem anhaltenden Wachstum der Weltbevolkerung erlebt die Erde einen Klimawandel, der als globale Erwarmung beschrieben wird. Dieser Prozess fuhrt zu der Tatsache, dass die Bevolkerung nicht mehr in der Lage ist sich vollstandig auf erneubare Quellen zu verlassen, die stark von Wetter und naturlichen Ressourcen beeinflusst werden. Daher sollte die Gesellschaft eine Neuorientierung vollziehen und die nukleare Energie als eine gute Alternative fur eine nachhaltige Zukunft wahrnehmen. Die nukleare Energie ist ein sehr stark diskutiertes und sogar umstrittenes Thema, die zwei Parteien hat namlich Gegner und Befurworter. \r\nEgal ob man zu der einen oder zu der anderen Mannschaft gehort, sollte man die Situation in einer objektiven Weise analysieren, sich nicht von anderen beeinflussen lassen und fur eine bessere Perspektive kampfen, die weniger CO2-Emissionen verspricht und genug Energie fur die Aufrechterhaltung einer Zukunft, die immer mehr Energie verlangt, ermoglicht.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://othes.univie.ac.at/28109/",
-        "authors": [
-          "Andreea Solomon"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Renewable Energy Capacity Factor Maps (2021)",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://researchdata.edu.au/renewable-energy-capacity-maps-2021/1680981",
-        "authors": [
-          "S.D.C. Walsh",
-          "Laura Easton",
-          "Andrew Feitz",
-          "M. Woods"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "The Capacity Value Of Renewable Energy Sources",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "www.iaee.org/proceedings/article/7387",
-        "authors": [
-          "Alberto Lamadrid Steffen Jenner"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Capacity Allocation of Renewable Energy Sources Considering Complementarity",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.17775/cseejpes.2021.06550",
-        "url": "https://doi.org/10.17775/cseejpes.2021.06550",
-        "authors": [],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Capacity Investment in Renewable and Conventional Energy Sources",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://dukespace.lib.duke.edu/dspace/handle/10161/12898",
-        "authors": [
-          "Şafak Yücel"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Desalination Powered by Renewable and Nuclear Energy Sources",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1201/9781003336914-17",
-        "url": "https://doi.org/10.1201/9781003336914-17",
-        "authors": [
-          "Veera Gnaneswar Gude"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Nuclear energy: a reassessment. [Monograph; other sources vs nuclear]",
-        "abstract": "This edited transcript of a televised American Enterprise Institute Public Poicy Forum explores the role of nuclear technology in energy production in the US today. A panel made up of Senator James A. McClure, Ralph Nader, Representative Morris K. Udall, and Dr. Carl Walske and moderated by John Charles Daly examines the lessons learned from the accident at the Three Mile Island Nuclear Plant and the public attitudes toward nuclear energy, particularly in light of this accident. The experts discuss alternative energy sources, such as coal, gas, biomass, and solar power as well as conservation and more efficient use of present facilities. The issues of nuclear waste disposal and transport and US commitments to countries not self-sufficient in their energy needs are also explored.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://www.osti.gov/scitech/biblio/6372065-nuclear-energy-reassessment-monograph-other-sources-vs-nuclear",
-        "authors": [
-          "John A. McClure",
-          "Ralph Nader",
-          "M.K. Udall",
-          "C. Walske"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "Optimal renewable-energy promotion: Capacity subsidies vs. generation subsidies",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1016/j.reseneeco.2016.06.002",
-        "url": "https://doi.org/10.1016/j.reseneeco.2016.06.002",
-        "authors": [
-          "Mark Andor",
-          "Achim Voß"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "THE IMPACTS OF RENEWABLE ENERGY POLICIES ON RENEWABLE ENERGY SOURCES FOR ELECTRICITY GENERATING CAPACITY",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://repository.library.georgetown.edu/handle/10822/558602",
-        "authors": [
-          "Bryan Bonsuk Koo"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear capacity factor vs renewable energy sources",
-        "title": "FUEL CELLS VS. RENEWABLE ENERGY SOURCES AS DISTRIBUTED GENERATION",
-        "abstract": "DGs are small scale generation sources which are located as near as possible at center of loads.Nowadays, these DGs are becoming more prominent in distribution systems due to the incremental demands of electrical energy and to reduce the power disruption in the power system network.Fuel cells (FCs) are new types of DGs which have numerous benefits that make them superior compared to the other types of DGs.This paper presents a deep review of FCs technology, (definition, structure and theory of work).A general description of FC types is explained, indicating advantages and disadvantages of each type and pointing out their principal use.Finally, economics of producing electricity from different types of FCs, wind and solar energy are examined under different conditions. ‫ٌتم‬",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.21608/erjm.2015.66769",
-        "url": "https://doi.org/10.21608/erjm.2015.66769",
-        "authors": [
-          "Heba A. Khattab",
-          "M.F Awad-alla",
-          "Shady Allam",
-          "S. M. Farrag"
-        ],
-        "source": "acemap"
-      }
-    ]
-  },
-  {
-    "task_id": "The role of nuclear energy in climate change mitigation strategies, including its current contribution to global decarbonization efforts. Research statistics from IAEA, IEA, and IPCC on how much CO2 emissions nuclear power currently avoids annually worldwide. Analyze nuclear's potential for providing baseload power to complement intermittent renewables like solar and wind in electricity grid decarbonization. Examine national and international climate policies that include nuclear energy as part of carbon reduction strategies, and evaluate nuclear's capacity factor and reliability compared to other low-carbon energy sources.",
-    "query": "nuclear energy in Paris Agreement climate policies",
-    "results": [
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Climate Change Policies after the 2015 Paris Agreement",
-        "abstract": "Le rapport Stern de 2006 reflète l’urgence de la lutte contre le changement climatique. D’après l’Accord de Paris de 2015, 55 pays représentant 55 % des émissions de gaz à effet de serre prendront l’initiative pour traiter le problème du changement climatique. Cet accord est peut-être la meilleure chance d’inverser le changement climatique. L’Accord de Paris de 2015 met en œuvre des mesures différenciées, équitables, durables et légalement contraignantes pour atteindre ces objectifs. On peut espérer que cet accord est bien plus avancé que son prédécesseur, le Protocole de Kyoto. Ce dernier, entré en vigueur à partir de 2005, appelait la communauté internationale à réduire les émissions de gaz à effet de serre de 5,25 % par rapport à 1990. Cependant, un traité significatif devrait viser une réduction des émissions de 60 %. Cela signifie que les États-Unis, qui représentent environ 20 % des émissions globales de gaz à effet de serre, doivent jouer pleinement un rôle de leader pour valider cet accord.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.3917/eufor.380.0013",
-        "url": "https://doi.org/10.3917/eufor.380.0013",
-        "authors": [
-          "Frederick D. Gordon"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Linking heterogeneous climate policies (consistent with the Paris Agreement)",
-        "abstract": "The Paris Agreement to the United Nations Framework Convention on Climate Change has achieved one of two key necessary conditions for ultimate success – a broad base of participation among the countries of the world. But another key necessary condition has yet to be achieved – adequate collective ambition of the individual nationally determined contributions. How can the climate negotiators provide a structure that will include incentives to increase ambition over time? An important part of the answer can be international linkage of regional, national, and sub-national policies, that is, formal recognition of emission reductions undertaken in another jurisdiction for the purpose of meeting a Party’s own mitigation objectives. A central challenge is how to facilitate such linkage in the context of the very great heterogeneity that characterizes climate policies along five dimensions – type of policy instrument; level of government jurisdiction; status of that jurisdiction under the Paris Agreement; nature of the policy instrument’s target; and the nature along several dimensions of each Party’s Nationally Determined Contribution. We consider such heterogeneity among policies, and identify which linkages of various combinations of characteristics are feasible; of these, which are most promising; and what accounting mechanisms would make the operation of respective linkages consistent with the Paris Agreement.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.22004/ag.econ.266282",
-        "url": "https://doi.org/10.22004/ag.econ.266282",
-        "authors": [
-          "Michael Mehling",
-          "Gilbert E. Metcalf",
-          "Robert N. Stavins"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Linking Heterogeneous Climate Policies (Consistent with the Paris Agreement)",
-        "abstract": "The Paris Agreement has achieved one of two key necessary conditions for ultimate success – a broad base of participation among the countries of the world. But another key necessary condition has yet to be achieved – adequate collective ambition of the individual nationally determined contributions. How can the climate negotiators provide a structure that will include incentives to increase ambition over time? An important part of the answer can be international linkage of regional, national, and sub‐ national policies, that is, formal recognition of emission reductions undertaken in another jurisdiction for the purpose of meeting a Party's own mitigation objectives. A central challenge is how to facilitate such linkage in the context of the very great heterogeneity that characterizes climate policies along five dimensions – type of policy instrument; level of government jurisdiction; status of that jurisdiction under the Paris Agreement; nature of the policy instrument's target; and the nature along several dimensions of each Party's Nationally Determined Contribution. We consider such heterogeneity among policies, and identify which linkages of various combinations of characteristics are feasible; of these, which are most promising; and what accounting mechanisms would make the operation of respective linkages consistent with the Paris Agreement.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2139/ssrn.3040676",
-        "url": "https://doi.org/10.2139/ssrn.3040676",
-        "authors": [
-          "Michael Mehling",
-          "Gilbert E. Metcalf",
-          "Robert N. Stavins"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Linking Heterogeneous Climate Policies (Consistent with the Paris Agreement)",
-        "abstract": "The Paris Agreement has achieved one of two key necessary conditions for ultimate success – a broad base of participation among the countries of the world. But another key necessary condition has yet to be achieved – adequate collective ambition of the individual nationally determined contributions. How can the climate negotiators provide a structure that will include incentives to increase ambition over time? An important part of the answer can be international linkage of regional, national, and subnational policies, that is, formal recognition of emission reductions undertaken in another jurisdiction for the purpose of meeting a Party’s own mitigation objectives. A central challenge is how to facilitate such linkage in the context of the very great heterogeneity that characterizes climate policies along five dimensions – type of policy instrument; level of government jurisdiction; status of that jurisdiction under the Paris Agreement; nature of the policy instrument’s target; and the nature along several dimensions of each Party’s Nationally Determined Contribution. We consider such heterogeneity among policies, and identify which linkages of various combinations of characteristics are feasible; of these, which are most promising; and what accounting mechanisms would make the operation of respective linkages consistent with the Paris Agreement.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2139/ssrn.3089658",
-        "url": "https://doi.org/10.2139/ssrn.3089658",
-        "authors": [
-          "Michael Mehling",
-          "Gilbert E. Metcalf",
-          "Robert N. Stavins"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Linking Heterogeneous Climate Policies (Consistent with the Paris Agreement)",
-        "abstract": "The Paris Agreement has achieved one of two key necessary conditions for ultimate success – a broad base of participation among the countries of the world. But another key necessary condition has yet to be achieved – adequate collective ambition of the individual nationally determined contributions. How can the climate negotiators provide a structure that will include incentives to increase ambition over time? An important part of the answer can be international linkage of regional, national, and subnational policies, that is, formal recognition of emission reductions undertaken in another jurisdiction for the purpose of meeting a Party’s own mitigation objectives. A central challenge is how to facilitate such linkage in the context of the very great heterogeneity that characterizes climate policies along five dimensions – type of policy instrument; level of government jurisdiction; status of that jurisdiction under the Paris Agreement; nature of the policy instrument’s target; and the nature along several dimensions of each Party’s Nationally Determined Contribution. We consider such heterogeneity among policies, and identify which linkages of various combinations of characteristics are feasible; of these, which are most promising; and what accounting mechanisms would make the operation of respective linkages consistent with the Paris Agreement.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1142/9789811292415_0024",
-        "url": "https://doi.org/10.1142/9789811292415_0024",
-        "authors": [
-          "Michael Mehling",
-          "Gilbert E. Metcalf",
-          "Robert N. Stavins"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Linking Heterogeneous Climate Policies (Consistent with the Paris Agreement)",
-        "abstract": "The Paris Agreement has achieved one of two key necessary conditions for ultimate success – a broad base of participation among the countries of the world. But another key necessary condition has yet to be achieved – adequate collective ambition of the individual nationally determined contributions. How can the climate negotiators provide a structure that will include incentives to increase ambition over time? An important part of the answer can be international linkage of regional, national, and sub‐ national policies, that is, formal recognition of emission reductions undertaken in another jurisdiction for the purpose of meeting a Party’s own mitigation objectives. A central challenge is how to facilitate such linkage in the context of the very great heterogeneity that characterizes climate policies along five dimensions – type of policy instrument; level of government jurisdiction; status of that jurisdiction under the Paris Agreement; nature of the policy instrument’s target; and the nature along several dimensions of each Party’s Nationally Determined Contribution. We consider such heterogeneity among policies, and identify which linkages of various combinations of characteristics are feasible; of these, which are most promising; and what accounting mechanisms would make the operation of respective linkages consistent with the Paris Agreement.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2139/ssrn.3042820",
-        "url": "https://doi.org/10.2139/ssrn.3042820",
-        "authors": [
-          "Michael Mehling",
-          "Gilbert E. Metcalf",
-          "Robert N. Stavins"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Europe’s climate change policies: The Paris Agreement and beyond",
-        "abstract": "This article discusses Europe's climate change policies with an insight into the targets of 2015 Paris Agreement (keeping global temperature below 2°C and achieving zero carbon emissions in the second half of the century). Even though the European Union (EU) member states have increased their consumption of renewables and reduced their greenhouse gas emissions, oil remains the biggest energy source for Europe. This article argues that while the EU member states can achieve the targets of their climate pledges under the Paris climate mechanism with their current climate change policies, the large share of oil in European energy consumption may keep Europe from reaching its goal of zero-carbon economy.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1080/15567249.2017.1324534",
-        "url": "https://doi.org/10.1080/15567249.2017.1324534",
-        "authors": [
-          "Laçin İdil Öztığ"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "What energy system after the Paris Climate Agreement",
-        "abstract": "After a large awareness and decades of negotiations, a historic climate agreement was adopted by consensus by all 195 parties at the UNFCCC, the December 12, 2015, in order to provide an answer to this climate issue. This agreement marks a turning point towards a new world, a decarbonized world. At least, that is its ambition. Using a long-term prospective approach, and more precisely the bottom-up optimization model TIAM-FR, we investigate different GHG mitigation trajectories in line with 1) commitments occurring according to the Paris Climate Agreement, 2) an ambitious ultimate and global target by 2050 in line with the 2°C objective and the IPCC recommendations (AR4 and AR5), and 3) regional assumptions by 2050 according to the optimistic/pessimistic revisions of long-term commitments, including a carbon price. The latter is considered in the light of Paragraph 137 of the Paris agreement that recognizes the importance of providing incentives to emission reduction activities, in particular with regard to tools such as national policies and carbon pricing. We analyze a combination of these scenarios to discuss decarbonized pathway and the technological solutions to climate issues. Our analysis of the scenario results then focuses on the effects on the level of GHG emissions and the carbon abatement costs associated with the different GHG reduction targets for regions (developed, fast developing or developing countries) with national focus.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "",
-        "url": "https://hal-mines-paristech.archives-ouvertes.fr/hal-01445719",
-        "authors": [
-          "Sandrine Selosse",
-          "Nadia Mäızi"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "GECO 2016: Global Energy and Climate Outlook: Road from Paris: Impact of climate policies on global energy markets in the context of the UNFCCC Paris Agreement",
-        "abstract": "",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.2790/89230",
-        "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC101899",
-        "authors": [
-          "Kitous Alban Gabriel",
-          "Kimon Keramidas",
-          "Toon Vandyck",
-          "Bert Saveyn"
-        ],
-        "source": "acemap"
-      },
-      {
-        "query": "nuclear energy in Paris Agreement climate policies",
-        "title": "Paris Climate Summit and Turkey's Renewable Energy Policies",
-        "abstract": "Abstract The increase in population and urbanization which emerged together with industrialization have brought the increase in energy demand with them. Carbon emissions rise as a result of the increase in energy demand and lead to climate change. Such changes in climate have negative effects on not only the environment but human life as well. Therefore, countries should implement energy policies with low carbon density in order to reduce greenhouse gas emission. In this context, preferring renewable energy sources can prevent temperature increase by reducing the effects of fossil fuels on the environment. Turkey should attach importance to renewable energy sources and invest in these sources in accordance with the commitments accepted at the Paris Climate Summit in order to reduce carbon emission.",
-        "year": "Unknown",
-        "citations": 0,
-        "doi": "10.1515/arhss-2016-0006",
-        "url": "https://doi.org/10.1515/arhss-2016-0006",
-        "authors": [
-          "Füsun Çelebi Boz",
-          "Turgut Bayramoğlu"
+          "Renato Lemm",
+          "Raphael Haymoz",
+          "Astrid Björnsen Gurung",
+          "Vanessa Burg",
+          "Tom Strebel",
+          "Oliver Thees"
         ],
         "source": "acemap"
       }
