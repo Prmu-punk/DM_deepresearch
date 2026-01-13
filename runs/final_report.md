@@ -1,159 +1,211 @@
-# 核能与气候变化：全生命周期温室气体排放的综合分析
+# The Role of Nuclear Energy in Climate Change Mitigation: A Comprehensive Analysis
 
-## 概述
+## Research Methodology
+This report was developed using a comprehensive research approach that employed knowledge graph (ConceptNet) technology to expand search queries and ensure thorough coverage of all relevant aspects of nuclear energy's role in climate change mitigation. The knowledge graph expansions included concepts such as "nuclear power's role in supplying electrical energy needs," "major increase in nuclear power," "investment in nuclear power," "role in low-carbon energy," and "comprehensive evaluation in climate change mitigation." These expansions guided the research to cover nuclear energy's scalability, reliability, and integration with renewable systems, ensuring a holistic analysis of its potential in decarbonization strategies.
 
-核能发电作为低碳能源选择，在全球应对气候变化的努力中扮演着重要角色。与化石燃料相比，核电站运行过程中几乎不产生直接温室气体排放，但需要全面评估其整个生命周期内的碳排放，包括建设、燃料加工、运营和退役等环节。本报告基于最新研究数据，系统分析核能发电的温室气体排放情况，并与主要能源进行比较，同时探讨其间接气候影响和在脱碳能源系统中的作用。
+## Introduction
+Nuclear energy represents a significant low-carbon electricity generation source that has played a crucial role in global energy systems for decades. With climate change emerging as one of the most pressing challenges of the 21st century, understanding nuclear power's potential contribution to decarbonization efforts is essential. This report examines nuclear energy through multiple dimensions: its lifecycle carbon footprint compared to other energy sources, scalability potential as a low-carbon energy solution, reliability characteristics for baseload power provision, and the associated challenges that influence its role in global climate strategies.
 
-## 研究方法
+## Lifecycle Carbon Footprint of Nuclear Energy
 
-本研究采用系统文献综述和元分析方法，对多个能源技术的生命周期评估（LCA）研究进行协调处理，以减少估计值的变异性并澄清中心趋势。通过筛选数百篇参考文献，选择符合质量LCA方法、透明度和完整性的研究进行分析，使用协调化过程调整已发布的估计值，使其具有共同的系统边界和关键操作输入参数的一致值。
+### Nuclear Power Emissions Profile
+Nuclear power generation produces negligible direct greenhouse gas emissions during operation, but lifecycle assessments reveal emissions occur throughout the entire fuel cycle. According to a comprehensive survey of 103 lifecycle studies, nuclear energy emissions range from 1.4 to 288 g CO₂e/kWh, with a mean value of 66 g CO₂e/kWh [1]. These emissions primarily result from plant construction, uranium mining and milling, fuel processing, and decommissioning activities.
 
-## 核能发电的全生命周期温室气体排放
+A detailed quantification study of different reactor types shows variation in emissions profiles:
+- Fast breeder reactor (FBR): 6.26 gCO₂e/kWh
+- Gas-cooled reactor (GCR): 8.35 gCO₂e/kWh
+- Pressurized water reactor (PWR): 11.87 gCO₂e/kWh
+- Boiling water reactor (BWR): 14.52 gCO₂e/kWh
+- Light water reactor (LWR): 20.5 gCO₂e/kWh
+- Heavy-water-moderated reactor (HWR): 28.2 gCO₂e/kWh [2]
 
-### 排放量化分析
+Chinese studies using process chain analysis and lifecycle assessment methods report even lower figures, with total nuclear lifecycle emissions at 11.9 g CO₂e/kWh, including fuel reprocessing and radioactive waste disposal [3]. The enrichment method also significantly impacts emissions, with centrifuge enrichment producing lower greenhouse gas emissions than gaseous diffusion [2].
 
-根据系统评估，核能发电的全生命周期温室气体排放远低于传统化石燃料来源。对轻水反应堆（LWRs）的研究表明：
+### Comparative Analysis with Other Energy Sources
+When compared to other major energy sources, nuclear power demonstrates substantially lower lifecycle emissions than fossil fuels and competitive figures with renewable energy sources:
 
-- 已发布的生命周期温室气体排放估计值中位数为13 g CO₂-eq/kWh
-- 四分位距（IQR）为23 g CO₂-eq/kWh
-- 范围在220 g CO₂-eq/kWh之间
+**Fossil Fuels:**
+- Coal and natural gas: 500-1200 g CO₂e/kWh [4]
 
-经过方法协调后，使用一致的总系统边界和几个重要系统参数值：
-- 协调后中位数：12 g CO₂-eq/kWh
-- 协调后四分位距：17 g CO₂-eq/kWh
-- 协调后范围：110 g CO₂-eq/kWh
+**Renewable Energy Sources:**
+- Hydropower: 16 g CO₂e/kWh (flat-area cold climate plants), with potential for 5-10 g CO₂e/kWh for high-altitude alpine reservoir-type and run-of-river systems
+- Wind power: ~15 g CO₂e/kWh
+- Solar thermal: 50-80 g CO₂e/kWh
+- Solar PV: 100-200 g CO₂e/kWh [4]
 
-### 不同反应堆类型的排放差异
+The research indicates that most non-fossil fuel energy sources have significantly lower full-energy-chain greenhouse gas emission factors than fossil fuels [4]. A study comparing resource intensities found that while renewable systems like hydro, tidal, offshore wind, and wave power utilize more materials during construction than conventional and nuclear power systems, they also require 50-150 times more surface area [5].
 
-不同核反应堆技术的生命周期温室气体排放存在显著差异：
+### Methodological Considerations in Lifecycle Assessments
+Lifecycle assessment studies face significant methodological challenges, including incomplete emission data, modeling limitations, and variations in system boundaries. The quantification of environmental impacts requires careful accounting of emissions and resources, often relying on incomplete or modeled data [6]. The disparity in nuclear lifecycle estimates can be attributed to errors in both the lowest estimates (lack of comprehensiveness) and highest estimates (failure to consider co-products) [1].
 
-- **快增殖反应堆（FBR）**：6.26 gCO₂e/kWh（样本量N=2）
-- **气冷反应堆（GCR）**：8.35 gCO₂e/kWh（N=1）
-- **压水反应堆（PWR）**：11.87 gCO₂e极速飞艇开奖结果记录/kWh（N=21）
-- **沸水反应堆（BWR）**：14.52 gCO₂e/kWh（N=15）
-- **轻水反应堆（LWR）**：极速飞艇开奖结果记录20.5 gCO₂e/kWh（N=7）
-- **重水慢化反应堆（HWR）**：28.2 gCO₂e/kWh（N=3）
+## Nuclear Power as a Scalable Low-Carbon Energy Source
 
-### 燃料浓缩方法的影响
+### Capacity and Reliability Characteristics
+Nuclear power plants excel as baseload power providers due to their high capacity factors and operational reliability. Studies show nuclear power plants typically achieve capacity factors of approximately 80%, compared to solar power's capacity factor as low as 10% [5]. The steady full-power operation of nuclear plants represents the most efficient use of capital investment [7].
 
-燃料浓缩方法对排放有显著影响：
-- 离心浓缩法比气体扩散法产生更低的温室气体排放
-- 浓缩工艺的能源强度是影响上游排放的关键因素
+The historical performance of nuclear power plants demonstrates their reliability in supplying increasing electricity demands. Finnish nuclear power plants, for instance, have shown "outstandingly good historic performance," making nuclear power the least-cost option for baseload electricity in Finland [8]. Nuclear generators, particularly large-scale units up to and exceeding 1500 MVA, have assumed a major role in supplying the world's increasing demand for electric power [9].
 
-### 生命周期阶段贡献分析
+### Grid Stability and Renewable Integration
+Nuclear power provides unique advantages for grid stability and renewable energy integration. As electrical grids increasingly incorporate variable renewable energy sources with "great ration and random generation," nuclear power offers constant low-CO₂ electricity 24/7, regardless of sunlight and weather conditions [10]. This characteristic is particularly valuable for commercial-scale plants that operate continuously.
 
-核能发电的全生命周期排放主要来自以下几个阶段：
+Research indicates that higher nuclear shares significantly reduce the need for transmission infrastructure, storage capacity, variable renewable energy curtailment, and land use [11]. This emphasizes nuclear power's potential role in low-carbon power systems that must accommodate growing renewable penetration.
 
-1. **铀矿开采和磨矿**：能耗和化学品使用导致排放
-2. **燃料转化和浓缩**：能源密集型工艺，特别是传统扩散法
-3. **电厂建设**：混凝土和钢材生产的隐含碳
-4. **运营维护**：相对较低的持续排放
-5. **退役和废物管理**：拆除活动和长期废物处置的排放
+The green transition requires electrifying industries with traditionally stable energy demands, combined with the rise of artificial intelligence and hyperscale data centers, which creates a significant increase in grid-connected baseload [11]. Nuclear energy is particularly well-suited to meet these demanding, constant electricity requirements.
 
-## 与其他能源技术的比较
+### Advanced Reactor Technologies and Future Scalability
+Advanced nuclear technologies, particularly Small Modular Reactors (SMRs), offer enhanced scalability and flexibility for future energy systems. SMRs are nuclear reactors with power less than 300 MWe, manufactured in factories as modules, then transported and assembled on site [12]. Proponents highlight their economy, passive safety, and flexibility in terms of investment, adaptation to electricity demand, and power grid management [12].
 
-### 化石燃料发电
+Advances in reactor designs, materials, and human-machine interfaces guarantee safety and reliability of emerging reactor technologies, potentially eliminating possibilities for high-consequence human errors [13]. New instrumentation and control technologies based on digital systems, novel sensors, and measurement approaches facilitate safety, reliability, and economic competitiveness of nuclear power options [13].
 
-煤电的生命周期温室气体排放显著较高：
-- 亚临界粉煤、整体煤气化联合循环、流化床和超临界粉煤燃烧技术的排放范围：675-1,689 g CO₂-eq/kWh
-- 四分位距：890-1,130 g CO₂极速飞艇开奖结果记录-eq/kWh
-- 中位数：1,001 g CO₂-eq/kWh
+Considering the world's growing energy demand, nuclear energy represents a viable option to meet this demand sustainably and reliably, with large-scale deployment of advanced nuclear reactors envisaged for the future [14]. Autonomous operation scenarios are becoming increasingly popular for small modular systems, enhancing their operational flexibility [13].
 
-协调化过程显著减少了估计值的变异性（IQR幅度减少53%），同时保持了几乎恒定的中心趋势（中位数减少2.2%）。
+## Climate Change Mitigation Potential
 
-### 可再生能源比较
+### Historical Impact and Future Projections
+Nuclear power has already made substantial contributions to climate change mitigation. Historical analysis shows that global nuclear power has prevented an average of 1.84 million air pollution-related deaths and 64 gigatonnes of CO₂-equivalent greenhouse gas emissions that would have resulted from fossil fuel burning [15]. Projections indicate that nuclear power could additionally prevent an average of 420,000-7.04 million deaths and 80-240 GtCO₂-eq emissions due to fossil fuels by midcentury, depending on which fuel it replaces [15].
 
-根据全能源链（FENCH）温室气体排放分析：
+Modeling studies suggest that nuclear power can reduce climate change mitigation costs by approximately 20%, with new reactor types and advanced uranium extraction methods providing a significant part of the savings (10%) [16]. However, realizing these savings would require a tenfold increase in reactors by 2070 [16].
 
-- **水力发电**：16 g CO₂-equiv./kWh（平坦地区寒冷气候电站）
-- **风力发电**：约15 g CO₂-equiv./kWh
-- **太阳能光伏**：100-200 g CO₂-equiv./kWh（当前值）
-- **太阳能热发电**：50-80 g CO₂-equiv./kWh
+### Economic Implications of Nuclear Policy
+The economic consequences of nuclear energy policies are significant in climate mitigation contexts. Early retirement of nuclear power plants leads to discounted cumulative global GDP losses of 0.07% by 2020, and if new nuclear investments are excluded, total losses double to 0.14% [17]. By comparison, climate policies themselves have much larger impacts, with carbon budget approaches leading to cumulative discounted near-term reductions of global GDP of 0.64% until 2020 [17].
 
-核能发电（8.9 g CO₂-equiv./kWh）与风电和水电处于同一低排放范围，远低于太阳能技术。
+The intertemporal flexibility of carbon budget approaches enables higher near-term emissions as a result of increased power generation from natural gas to fill emerging electricity supply gaps when nuclear is restricted, while still remaining within overall carbon budgets [17].
 
-### 综合比较表
+### Integration with Renewable Energy Systems
+Nuclear-renewable hybrid energy systems (NR-HES) represent promising low-carbon power generation systems that can meet electricity and residential heat demand, particularly for remote communities [18]. These systems combine the reliability of nuclear base-load operation with the sustainability of renewable energy, often incorporating thermal storage systems to optimize energy use and minimize fossil fuel consumption [18].
 
-| 能源技术 | 温室气体排放 (g CO₂-eq/kWh) | 备注 |
-|---------|---------------------------|------|
-| 煤电 | 675-1,689 (中位数1,001) | 化石燃料中最高 |
-| 天然气发电 | 约400-500 | 比煤电低但仍较高 |
-| 太阳能光伏 | 100-200 | 硅生产主导排放 |
-| 太阳能热发电 | 50-80 | 比光伏略极速飞艇开奖结果记录低 |
-| 水力发电 | 16 | 水库生物源性排放 |
-| 风力发电 | 约15 | 涡轮机和基础材料 |
-| 核能发电 | 6-28 (取决于技术) | 快增殖堆最低 |
-| 生物质能 | 可变 | 取决于原料和工艺 |
+Research on nuclear-renewable oil shale systems (NROSS) demonstrates how base-load nuclear reactors can provide primary energy for both electricity generation and industrial processes like shale oil production, simultaneously providing flexible, dispatchable, very-low-carbon electricity to the grid [19].
 
-## 影响排放的关键因素
+## Challenges and Controversies
 
-### 铀矿石品位
+### Radioactive Waste Management
+The management of radioactive waste remains one of the most significant challenges for nuclear energy. Geological repository systems require careful evaluation to determine if radionuclides from emplaced waste will eventually appear in the biosphere in hazardous amounts [20]. Deep geological repositories (DGRs) are currently being studied in several countries, including Canada, China, France, Germany, India, and Switzerland [21].
 
-全球铀市场平均矿石品位的下降对未来生命周期温室气体排放有显著影响。scenario分析显示，到2050年，中位生命周期温室气体排放可能在9到110 g CO₂-eq/kWh之间，具体取决于条件。
+These repositories rely on multiple barriers, including engineered and natural barriers, for long-term performance. Significant amounts of gases could be generated in DGRs from processes such as degradation of waste forms or corrosion of waste containers, potentially causing microcracks or macrocracks that affect barrier integrity [21]. Assessing long-term safety requires understanding gas migration mechanisms and their effects on repository stability [21].
 
-### 能源结构
+The isolation of waste from the public is essential, and the future of nuclear power depends in part on successful waste disposal strategies [22]. Disposal by deep burial is planned for spent fuel, and enhanced confinement near the surface for low-level waste, with site characterization being a critical ongoing process [22].
 
-核设施建设和其他上游过程使用的极速飞艇开奖结果记录能源结构严重影响总体排放。使用低碳能源进行铀浓缩和极速飞艇开奖结果记录燃料加工可以显著降低全生命周期排放。
+### Safety Technologies and Post-Fukushima Improvements
+Nuclear safety has been an ongoing concern worldwide, with the Fukushima Daiichi nuclear power plant accident in 2011 particularly undermining public confidence [23]. However, the industry has implemented significant safety improvements in response. The Benchmark Study of the Accident at the Fukushima Daiichi Nuclear Power Station (BSAF) project, run by the OECD/Nuclear Energy Agency, was established to estimate accident progression and status inside the nuclear reactors, contributing to decommissioning activities [24].
 
-### LCA方法选择
+Seventeen organizations from eight countries participated in calculating the thermohydraulic behavior inside the three reactors for approximately six days from the earthquake occurrence using severe accident integral codes [24]. Both industry and regulators have reassessed nuclear power plant safety and taken measures to address new safety challenges raised from the accident [25].
 
-使用的生命周期评估方法（ attributional vs. consequential）会显著影响排放估计。协调化过程通过统一系统边界和关键参数减少了变异性。
+Advances in reactor designs, materials, and human-machine interfaces continue to improve safety and reliability of emerging reactor technologies [13]. Digital systems, novel sensors, and measurement approaches further enhance safety, reliability, and economic competitiveness [13].
 
-## 间接气候影响
+### Economic Costs and Decommissioning
+The economics of nuclear power involve substantial costs throughout the lifecycle, particularly for decommissioning. Early decommissioning estimates have tended to rise as they come under closer attention, with current estimated costs much higher than initial projections [26]. Most countries have established requirements for cost estimates and reporting, including preparation of decommissioning plans with associated cost estimates and periodic updates every three to five years [27].
 
-### 热耗散
+Important considerations for stable and accurate decommissioning cost estimates include avoiding changes in project scope, fixing regulatory standards during planning phases, and ensuring accurate characterization of materials and soil [27]. Comparing cost estimates for entire projects is difficult, and proposed figures should not be taken at face value unless all boundary conditions and assumptions are clear [27].
 
-核电站通过冷却系统向环境释放大量废热，可能导致局部水温升高，影响水生生态系统。这种热污染在气候变化背景下可能加剧水体热应力，但对全球气候系统的影响相对较小。
+The levelized cost of electricity (LCOE) metric has traditionally been used to compare electricity costs, but three forces compel a move away from LCOE: social costs of CO₂ and local pollutants becoming important decision criteria, liberalization of electricity markets introducing price and market risk, and the rise of variable renewable energies requiring new cost metrics [28].
 
-### 水资源利用
+### Public Perception and Acceptance
+Public acceptance significantly influences nuclear energy development, with perceptions varying widely across different demographics and regions [29]. Cluster analysis reveals small but statistically significant differences in attitude between different public segments, with well-educated, economically active segments showing different attitudes than less educated, less economically active segments dependent on social security programs [30].
 
-核电站需要大量冷却水，通常比化石燃料电厂更需要水。在缺水地区或气候变化导致水资源压力增加的情况下，这可能成为限制因素。不同冷却技术（一次通过式 vs. 冷却塔）的水资源影响差异显著。
+Environmental perception strongly influences nuclear attitudes, with respondents showing higher levels of environmental concern more likely to support policies to decommission nuclear facilities and express concern about nuclear safety [31]. The final destination of nuclear waste remains a particular public concern, with local populations often rejecting proposed storage facilities, forcing restart of selection processes [32].
 
-### 土地用途
+Internationally, public acceptance is generally used to gauge acceptance of nuclear energy whenever governments decide to engage in nuclear energy programs [33]. The concept of "reluctant acceptance" describes how many people discursively re-negotiate their position on nuclear energy when it is positioned alongside climate change concerns [34].
 
-核电站的土地使用效率较高，单位能源产量所需的土地面积远小于大多数可再生能源，特别是生物质能和太阳能光伏。
+Statistical data show that a significant fraction of the global population has concerns about nuclear energy and its potential impacts, despite expert statements about its environmental advantages, including absence of greenhouse gas emissions [32].
 
-## 核能在脱碳能源系统中的作用
+## Global Decarbonization Strategies and Nuclear Energy
 
-### 减排潜力
+### International Perspectives and Policy Frameworks
+Nuclear power has experienced a dramatic comeback in popularity, though utilities are building and restarting nuclear power plants not primarily to decarbonize but to fuel the energy demands of artificial intelligence systems and data centers [35]. The OECD Halden Reactor Project constitutes an international network with 21 member countries focused on safe and reliable operation of nuclear power plants with R&D advances [36].
 
-研究表明，核能利用具有巨大的CO₂减排潜力：
-- 1990年总排放量减少10%
-- 2000年达到16%
-- 2010年达到21%
-- 203极速飞艇开奖结果记录0年达到42%
+In many countries, climate concerns have increasingly become manifest in political debates around energy policy, reframing nuclear power as part of the solution to the need for low-carbon energy options [34]. This represents a significant shift in how nuclear energy is positioned within broader energy and environmental discussions.
 
-通过发电和工艺热应用，核能可以显著替代化石燃料。
+### Nuclear Energy and Non-Proliferation Concerns
+For nuclear energy to provide any substantial part of the low-carbon energy needed in the second half of the twenty-first century would require dramatic growth, placing unprecedented demands on global systems for verification, control, and security for weapons-usable nuclear materials [37]. Deep reductions in nuclear arms and their eventual prohibition would also require new approaches to managing global stocks of weapons-usable nuclear materials [37].
 
-### 可靠性优势
+Politically, nuclear energy may not be able to grow on the required scale unless governments and publics are confident that it will not contribute to the spread of nuclear weapons, creating another link between climate mitigation and nuclear nonproliferation and disarmament [37].
 
-与间歇性可再生能源不同，核能提供基本负荷电力，具有高容量因子和电网稳定性优势。这对于整合高比例可变可再生能源（如风能和太阳能）的电力系统尤为重要。
+### Regional Case Studies and Implementation Challenges
+Different regions face unique challenges in nuclear energy implementation. In Asia, despite the Fukushima accident undermining public confidence, many emerging economies still plan to introduce nuclear energy [23]. Analysis reveals that insufficient financial, technical, and institutional capacities could be complemented by external support and assistance, with public acceptance being vital for launching nuclear power programs [23].
 
-### 系统集成挑战
+Malaysia's consideration of nuclear energy as an option for future electricity generation during the 9th Malaysia Development Plan demonstrates typical preparatory steps, including establishment of Nuclear Power Corporation of Malaysia (MNPC) as the first Nuclear Energy Programme Implementing Organization (NEPIO) in the country [38].
 
-尽管核极速飞艇开奖结果记录能具有低碳和可靠性的优势，但其在未来能源系统中的角色面临多个挑战：
-- 高资本成本和长建设周期
-- 公众接受度和安全问题
-- 废物管理和退役挑战
-- 与可变可再生能源的灵活性匹配
+## Conclusion
+Nuclear energy presents a complex but potentially significant component of global climate change mitigation strategies. With lifecycle greenhouse gas emissions substantially lower than fossil fuels and competitive with most renewable energy sources, nuclear power offers a proven low-carbon electricity generation option. Its high capacity factors and reliability make it particularly valuable for providing baseload power and stabilizing grids with increasing renewable energy penetration.
 
-## 结论
+Advanced reactor technologies, particularly small modular reactors, offer enhanced safety features and flexibility for future energy systems. However, significant challenges remain in waste management, decommissioning costs, public acceptance, and non-proliferation concerns. The economic competitiveness of nuclear power must be evaluated beyond simple LCOE metrics to include system costs and integration benefits.
 
-核能发电在全生命周期基础上是一种低碳能源技术，其温室气体排放与风电和水电相当，远低于化石燃料和太阳能技术。不同类型的核反应堆技术排放水平不同，快增殖反应堆排放最低（约6.26 gCO₂e/kWh）。
+The role of nuclear energy in decarbonization strategies will likely vary by region, depending on existing infrastructure, regulatory frameworks, public attitudes, and alternative energy resources. A balanced approach that acknowledges both the potential benefits and substantial challenges of nuclear energy will be essential for developing comprehensive climate mitigation policies that effectively address the urgent need for decarbonization while managing associated risks.
 
-核能在脱碳能源系统中具有重要作用，可以提供可靠的基本负荷电力，补充间歇性可再生能源。然而，其部署受到铀矿石品位、能源结构、公众接受度和经济因素等多重因素的影响。未来核能的发展需要综合考虑这些因素，以最大化其对气候变化的缓解潜力。
+## Sources
 
-虽然核能不是零影响能源，但其生命周期温室气体排放极低，使其成为应对气候变化和能源安全挑战的重要选择之一。在适当的条件下，核能可以与其他低碳能源技术协同工作，为实现深度脱碳的能源系统做出贡献。
+[1] Valuing the Greenhouse Gas Emissions from Nuclear Power: A Critical Survey: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3445371
 
-## 资料来源
+[2] Quantification of the Lifecycle Greenhouse Gas Emissions from Nuclear Power Generation Systems: https://doi.org/10.3390/en9110863
 
-[1] Quantification of the Lifecycle Greenhouse Gas Emissions from Nuclear Power Generation Systems: https://doi.org/10.3390/en9110863  
-[2] Life Cycle Greenhouse Gas Emissions of Nuclear Electricity Generation: https://doi.org/10.1111/j.1530-9290.2012.00472.x  
-[3] Life Cycle Greenhouse Gas Emissions from Electricity Generation: https://doi.org/10.2172/1338444  
-[4] Life Cycle Greenhouse Gas Emissions of Coal‐Fired Electricity Generation: https://doi.org/10.1111/j.1530-9290.2012.00465.x  
-[5] Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydrop极速飞艇开奖结果记录ower, solar power and wind power: https://doi.org/10.1504/ijram.2002.001520  
-[6] Uranium Mining and Nuclear Power: http://search.informit.com.au/documentSummary;dn=104077498471336;res=IELAPA  
-[7] Waste management considerations in nuclear facility decommissioning: http://www.osti.gov/scitech/biblio/5169954  
-[8] WASTE MANAGEMENT FOR DECOMMISSIONING OF NUCLEAR POWER PLANTS: AN EPRI DECOMMISSIONING PROGRAM REPORT: https://www.oecd-nea.org/rwm/wpdd/studsvik2014/documents/E-1__waste_management__R-McGrath.pdf  
-[9] Nuclear Power: A Nuclear Solution to CO2 Emissions: https://doi.org/10.2139/ssrn.1143082  
-[10] Energy and Technology Options for CO2 Emission Reduction. Towards Symbiotic Use of Nuclear Energy and Fossil Fuels.: https://doi.org/10.3327/jaesj.33.1131
+[3] Greenhouse gas emissions from nuclear power chain life cycle in China: https://en.cnki.com.cn/Article_en/CJFDTotal-ZGHJ201511053.htm
+
+[4] Full-energy-chain greenhouse-gas emissions: a comparison between nuclear power, hydropower, solar power and wind power: https://doi.org/10.1504/ijram.2002.001520
+
+[5] Comparison of Resource Intensities and Operational Parameters of Renewable, Fossil Fuel, and Nuclear Power Systems: https://极doi.org/10.5383/ijtee.05.02.001
+
+[极6] Global environmental impacts: data sources and methodological choices for calculating normalization factors for LCA: https://doi.org/10.1007/s11367-019-01604-y
+
+[7] Increasing Needs and Solutions for Non-Baseload Operation of Nuclear Power Plants: https://doi.org/10.37798/2016651-2130
+
+[8] Nuclear power: least-cost option for baseload electricity in Finland: https://doi.org/10.1680/nuen.40.2.87.39954
+
+[9] Factors Influencing Reliability of极 Large Generators for Nuclear power Plants: https://doi.org/10.1109/tpas.1974.293934
+
+[10] New nuclear should power decarbonization: https://doi.org/10.1021/cen-10236-editorial
+
+[11] The Role of Nuclear Energy and Baseload Demand in Capacity Expansion Planning for Low-Carbon Power Systems: https://doi.org/10.2139/ssrn.4845091
+
+[12] Les Small Modular Reactors (SMR): https://doi.org/10.3917/rindu.123.0133
+
+[13] Nuclear Power - Control, Reliability and Human Factors: https://doi.org/10.5772/988
+
+[14] Role of advanced nuclear reactor technologies in meeting the growing energy demands: https://doi.org/10.1109/pgsret.2015.7312206
+
+[15] Prevented Mortality and Greenhouse Gas Emissions from Historical and Projected Nuclear Power: https://doi.org/10.1021/es3051197
+
+[16] Nuclear Power as a Climate Change Mitigation Option: a Modelling Approach: https://publications.lib.chalmers.se/records/fulltext/191445/191445.pdf
+
+[17] Economics of nuclear power and climate change mitigation policies: https://doi.org/10.1073/pnas.120极1264109
+
+[18] Nuclear renewable hybrid energy system assessment through the thermal storage system: https://doi.org/10.1002/er.5514
+
+[19] Development of Nuclear Renewable Oil Shale Systems for Flexible Electricity and Reduced Fossil Fuel Emissions: http://www.osti.gov/scitech/biblio/1239875-development-nuclear-renewable-oil-shale-systems-flexible-electricity-reduced-fossil-fuel-emissions
+
+[20] Geological criteria for radioactive waste repositories: http://www.osti.gov/scitech/biblio/5170639
+
+[21] Gas Generation and Migration in Deep Geological Radioactive Waste Repositories: https://doi.org/10.11159/icgre23.002
+
+[22] Nuclear Reactors, Waste Management: https://doi.org/10.1002/0471238961.2301192013211818.a01
+
+[23] Nuclear Energy in Asia: Safety Post-Fukushima: https://gcoe.ier.hit-u.ac.jp/research/discussion/2008/pdf/gd12-234.pdf
+
+[24] Overview and Outcomes of the OECD/NEA Benchmark Study of the Accident at the Fukushima Daiichi Nuclear Power Station: https://doi.org/10.13182/nt16-10
+
+[25] Post-Fukushima Nuclear Power Plant Safety-A Review: https://doi.org/10.4172/2325-9809.1000101
+
+[26] Decommissioning costs and British nuclear policy: http://sro.sussex.ac.uk/id/eprint/31442/
+
+[27] Estimation and comparability of nuclear facility decommissioning costs: https://www.osti.gov/etdeweb/biblio/22178108
+
+[28] The Competitiveness of Nuclear Energy: From LCOE to System Costs: https://doi.org/10.3917/re1.097.0031
+
+[29] Public Acceptance Study of Nuclear Energy: http://en.cnki.com.cn/Article_en/CJFDTOTAL-ZGRK200008015.htm
+
+[30] THE PUBLIC PERCEPTION OF NUCLEAR ENERGY IN LITHUANIA: https://doi.org/10.9770/jssi.2017.7.1(2)
+
+[31] Environmental Perception and Public Attitudes toward Nuclear Energy: https://doi.org/10.29274/ews.2023.35.1.201
+
+[32] PUBLIC PERCEPTION ON NUCLEAR ENER极GY AND RADIOACTIVE WASTE STORAGE: https://www.iaea.org/inis/collection/nclcollectionstore/_public/41/072/41072586.pdf
+
+[33] Malaysian public perception towards nuclear power energy-related issues: https://doi.org/10.1063/1.4972904
+
+[34] Reframing nuclear power in the UK energy debate: nuclear power, climate change mitigation and radioactive waste: https://doi.org/10.1177/0963662506066719
+
+[35] New nuclear should power decarbonization: https://doi.org/10.1021/cen-10236-editorial
+
+[36] The OECD Halden reactor project. International research on safety and reliability of nuclear power generation: https://inis.iaea.org/search/search.aspx?orig_q=RN:31027104
+
+[37] Nuclear disarmament, nuclear energy, and climate change: https://doi.org/10.4324/9780429026126-12
+
+[38] Malaysian public perception towards nuclear power energy-related issues: https://doi.org/10.1063/1.4972904
