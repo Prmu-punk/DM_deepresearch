@@ -34,11 +34,26 @@ DM_deepresearch/
 
 ### 1. 环境准备
 
-确保已安装 `uv` 包管理器和 Python 环境。
+**前置要求**:
+*   **Python**: 版本需 `>=3.10`
+*   **包管理器**: 推荐使用 [uv](https://github.com/astral-sh/uv) 进行依赖管理和环境隔离。
 
+如果你还没有安装 `uv`，可以通过以下命令安装：
 ```bash
-# 安装依赖
+# MacOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**安装项目依赖**:
+```bash
+# 创建虚拟环境并同步依赖
 uv sync
+
+# 或者使用 pip (如果不想用 uv)
+pip install -r pyproject.toml
 ```
 
 ### 2. 配置环境变量
